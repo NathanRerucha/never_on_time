@@ -3,4 +3,6 @@
 ## The Time Travelling Platformer
 
 Made by
-- Corey Thompson
+
+* Corey Thompson
+* Camille Ollison
