@@ -4,3 +4,4 @@
 
 Made by
 - Corey Thompson
+- Miranda Adams
