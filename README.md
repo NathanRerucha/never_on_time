@@ -3,4 +3,4 @@
 ## The Time Travelling Platformer
 
 Made by
-- PUT NAMES HERE
+- Corey Thompson
