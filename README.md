@@ -6,3 +6,4 @@ Made by
 - Corey Thompson
 - Miranda Adams
 - Camille Ollison
+- Nathan Rerucha
