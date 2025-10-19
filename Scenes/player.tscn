@@ -137,6 +137,7 @@ jump_force = 230.0
 position = Vector2(0, -15)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_6t5aa")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)

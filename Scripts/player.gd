@@ -8,6 +8,9 @@ extends CharacterBody2D
 
 var move_input : float
 
+var shift_dist : int
+var shifted = false
+
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
 
@@ -37,7 +40,12 @@ func _process(delta: float) -> void:
 	
 	_manage_animation()
 	
-func _manage_animation ():
+	time_shift()
+	
+	print("Y coord: ", position.y)
+	print(shifted)
+	
+func _manage_animation():
 	if not is_on_floor():
 		anim.play("jump")
 	elif move_input != 0:
@@ -45,5 +53,14 @@ func _manage_animation ():
 	else:
 		anim.play("idle")
 	
+func time_shift():
 	
+	
+	
+	if Input.is_action_just_pressed("time_forward") and not shifted:
+		shifted = true
+		position.y += 288
+	if Input.is_action_just_pressed("time_reverse") and shifted:
+		shifted = false
+		position.y -= 288
 	
