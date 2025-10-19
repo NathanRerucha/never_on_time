@@ -5,7 +5,23 @@
 [ext_resource type="Texture2D" uid="uid://b6mgpkujscws5" path="res://Sprites/Characters/character_0001.png" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
+radius = 8.0
 height = 24.0
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_v0iea")]
+}
 
 [sub_resource type="Animation" id="Animation_vgqql"]
 resource_name = "idle"
@@ -23,8 +39,8 @@ tracks/0/keys = {
 "values": [ExtResource("1_v0iea")]
 }
 
-[sub_resource type="Animation" id="Animation_fkybt"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "jump"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,7 +51,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_v0iea")]
+"values": [ExtResource("3_6t5aa")]
 }
 
 [sub_resource type="Animation" id="Animation_x3wgy"]
@@ -55,21 +71,6 @@ tracks/0/keys = {
 "values": [ExtResource("3_6t5aa"), ExtResource("1_v0iea")]
 }
 
-[sub_resource type="Animation" id="Animation_3smsa"]
-resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_6t5aa")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8erm5"]
 _data = {
 &"RESET": SubResource("Animation_fkybt"),
@@ -80,6 +81,8 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
+gravity = 700.0
+jump_force = 230.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_v0iea")
