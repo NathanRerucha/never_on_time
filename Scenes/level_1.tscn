@@ -24,9 +24,5 @@ position = Vector2(-19, -74)
 position = Vector2(-24, -80)
 
 [node name="KillZone" parent="." instance=ExtResource("5_6444e")]
-position = Vector2(440, 112)
-scale = Vector2(11.580231, 1)
-
-[node name="KillZone2" parent="." instance=ExtResource("5_6444e")]
-position = Vector2(408, 408)
-scale = Vector2(12, 1)
+position = Vector2(-5.999939, 115)
+scale = Vector2(188.92441, 5.0773563)

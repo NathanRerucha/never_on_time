@@ -33,8 +33,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -jump_force
 		
 		#time shift
-	if Input.is_action_just_pressed("time_shift"):
-		TimeManager.shift_time()
+	#if Input.is_action_just_pressed("time_shift"):
+		#TimeManager.shift_time()
 		
 	move_and_slide()
 	
