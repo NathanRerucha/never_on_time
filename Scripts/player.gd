@@ -8,8 +8,10 @@ extends CharacterBody2D
 
 var move_input : float
 
-var shift_dist : int
-var shifted = false
+var shift_dist_past : int
+var shift_dist_future : int
+var current_time : int = 0
+var spawn_point : Vector2 
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -33,8 +35,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -jump_force
 		
 		#time shift
-	if Input.is_action_just_pressed("time_shift"):
-		TimeManager.shift_time()
+	#if Input.is_action_just_pressed("time_shift"):
+#		TimeManager.shift_time()
 		
 	move_and_slide()
 	
@@ -46,9 +48,6 @@ func _process(delta: float) -> void:
 	
 	time_shift()
 	
-	print("Y coord: ", position.y)
-	print(shifted)
-	
 func _manage_animation():
 	if not is_on_floor():
 		anim.play("jump")
@@ -58,13 +57,12 @@ func _manage_animation():
 		anim.play("idle")
 	
 func time_shift():
-	
-	
-	
-	if Input.is_action_just_pressed("time_forward") and not shifted:
-		shifted = true
-		position.y += 288
-	if Input.is_action_just_pressed("time_reverse") and shifted:
-		shifted = false
+	if Input.is_action_just_pressed("time_forward") and current_time == 0:
+		current_time = 1
+		position.y += shift_dist_future
+	if Input.is_action_just_pressed("time_reverse") and current_time == 1 :
+		position.y -= 288
+	if Input.is_action_just_pressed("time_reverse") and current_time == -1 :
+		
 		position.y -= 288
 	
