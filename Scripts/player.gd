@@ -8,8 +8,6 @@ extends CharacterBody2D
 
 var move_input : float
 
-var shift_dist : int
-var shifted = false
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -34,7 +32,6 @@ func _physics_process(delta: float) -> void:
 		
 		#time shift
 	#if Input.is_action_just_pressed("time_shift"):
-		#TimeManager.shift_time()
 		
 	move_and_slide()
 	
