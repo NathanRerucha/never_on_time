@@ -1,12 +1,24 @@
 [gd_scene load_steps=3 format=3 uid="uid://de63g3xci0oat"]
 
-[ext_resource type="Script" uid="uid://dr2b5l630oam5" path="res://Scripts/kill_zone.gd" id="1_1yg0r"]
+[ext_resource type="Script" uid="uid://elsw3qrakjxc" path="res://Scenes/killzone.gd" id="1_1yg0r"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3idby"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yg0r"]
+size = Vector2(810.00006, 20)
 
-[node name="KillZone" type="Area2D"]
-scale = Vector2(1, 1.0078596)
+[node name="Main" type="Node2D"]
+
+[node name="Killzone" type="Area2D" parent="."]
+visibility_layer = 3
+scale = Vector2(1e-05, 1e-05)
 script = ExtResource("1_1yg0r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("WorldBoundaryShape2D_3idby")
+[node name="Timer" type="Timer" parent="Killzone"]
+wait_time = 0.001
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(197500.05, 0)
+scale = Vector2(500.00003, 1)
+shape = SubResource("RectangleShape2D_1yg0r")
+
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
+[connection signal="timeout" from="Killzone/Timer" to="Killzone" method="_on_timer_timeout"]
