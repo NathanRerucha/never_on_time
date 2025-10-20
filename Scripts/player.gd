@@ -46,7 +46,9 @@ func _process(delta: float) -> void:
 	
 	_manage_animation()
 	
-	time_shift()
+	_time_shift()
+	
+
 	
 func _manage_animation():
 	if not is_on_floor():
@@ -56,13 +58,23 @@ func _manage_animation():
 	else:
 		anim.play("idle")
 	
-func time_shift():
-	if Input.is_action_just_pressed("time_forward") and current_time == 0:
-		current_time = 1
-		position.y += shift_dist_future
-	if Input.is_action_just_pressed("time_reverse") and current_time == 1 :
-		position.y -= 288
-	if Input.is_action_just_pressed("time_reverse") and current_time == -1 :
+func _time_shift():
+	print("current time: ", current_time)
+	if Input.is_action_just_pressed("time_forward") and current_time == 0 or current_time == -1:
+		position.y -= shift_dist_future
+		if current_time == -1:
+			print("test")
+			current_time = 0
+		else:
+			current_time = 1
+	if Input.is_action_just_pressed("time_reverse") and current_time == 0 or current_time == 1:
+		position.y += shift_dist_past
+		if current_time == 1:
+			current_time = 0
+		else:
+			current_time = -1
 		
-		position.y -= 288
+func _death():
+	# will become more complex in future (ie. animaitons and such)
+	position = spawn_point
 	
