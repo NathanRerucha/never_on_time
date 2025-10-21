@@ -8,13 +8,22 @@ extends CharacterBody2D
 
 var move_input : float
 
-var shift_dist_past : int
-var shift_dist_future : int
+var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
+var timer := Timer.new()
+var velocity_saved : Vector2
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
+
+func _ready():
+	# Setting up timer for pausing between shifts
+	add_child(timer)
+	print(timer)
+	timer.wait_time = 3.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout)
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -34,21 +43,15 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
 		
-		#time shift
-	#if Input.is_action_just_pressed("time_shift"):
-#		TimeManager.shift_time()
-		
 	move_and_slide()
+	
+	_time_shift()
 	
 func _process(delta: float) -> void:
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
 	
 	_manage_animation()
-	
-	_time_shift()
-	
-
 	
 func _manage_animation():
 	if not is_on_floor():
@@ -58,22 +61,34 @@ func _manage_animation():
 	else:
 		anim.play("idle")
 	
-func _time_shift():
-	print("current time: ", current_time)
-	if Input.is_action_just_pressed("time_forward") and current_time == 0 or current_time == -1:
-		position.y -= shift_dist_future
+func _time_shift():	
+	velocity_saved = velocity
+	print("velocity:", velocity)
+	# current time: 0 = present, 1 = future, -1 = past
+	if Input.is_action_just_pressed("time_forward") and (current_time == 0 or current_time == -1):
+		# adds a pause between shifts
+		timer.start()
+		print("time left: ", timer.time_left)
+		velocity = Vector2(0,0)
+		# shift player vertically a set amount of pixels, sourced from level 
+		position.y -= shift_dist
+		# determines what time period player is in and sets the current_time variable accordingly
 		if current_time == -1:
-			print("test")
 			current_time = 0
 		else:
 			current_time = 1
-	if Input.is_action_just_pressed("time_reverse") and current_time == 0 or current_time == 1:
-		position.y += shift_dist_past
+	if Input.is_action_just_pressed("time_reverse") and (current_time == 0 or current_time == 1):
+		timer.start()
+		position.y += shift_dist
 		if current_time == 1:
 			current_time = 0
 		else:
 			current_time = -1
 		
+func _on_timer_timeout() -> void:
+	print("timeeout")
+	velocity = velocity_saved
+
 func _death():
 	# will become more complex in future (ie. animaitons and such)
 	position = spawn_point
