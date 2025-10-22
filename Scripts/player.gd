@@ -11,7 +11,6 @@ var move_input : float
 var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
-var timer := Timer.new()
 var velocity_saved : Vector2
 
 @onready var sprite : Sprite2D = $Sprite
@@ -19,7 +18,6 @@ var velocity_saved : Vector2
 
 func _ready():
 	# Setting up timer for pausing between shifts
-	timer.timeout.connect(_on_timer_timeout)
 	add_child(freeze_timer)
 	freeze_timer.connect("timeout", Callable(self, "_unfreeze_game"))
 	freeze_timer.one_shot = true # The timer will only run once
@@ -79,12 +77,11 @@ func _unfreeze_game():
 	print("Game unpaused")
 	
 func _time_shift():	
-	velocity_saved = velocity
-	print("velocity:", velocity)
 	# current time: 0 = present, 1 = future, -1 = past
 	if Input.is_action_just_pressed("time_forward") and (current_time == 0 or current_time == -1):
-	
+		print("test")
 		# shift player vertically a set amount of pixels, sourced from level 
+		freeze_game()
 		position.y -= shift_dist
 		# determines what time period player is in and sets the current_time variable accordingly
 		if current_time == -1:
@@ -92,8 +89,9 @@ func _time_shift():
 		else:
 			current_time = 1
 	if Input.is_action_just_pressed("time_reverse") and (current_time == 0 or current_time == 1):
-		timer.start()
+		freeze_game()
 		position.y += shift_dist
+		
 		if current_time == 1:
 			current_time = 0
 		else:
