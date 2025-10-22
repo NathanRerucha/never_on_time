@@ -15,6 +15,7 @@ var velocity_saved : Vector2
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
+@onready var coyote_timer = $CoyoteTimer
 
 func _ready():
 	# Setting up timer for pausing between shifts
@@ -27,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	# gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	var was_on_floor = is_on_floor()
 	
 	# get the move input
 	move_input = Input.get_axis("move_left", "move_right")
@@ -38,10 +40,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, 0.0, braking * delta)
 	
 	#jumping
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() || !coyote_timer.is_stopped()):
 		velocity.y = -jump_force
 		
 	move_and_slide()
+	if was_on_floor && !is_on_floor():
+		coyote_timer.start()
 	
 	_time_shift()
 	
@@ -61,12 +65,6 @@ func _manage_animation():
 
 var freeze_duration = 1 # seconds
 var freeze_timer = Timer.new()
-
-
-
-func _input(event):
-	if event.is_action_pressed("freeze_time"):
-		freeze_game()
 
 func freeze_game():
 	get_tree().paused = true
