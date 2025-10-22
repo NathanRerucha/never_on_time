@@ -19,12 +19,12 @@ var velocity_saved : Vector2
 
 func _ready():
 	# Setting up timer for pausing between shifts
-	add_child(timer)
-	print(timer)
-	timer.wait_time = 3.0
-	timer.one_shot = true
 	timer.timeout.connect(_on_timer_timeout)
-
+	add_child(freeze_timer)
+	freeze_timer.connect("timeout", Callable(self, "_unfreeze_game"))
+	freeze_timer.one_shot = true # The timer will only run once
+	freeze_timer.process_mode = Node.PROCESS_MODE_ALWAYS
+	
 func _physics_process(delta: float) -> void:
 	# gravity
 	if not is_on_floor():
@@ -60,16 +60,30 @@ func _manage_animation():
 		anim.play("move")
 	else:
 		anim.play("idle")
+
+var freeze_duration = 1 # seconds
+var freeze_timer = Timer.new()
+
+
+
+func _input(event):
+	if event.is_action_pressed("freeze_time"):
+		freeze_game()
+
+func freeze_game():
+	get_tree().paused = true
+	freeze_timer.start(freeze_duration)
+
+func _unfreeze_game():
+	get_tree().paused = false
+	print("Game unpaused")
 	
 func _time_shift():	
 	velocity_saved = velocity
 	print("velocity:", velocity)
 	# current time: 0 = present, 1 = future, -1 = past
 	if Input.is_action_just_pressed("time_forward") and (current_time == 0 or current_time == -1):
-		# adds a pause between shifts
-		timer.start()
-		print("time left: ", timer.time_left)
-		velocity = Vector2(0,0)
+	
 		# shift player vertically a set amount of pixels, sourced from level 
 		position.y -= shift_dist
 		# determines what time period player is in and sets the current_time variable accordingly
