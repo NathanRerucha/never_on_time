@@ -62,12 +62,6 @@ func _manage_animation():
 var freeze_duration = 1 # seconds
 var freeze_timer = Timer.new()
 
-
-
-func _input(event):
-	if event.is_action_pressed("freeze_time"):
-		freeze_game()
-
 func freeze_game():
 	get_tree().paused = true
 	freeze_timer.start(freeze_duration)
