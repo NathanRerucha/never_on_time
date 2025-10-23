@@ -78,6 +78,7 @@ func freeze_game():
 	freeze_timer.start(freeze_duration)
 
 func _unfreeze_game():
+	is_shifting = false
 	get_tree().paused = false
 	print("Game unpaused")
 	
@@ -90,6 +91,7 @@ func _time_shift():
 		# shift player vertically a set amount of pixels, sourced from level 
 		freeze_game()
 		position.y -= shift_dist
+		#is_shifting = false
 		# determines what time period player is in and sets the current_time variable accordingly
 		if current_time == -1:
 			current_time = 0
@@ -100,6 +102,7 @@ func _time_shift():
 		anim.play("time_shift")
 		freeze_game()
 		position.y += shift_dist
+		#is_shifting = false
 		
 		if current_time == 1:
 			current_time = 0
