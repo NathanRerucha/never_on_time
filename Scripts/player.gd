@@ -12,6 +12,7 @@ var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
 var velocity_saved : Vector2
+var is_shifting : bool = false
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -23,6 +24,7 @@ func _ready():
 	freeze_timer.connect("timeout", Callable(self, "_unfreeze_game"))
 	freeze_timer.one_shot = true # The timer will only run once
 	freeze_timer.process_mode = Node.PROCESS_MODE_ALWAYS
+	anim.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -49,13 +51,18 @@ func _physics_process(delta: float) -> void:
 	
 	_time_shift()
 	
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
 	
 	_manage_animation()
+	if is_shifting:
+		return
 	
 func _manage_animation():
+	if is_shifting:
+		return
 	if not is_on_floor():
 		anim.play("jump")
 	elif move_input != 0:
@@ -78,6 +85,8 @@ func _time_shift():
 	# current time: 0 = present, 1 = future, -1 = past
 	if Input.is_action_just_pressed("time_forward") and (current_time == 0 or current_time == -1):
 		print("test")
+		is_shifting = true
+		anim.play("time_shift")
 		# shift player vertically a set amount of pixels, sourced from level 
 		freeze_game()
 		position.y -= shift_dist
@@ -87,6 +96,8 @@ func _time_shift():
 		else:
 			current_time = 1
 	if Input.is_action_just_pressed("time_reverse") and (current_time == 0 or current_time == 1):
+		is_shifting = true
+		anim.play("time_shift")
 		freeze_game()
 		position.y += shift_dist
 		
@@ -94,6 +105,11 @@ func _time_shift():
 			current_time = 0
 		else:
 			current_time = -1
+			
+func _on_animation_finished(anim_name):
+	if anim_name == "time_shift":
+		is_shifting = false 
+		_manage_animation()
 		
 func _on_timer_timeout() -> void:
 	print("timeeout")

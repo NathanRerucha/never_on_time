@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv0g1jn3n7ini"]
+[gd_scene load_steps=12 format=3 uid="uid://dv0g1jn3n7ini"]
 
 [ext_resource type="Script" uid="uid://dm4f85m18rkkw" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cef0tny10j0a0" path="res://Sprites/Player/player_prototype_1_front.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://chitat0vnh3r0" path="res://Sprites/Player/player_prototype_1_side.png" id="3_vgqql"]
+[ext_resource type="Texture2D" uid="uid://cgh5qfiovfdf4" path="res://Sprites/Backgrounds/timeShiftPlaceholder.png" id="4_vgqql"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 6.0
@@ -120,12 +121,28 @@ tracks/0/keys = {
 "values": [ExtResource("3_vgqql"), ExtResource("3_vgqql")]
 }
 
+[sub_resource type="Animation" id="Animation_8erm5"]
+resource_name = "time_shift"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_vgqql")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8erm5"]
 _data = {
 &"RESET": SubResource("Animation_fkybt"),
 &"idle": SubResource("Animation_vgqql"),
 &"jump": SubResource("Animation_3smsa"),
-&"move": SubResource("Animation_x3wgy")
+&"move": SubResource("Animation_x3wgy"),
+&"time_shift": SubResource("Animation_8erm5")
 }
 
 [node name="Player" type="CharacterBody2D"]
@@ -137,7 +154,6 @@ jump_force = 230.0
 position = Vector2(0, -15)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_6t5aa")
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -12)
