@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7jdrcqytpoxc"]
+
+[ext_resource type="Script" uid="uid://cquw13j75h687" path="res://Scripts/level_1.gd" id="1_jp3d8"]
+[ext_resource type="Texture2D" uid="uid://fdg02gkhp45i" path="res://Sprites/Backgrounds/backgroundDesert.png" id="2_er6is"]
+[ext_resource type="Texture2D" uid="uid://dhtvwtc1oohln" path="res://Sprites/Backgrounds/backgroundForest.png" id="3_f5j5a"]
+[ext_resource type="PackedScene" uid="uid://d02tislhomo3q" path="res://Scenes/tile_map_layer.tscn" id="4_jp3d8"]
+[ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="5_cnvjx"]
+[ext_resource type="PackedScene" uid="uid://de63g3xci0oat" path="res://Scenes/KillZone.tscn" id="6_anpc1"]
+[ext_resource type="Script" uid="uid://du5j1qvplmb6t" path="res://Scenes/flag.gd" id="7_bx3gq"]
+[ext_resource type="AudioStream" uid="uid://b558shskpgk7p" path="res://Audio/toot.mp3" id="8_3g81k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
+size = Vector2(18, 37)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jp3d8")
+
+[node name="BackgroundDesert" type="Sprite2D" parent="."]
+position = Vector2(375, 412)
+texture = ExtResource("2_er6is")
+region_enabled = true
+region_rect = Rect2(0, 422.64746, 1024, 601.35254)
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+position = Vector2(376, -275)
+scale = Vector2(1, 0.7734375)
+texture = ExtResource("3_f5j5a")
+
+[node name="TileMapLayer" parent="." instance=ExtResource("4_jp3d8")]
+
+[node name="Player" parent="." instance=ExtResource("5_cnvjx")]
+position = Vector2(-19, -74)
+
+[node name="Spawn" type="Marker2D" parent="."]
+position = Vector2(-19, -74)
+
+[node name="KillZone" parent="." instance=ExtResource("6_anpc1")]
+position = Vector2(-304, 128)
+scale = Vector2(2160.736, 9.5573225)
+
+[node name="KillZone2" parent="." instance=ExtResource("6_anpc1")]
+position = Vector2(-176, -152.00002)
+scale = Vector2(636.14984, -1.6714239)
+
+[node name="KillZone3" parent="." instance=ExtResource("6_anpc1")]
+position = Vector2(-304, 424)
+scale = Vector2(636.14984, -1.6714239)
+
+[node name="Flag" type="Area2D" parent="."]
+position = Vector2(816, -48)
+script = ExtResource("7_bx3gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flag"]
+position = Vector2(4, -5.5)
+shape = SubResource("RectangleShape2D_wrinw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Flag"]
+stream = ExtResource("8_3g81k")
+
+[connection signal="body_entered" from="Flag" to="Flag" method="_on_body_entered"]

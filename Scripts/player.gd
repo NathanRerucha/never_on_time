@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and (is_on_floor() || !coyote_timer.is_stopped()):
 		velocity.y = -jump_force
 		
-	var was_on_floor = is_on_floor
+	var was_on_floor = is_on_floor()
 	move_and_slide()
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
