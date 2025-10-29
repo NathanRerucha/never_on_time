@@ -19,6 +19,7 @@ var is_shifting : bool = false
 @onready var coyote_timer = $CoyoteTimer
 
 func _ready():
+	#animation tween
 	# Setting up timer for pausing between shifts
 	add_child(freeze_timer)
 	freeze_timer.connect("timeout", Callable(self, "_unfreeze_game"))
@@ -61,6 +62,8 @@ func _process(delta: float) -> void:
 		return
 	
 func _manage_animation():
+	#var tween = create_tween()
+	#tween.tween_property($Sprite, "scale", Vector2(2,2), 1)
 	if is_shifting:
 		return
 	if not is_on_floor():
@@ -84,33 +87,40 @@ func _unfreeze_game():
 	
 func _time_shift():	
 	# current time: 0 = present, 1 = future, -1 = past
-	if Input.is_action_just_pressed("time_forward") and (current_time == 0 or current_time == -1):
+	if Input.is_action_just_pressed("time_forward") and current_time == 0:
 		print("test")
 		is_shifting = true
-		anim.play("time_shift")
+		anim.play("time_shift2")
 		# shift player vertically a set amount of pixels, sourced from level 
 		freeze_game()
 		position.y -= shift_dist
-		#is_shifting = false
 		# determines what time period player is in and sets the current_time variable accordingly
-		if current_time == -1:
-			current_time = 0
-		else:
-			current_time = 1
-	if Input.is_action_just_pressed("time_reverse") and (current_time == 0 or current_time == 1):
+		current_time = 1
+		
+	elif Input.is_action_just_pressed("time_forward") and current_time == 1:
 		is_shifting = true
-		anim.play("time_shift")
+		anim.play("time_shift2")
 		freeze_game()
 		position.y += shift_dist
+		current_time = 0
+		#if current_time == 0:
+			#current_time = 1
+		#else:
+			#current_time = 1
+	#if Input.is_action_just_pressed("time_reverse") and (current_time == 0 or current_time == 1):
+		#is_shifting = true
+		#anim.play("time_shift")
+		#freeze_game()
+		#position.y += shift_dist
 		#is_shifting = false
 		
-		if current_time == 1:
-			current_time = 0
-		else:
-			current_time = -1
+		#if current_time == 1:
+			#current_time = 0
+		#else:
+			#current_time = -1
 			
 func _on_animation_finished(anim_name):
-	if anim_name == "time_shift":
+	if anim_name == "time_shift2":
 		is_shifting = false 
 		_manage_animation()
 		
