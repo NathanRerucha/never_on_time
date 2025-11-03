@@ -13,6 +13,7 @@ var current_time : int = 0
 var spawn_point : Vector2 
 var velocity_saved : Vector2
 var is_shifting : bool = false
+var can_shift : bool = false
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -53,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	_time_shift()
 	
 @warning_ignore("unused_parameter")
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
 	
@@ -84,10 +85,15 @@ func _unfreeze_game():
 	is_shifting = false
 	get_tree().paused = false
 	print("Game unpaused")
+
+func _on_cutscene_trigger_1_body_entered(body) -> void:
+	if body.get_class() == "CharacterBody2D":
+		print("can shift")
+		can_shift = true
 	
 func _time_shift():	
 	# current time: 0 = present, 1 = future, -1 = past
-	if Input.is_action_just_pressed("time_forward") and current_time == 0:
+	if Input.is_action_just_pressed("time_forward") and current_time == 0 and can_shift:
 		print("test")
 		is_shifting = true
 		anim.play("time_shift2")
@@ -97,12 +103,15 @@ func _time_shift():
 		# determines what time period player is in and sets the current_time variable accordingly
 		current_time = 1
 		
-	elif Input.is_action_just_pressed("time_forward") and current_time == 1:
+	elif Input.is_action_just_pressed("time_forward") and current_time == 1 and can_shift:
 		is_shifting = true
 		anim.play("time_shift2")
 		freeze_game()
 		position.y += shift_dist
 		current_time = 0
+		
+		# I vote to remove this -N
+		
 		#if current_time == 0:
 			#current_time = 1
 		#else:
