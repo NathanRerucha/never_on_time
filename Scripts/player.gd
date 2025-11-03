@@ -65,8 +65,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y = lerp(velocity.y, move_input_ladder * move_speed, acceleration * delta)
 		else:
 			velocity.y = lerp(velocity.y, 0.0, braking * delta)
-		if Input.is_action_just_pressed('jump'):
-			on_ladder = false
 	
 	_time_shift()
 	
