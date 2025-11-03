@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+@export var move_speed : float = 300
 @export var acceleration : float = 50
 @export var braking : float = 20
-@export var gravity : float = 500
-@export var jump_force : float = 200
+@export var gravity : float = 700
+@export var jump_force : float = 230
 
 var move_input : float
 var on_ladder: bool
@@ -16,7 +16,7 @@ var velocity_saved : Vector2
 var is_shifting : bool = false
 var can_shift : bool = false
 
-@onready var sprite : Sprite2D = $Sprite
+@onready var sprite : Sprite2D = $PlayerSprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer = $CoyoteTimer
 
@@ -29,10 +29,17 @@ func _ready():
 	freeze_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	anim.process_mode = Node.PROCESS_MODE_ALWAYS
 	
-func _on_body_entered(_body: Node2D):
+func _on_body_entered(body):
+	print("body entered")
+	if body.is_in_group("Rigidbody"):
+		body.collision_layer = 1
+		body.collision_mask = 1
 	on_ladder = true
 	
-func _on_body_exited(_body: Node2D):
+func _on_body_exited(body):
+	if body.is_in_group("Rigidbody"):
+		body.collision_layer = 2
+		body.collision_mask = 2
 	on_ladder = false
 
 func _physics_process(delta: float) -> void:
@@ -60,6 +67,7 @@ func _physics_process(delta: float) -> void:
 	
 	#ladder movement
 	if on_ladder:
+		print("is on ladder")
 		var move_input_ladder = Input.get_axis('climb_ladder', 'climb_ladder_down')
 		if move_input_ladder != 0:
 			velocity.y = lerp(velocity.y, move_input_ladder * move_speed, acceleration * delta)
@@ -155,8 +163,3 @@ func _on_timer_timeout() -> void:
 func _death():
 	# will become more complex in future (ie. animaitons and such)
 	position = spawn_point
-	
-
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
