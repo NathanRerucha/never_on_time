@@ -7,7 +7,8 @@ extends CharacterBody2D
 @export var jump_force : float = 200
 
 var move_input : float
-
+var on_ladder: bool
+var is_climbing: bool
 var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
@@ -27,9 +28,15 @@ func _ready():
 	freeze_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	anim.process_mode = Node.PROCESS_MODE_ALWAYS
 	
+func _on_body_entered(_body: Node2D):
+	on_ladder = true
+	
+func _on_body_exited(_body: Node2D):
+	on_ladder = false
+
 func _physics_process(delta: float) -> void:
 	# gravity
-	if not is_on_floor():
+	if not is_on_floor() && !on_ladder:
 		velocity.y += gravity * delta
 	
 	# get the move input
@@ -42,13 +49,23 @@ func _physics_process(delta: float) -> void:
 		velocity.x = lerp(velocity.x, 0.0, braking * delta)
 	
 	#jumping
-	if Input.is_action_just_pressed("jump") and (is_on_floor() || !coyote_timer.is_stopped()):
+	if Input.is_action_just_pressed("jump") and (is_on_floor() || !coyote_timer.is_stopped() || on_ladder):
 		velocity.y = -jump_force
 		
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
+	
+	#ladder movement
+	if on_ladder:
+		var move_input_ladder = Input.get_axis('climb_ladder', 'climb_ladder_down')
+		if move_input_ladder != 0:
+			velocity.y = lerp(velocity.y, move_input_ladder * move_speed, acceleration * delta)
+		else:
+			velocity.y = lerp(velocity.y, 0.0, braking * delta)
+		if Input.is_action_just_pressed('jump'):
+			on_ladder = false
 	
 	_time_shift()
 	
@@ -132,3 +149,7 @@ func _death():
 	# will become more complex in future (ie. animaitons and such)
 	position = spawn_point
 	
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

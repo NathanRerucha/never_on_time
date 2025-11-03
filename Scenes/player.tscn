@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dv0g1jn3n7ini"]
+[gd_scene load_steps=14 format=3 uid="uid://dv0g1jn3n7ini"]
 
 [ext_resource type="Script" uid="uid://dm4f85m18rkkw" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cef0tny10j0a0" path="res://Sprites/Player/player_prototype_1_front.png" id="2_6t5aa"]
@@ -185,17 +185,23 @@ _data = {
 &"time_shift2": SubResource("Animation_f1ek2")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgqql"]
+radius = 6.0
+height = 24.0
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
 gravity = 700.0
 jump_force = 230.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -15)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_cvnsp")
 
@@ -219,3 +225,14 @@ show_behind_parent = true
 z_index = 1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_vgqql")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_vgqql")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
