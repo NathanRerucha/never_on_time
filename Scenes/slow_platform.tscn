@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b70ga0h82mkxh"]
+
+[ext_resource type="Script" uid="uid://p0d5sn2bl6or" path="res://Scripts/slow_platform.gd" id="1_wq0dj"]
+[ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="2_vyr55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0coc"]
+size = Vector2(127, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4u07"]
+size = Vector2(128, 13)
+
+[node name="Slow Platform" type="StaticBody2D"]
+position = Vector2(-1, 3)
+script = ExtResource("1_wq0dj")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_vyr55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f0coc")
+
+[node name="Slow Zone" type="Area2D" parent="."]
+
+[node name="Trigger" type="CollisionShape2D" parent="Slow Zone"]
+position = Vector2(0, -60.5)
+shape = SubResource("RectangleShape2D_w4u07")
+
+[connection signal="body_entered" from="Slow Zone" to="." method="_on_slow_zone_body_entered"]
+[connection signal="body_exited" from="Slow Zone" to="." method="_on_slow_zone_body_exited"]

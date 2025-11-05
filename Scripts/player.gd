@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity : float = 700
 @export var jump_force : float = 230
 
+var base_speed: float
 var move_input : float
 var on_ladder: bool
 var is_climbing: bool
@@ -21,6 +22,7 @@ var can_shift : bool = false
 @onready var coyote_timer = $CoyoteTimer
 
 func _ready():
+	base_speed = move_speed
 	#animation tween
 	# Setting up timer for pausing between shifts
 	add_child(freeze_timer)
@@ -28,6 +30,12 @@ func _ready():
 	freeze_timer.one_shot = true # The timer will only run once
 	freeze_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	anim.process_mode = Node.PROCESS_MODE_ALWAYS
+	
+func apply_speed_modifier(modifier: float):
+	move_speed = base_speed * modifier
+	
+func remove_speed_modifier():
+	move_speed = base_speed
 	
 func _on_body_entered(body):
 	print("body entered")
@@ -160,6 +168,6 @@ func _on_timer_timeout() -> void:
 	print("timeeout")
 	velocity = velocity_saved
 
-func _death():
+#func _death():
 	# will become more complex in future (ie. animaitons and such)
-	position = spawn_point
+	#position = spawn_points

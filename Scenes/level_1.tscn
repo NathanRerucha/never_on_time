@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://3l6ppx1mm6h0" path="res://Scenes/walkway_past.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://ddapikboj61lb" path="res://Scenes/foreground_wall_past.tscn" id="4_7p6j4"]
-[ext_resource type="PackedScene" path="res://Scenes/ladders.tscn" id="4_evi0p"]
+[ext_resource type="PackedScene" uid="uid://c2iwv2gn772kj" path="res://Scenes/ladders.tscn" id="4_evi0p"]
 [ext_resource type="PackedScene" uid="uid://kyg4w5jhpm5f" path="res://Scenes/box.tscn" id="5_6444e"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8ffim"]
@@ -56,6 +56,6 @@ position = Vector2(450, 40.000004)
 scale = Vector2(0.39999968, 0.39999968)
 
 [node name="Box" parent="CanvasGroup" instance=ExtResource("5_6444e")]
-position = Vector2(75, -29)
+position = Vector2(95, -103)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
