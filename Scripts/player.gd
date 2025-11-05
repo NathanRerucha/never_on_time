@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 300
+@export var move_speed : float = 150
 @export var acceleration : float = 50
 @export var braking : float = 20
 @export var gravity : float = 700
@@ -12,7 +12,6 @@ var is_climbing: bool
 var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
-var velocity_saved : Vector2
 var is_shifting : bool = false
 var can_shift : bool = false
 
@@ -30,17 +29,13 @@ func _ready():
 	anim.process_mode = Node.PROCESS_MODE_ALWAYS
 	
 func _on_body_entered(body):
-	print("body entered")
-	if body.is_in_group("Rigidbody"):
-		body.collision_layer = 1
-		body.collision_mask = 1
-	on_ladder = true
+	if body.get_name() == "Ladders":
+		print("body entered")
+		on_ladder = true
 	
 func _on_body_exited(body):
-	if body.is_in_group("Rigidbody"):
-		body.collision_layer = 2
-		body.collision_mask = 2
-	on_ladder = false
+	if body.get_name() == "Ladders":
+		on_ladder = false
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -115,7 +110,6 @@ func _on_cutscene_trigger_1_body_entered(body) -> void:
 		can_shift = true
 	
 func _time_shift():	
-	# current time: 0 = present, 1 = future, -1 = past
 	if Input.is_action_just_pressed("time_forward") and current_time == 0 and can_shift:
 		print("test")
 		is_shifting = true
@@ -132,34 +126,24 @@ func _time_shift():
 		freeze_game()
 		position.y += shift_dist
 		current_time = 0
-		
-		# I vote to remove this -N
-		
-		#if current_time == 0:
-			#current_time = 1
-		#else:
-			#current_time = 1
-	#if Input.is_action_just_pressed("time_reverse") and (current_time == 0 or current_time == 1):
-		#is_shifting = true
-		#anim.play("time_shift")
-		#freeze_game()
-		#position.y += shift_dist
-		#is_shifting = false
-		
-		#if current_time == 1:
-			#current_time = 0
-		#else:
-			#current_time = -1
 			
 func _on_animation_finished(anim_name):
 	if anim_name == "time_shift2":
 		is_shifting = false 
 		_manage_animation()
-		
-func _on_timer_timeout() -> void:
-	print("timeeout")
-	velocity = velocity_saved
 
 func _death():
 	# will become more complex in future (ie. animaitons and such)
 	position = spawn_point
+
+
+func _on_box_detector_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Box"):
+		body.collision_layer = 1
+		body.collision_mask = 1
+
+
+func _on_box_detector_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Box"):
+		body.collision_layer = 3
+		body.collision_mask = 3
