@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyayr5maq5jof"]
+
+[ext_resource type="Script" uid="uid://sd6edmr22664" path="res://Scripts/conveyor_area_2d.gd" id="1_uuasg"]
+[ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="2_3o8x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndkag"]
+size = Vector2(127.68547, 131.28204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_754l8"]
+size = Vector2(406, 14)
+
+[node name="Conveyor Area2D" type="Area2D"]
+script = ExtResource("1_uuasg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.1796875, 0.3046875)
+texture = ExtResource("2_3o8x2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0.15724564, 4.9230804)
+scale = Vector2(1.0000005, 1)
+shape = SubResource("RectangleShape2D_ndkag")
+
+[node name="ConveyorArea2d" type="Area2D" parent="."]
+script = ExtResource("1_uuasg")
+horizontal_speed = -150.0
+metadata/_custom_type_script = "uid://sd6edmr22664"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorArea2d"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_754l8")

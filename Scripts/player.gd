@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity : float = 700
 @export var jump_force : float = 230
 
+var conveyor_velocity: float = 0.0
 var base_speed: float
 var move_input : float
 var on_ladder: bool
@@ -69,6 +70,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = -jump_force
 		
 	var was_on_floor = is_on_floor()
+	velocity.x += conveyor_velocity
 	move_and_slide()
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
