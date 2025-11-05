@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsi5pfvw26jjq"]
+
+[ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="1_aidty"]
+[ext_resource type="Script" uid="uid://ddy7ib5s0sngq" path="res://Scripts/speed_platform.gd" id="1_gq18q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aidty"]
+size = Vector2(129, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq18q"]
+size = Vector2(128.5, 14)
+
+[node name="Speed Platform" type="StaticBody2D"]
+script = ExtResource("1_gq18q")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_aidty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_aidty")
+
+[node name="Speed Zone" type="Area2D" parent="."]
+
+[node name="Trigger" type="CollisionShape2D" parent="Speed Zone"]
+position = Vector2(-0.75, -61)
+shape = SubResource("RectangleShape2D_gq18q")
+
+[connection signal="body_entered" from="Speed Zone" to="." method="_on_speed_zone_body_entered"]
+[connection signal="body_exited" from="Speed Zone" to="." method="_on_speed_zone_body_exited"]
