@@ -18,6 +18,10 @@ var velocity_saved : Vector2
 var is_shifting : bool = false
 var can_shift : bool = false
 
+# Moved timer variables with rest for consistency
+var freeze_timer = Timer.new()
+var freeze_duration = 1 # seconds
+
 @onready var sprite : Sprite2D = $PlayerSprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer = $CoyoteTimer
@@ -40,16 +44,12 @@ func remove_speed_modifier():
 	
 func _on_body_entered(body):
 	print("body entered")
-	if body.is_in_group("Rigidbody"):
-		body.collision_layer = 1
-		body.collision_mask = 1
-	on_ladder = true
+	if body.get_name() == "Ladders":
+		on_ladder = true
 	
 func _on_body_exited(body):
-	if body.is_in_group("Rigidbody"):
-		body.collision_layer = 2
-		body.collision_mask = 2
-	on_ladder = false
+	if body.get_name() == "Ladders":
+		on_ladder = false
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -107,9 +107,6 @@ func _manage_animation():
 	else:
 		anim.play("idle")
 
-var freeze_duration = 1 # seconds
-var freeze_timer = Timer.new()
-
 func freeze_game():
 	get_tree().paused = true
 	freeze_timer.start(freeze_duration)
@@ -142,24 +139,6 @@ func _time_shift():
 		freeze_game()
 		position.y += shift_dist
 		current_time = 0
-		
-		# I vote to remove this -N
-		
-		#if current_time == 0:
-			#current_time = 1
-		#else:
-			#current_time = 1
-	#if Input.is_action_just_pressed("time_reverse") and (current_time == 0 or current_time == 1):
-		#is_shifting = true
-		#anim.play("time_shift")
-		#freeze_game()
-		#position.y += shift_dist
-		#is_shifting = false
-		
-		#if current_time == 1:
-			#current_time = 0
-		#else:
-			#current_time = -1
 			
 func _on_animation_finished(anim_name):
 	if anim_name == "time_shift2":
