@@ -10,6 +10,8 @@ size = Vector2(127.68547, 131.28204)
 size = Vector2(406, 14)
 
 [node name="Conveyor Area2D" type="Area2D"]
+physics_interpolation_mode = 1
+priority = 1
 script = ExtResource("1_uuasg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,8 +26,8 @@ scale = Vector2(1.0000005, 1)
 shape = SubResource("RectangleShape2D_ndkag")
 
 [node name="ConveyorArea2d" type="Area2D" parent="."]
+scale = Vector2(1, 1.24)
 script = ExtResource("1_uuasg")
-horizontal_speed = -150.0
 metadata/_custom_type_script = "uid://sd6edmr22664"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorArea2d"]

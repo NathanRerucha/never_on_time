@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 300
+@export var move_speed : float = 175
 @export var acceleration : float = 50
 @export var braking : float = 20
 @export var gravity : float = 700
@@ -59,23 +59,25 @@ func _physics_process(delta: float) -> void:
 	# get the move input
 	move_input = Input.get_axis("move_left", "move_right")
 	
-	# movement
-	if move_input != 0:
-		velocity.x = lerp(velocity.x, move_input * move_speed, acceleration * delta)
-	else:
-		velocity.x = lerp(velocity.x, 0.0, braking * delta)
+	var target_velocity_x = (move_input * move_speed) + conveyor_velocity
 	
+	if move_input != 0:
+		velocity.x = lerp(velocity.x, target_velocity_x, acceleration * delta)
+	else:
+		velocity.x = lerp(velocity.x, target_velocity_x, braking * delta)
+
 	#jumping
 	if Input.is_action_just_pressed("jump") and (is_on_floor() || !coyote_timer.is_stopped() || on_ladder):
 		velocity.y = -jump_force
 		
 	var was_on_floor = is_on_floor()
-	velocity.x += conveyor_velocity
+	
 	move_and_slide()
+	
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
 	
-	#ladder movement
+	#ladder movement (this part is fine)
 	if on_ladder:
 		print("is on ladder")
 		var move_input_ladder = Input.get_axis('climb_ladder', 'climb_ladder_down')
