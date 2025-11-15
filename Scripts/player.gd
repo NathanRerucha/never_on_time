@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var jump_force : float = 230
 
 var conveyor_velocity: float = 0.0
+# is this variable still used? ^ line 63 -Nathan
 var base_speed: float
 var move_input : float
 var on_ladder: bool
@@ -59,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	# get the move input
 	move_input = Input.get_axis("move_left", "move_right")
 	
-	var target_velocity_x = (move_input * move_speed) + conveyor_velocity
+	var target_velocity_x = (move_input * move_speed) + conveyor_velocity # <-- is this variable still used? -Nathan
 	
 	if move_input != 0:
 		velocity.x = lerp(velocity.x, target_velocity_x, acceleration * delta)
@@ -75,6 +76,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if was_on_floor && !is_on_floor():
+		print("coyote timer start")
 		coyote_timer.start()
 	
 	#ladder movement (this part is fine)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjlckffi2ub8t"
-path="res://.godot/imported/lv1drill.past.walkwayseg.png-ce47569cf5662b92c4015e4e0811b1a3.ctex"
+uid="uid://csot6cea4jkbt"
+path="res://.godot/imported/lv1drill.past.wallfore.png-7ddaa95d956b09f41ad7bfe282fb06e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Backgrounds/Level1/lv1drill.past.walkwayseg.png"
-dest_files=["res://.godot/imported/lv1drill.past.walkwayseg.png-ce47569cf5662b92c4015e4e0811b1a3.ctex"]
+source_file="res://Sprites/Level1/lv1drill.past.wallfore.png"
+dest_files=["res://.godot/imported/lv1drill.past.wallfore.png-7ddaa95d956b09f41ad7bfe282fb06e8.ctex"]
 
 [params]
 
