@@ -1,7 +1,7 @@
 extends Area2D
 class_name ConveyorArea2d
 
-@export var horizontal_speed: float = 1.0
+@export var horizontal_speed: float = 0.5
 var objects_array: Array[Node2D] = []
 var objects_speed: Array[float] = []
 

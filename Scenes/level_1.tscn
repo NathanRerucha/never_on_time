@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddapikboj61lb" path="res://Scenes/foreground_wall_past.tscn" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://gh6fyf6uorjy" path="res://Scenes/ladders.tscn" id="4_evi0p"]
 [ext_resource type="PackedScene" uid="uid://kyg4w5jhpm5f" path="res://Scenes/box.tscn" id="5_6444e"]
-[ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor_area_2d.tscn" id="7_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://c4kh062p13gxb" path="res://Scenes/conveyor_area_2d.tscn" id="7_lsmp6"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8ffim"]
 b = Vector2(0, 111)
@@ -60,7 +60,7 @@ scale = Vector2(0.39999968, 0.39999968)
 position = Vector2(95, -103)
 
 [node name="Conveyor Area2D" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(404, 0)
+position = Vector2(414.00003, -3.9999998)
 scale = Vector2(0.5041872, 0.28149146)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]

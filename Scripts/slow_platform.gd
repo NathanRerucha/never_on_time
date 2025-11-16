@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var speed_multiplier: float = 0.5
+@export var speed_multiplier: float = .5
 
 func _on_slow_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
