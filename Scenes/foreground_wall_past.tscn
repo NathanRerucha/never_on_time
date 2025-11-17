@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddapikboj61lb"]
 
-[ext_resource type="Texture2D" uid="uid://csot6cea4jkbt" path="res://Sprites/Backgrounds/Level1/lv1drill.past.wallfore.png" id="1_axwim"]
+[ext_resource type="Texture2D" uid="uid://csot6cea4jkbt" path="res://Sprites/Level1/lv1drill.past.wallfore.png" id="1_axwim"]
 
 [node name="foreground_wall_past" type="Sprite2D"]
 z_index = 5
