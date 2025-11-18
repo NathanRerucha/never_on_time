@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://de63g3xci0oat"]
 
-[ext_resource type="Script" uid="uid://elsw3qrakjxc" path="res://Scripts/killzone.gd" id="1_1yg0r"]
+[ext_resource type="Script" uid="uid://elsw3qrakjxc" path="res://Scripts/kill_zone.gd" id="1_d6013"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yg0r"]
 size = Vector2(810.00006, 20)
@@ -10,7 +10,7 @@ size = Vector2(810.00006, 20)
 [node name="Killzone" type="Area2D" parent="."]
 visibility_layer = 3
 scale = Vector2(1e-05, 1e-05)
-script = ExtResource("1_1yg0r")
+script = ExtResource("1_d6013")
 
 [node name="Timer" type="Timer" parent="Killzone"]
 wait_time = 0.001

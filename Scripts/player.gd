@@ -18,6 +18,8 @@ var spawn_point : Vector2
 var velocity_saved : Vector2
 var is_shifting : bool = false
 var can_shift : bool = false
+var check_climb_up: bool = Input.is_action_pressed("climb_ladder")
+var check_climb_down: bool = Input.is_action_pressed("climb_ladder_down")
 
 # Moved timer variables with rest for consistency
 var freeze_timer = Timer.new()
@@ -44,13 +46,13 @@ func remove_speed_modifier():
 	move_speed = base_speed
 	
 func _on_body_entered(body):
-	print("body entered")
-	if body.get_name() == "Ladders":
+	if body.is_in_group("Ladders"):
 		on_ladder = true
 	
 func _on_body_exited(body):
-	if body.get_name() == "Ladders":
+	if body.is_in_group("Ladders"):
 		on_ladder = false
+		is_climbing = false # stops floating player when they get off ladder
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -76,21 +78,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if was_on_floor && !is_on_floor():
-		print("coyote timer start")
 		coyote_timer.start()
 	
 	#ladder movement (this part is fine)
 	if on_ladder:
-		print("is on ladder")
-		var move_input_ladder = Input.get_axis('climb_ladder', 'climb_ladder_down')
-		if move_input_ladder != 0:
-			velocity.y = lerp(velocity.y, move_input_ladder * move_speed, acceleration * delta)
-		else:
-			velocity.y = lerp(velocity.y, 0.0, braking * delta)
-	
+		# checks if player is currently pressing W or S, if not, use normal gravity
+		if Input.is_action_pressed("climb_ladder") or Input.is_action_pressed("climb_ladder_down"):
+			is_climbing = true # if player is still on ladder, freeze gravity
+			var move_input_ladder = Input.get_axis('climb_ladder', 'climb_ladder_down')
+			# if either W or S are pressed, accelerate in the y axis, direction determined by 
+			# move_input_ladder being negaitve or positive
+			if move_input_ladder != 0: 
+				velocity.y = lerp(velocity.y, move_input_ladder * move_speed, acceleration * delta)
+			else:
+				velocity.y = lerp(velocity.y, 0.0, braking * delta) # stops gravity and allows player to float
+		else: # if not pressing W or S, use normal gravity, unless player is on the ladder, then freeze
+			if is_climbing:
+				velocity.y = lerp(velocity.y, 0.0, braking * delta) # freeze
+			else:
+				velocity.y += gravity * delta # normal
 	_time_shift()
-	
-@warning_ignore("unused_parameter")
+
 func _process(_delta: float) -> void:
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0

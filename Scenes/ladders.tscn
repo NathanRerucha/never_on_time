@@ -2,6 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="1_mge2w"]
 
-[node name="Ladders" type="TileMapLayer"]
+[node name="Ladders" type="TileMapLayer" groups=["Ladders"]]
 tile_map_data = PackedByteArray("AAAmAAUAAAALAAMAAAAmAAQAAAALAAMAAAAmAAMAAAALAAMAAAAmAAIAAAALAAIAAAAIAP//AAALAAMAAAAIAP7/AAALAAMAAAA=")
 tile_set = ExtResource("1_mge2w")

@@ -13,7 +13,7 @@ func _ready() -> void:
 	body_entered.connect(_object_entered)
 	body_exited.connect(_object_exited)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for i in objects_array.size():
 		# Check if the player is on the floor
 		if objects_array[i] is CharacterBody2D and objects_array[i].is_on_floor():

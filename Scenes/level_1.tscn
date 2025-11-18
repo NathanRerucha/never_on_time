@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=9 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_6444e"]
@@ -6,13 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://ddapikboj61lb" path="res://Scenes/foreground_wall_past.tscn" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://gh6fyf6uorjy" path="res://Scenes/ladders.tscn" id="4_evi0p"]
 [ext_resource type="PackedScene" uid="uid://kyg4w5jhpm5f" path="res://Scenes/box.tscn" id="5_6444e"]
-[ext_resource type="PackedScene" uid="uid://c4kh062p13gxb" path="res://Scenes/conveyor_area_2d.tscn" id="7_lsmp6"]
+[ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="7_lsmp6"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8ffim"]
 b = Vector2(0, 111)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lsmp6"]
-friction = 0.19
 
 [node name="Main" type="Node2D"]
 
@@ -72,16 +69,9 @@ position = Vector2(450, 40.000004)
 scale = Vector2(0.39999968, 0.39999968)
 
 [node name="Conveyor Area2D" parent="." instance=ExtResource("7_lsmp6")]
-position = Vector2(414.00003, -3.9999998)
-scale = Vector2(0.5041872, 0.28149146)
-horizontal_speed = -200.0
-
-[node name="walkway_past" parent="." instance=ExtResource("3_xfk5q")]
-position = Vector2(632, 62.00001)
-rotation = 0.759329
-scale = Vector2(0.3198493, 0.100259155)
-collision_layer = 1
-physics_material_override = SubResource("PhysicsMaterial_lsmp6")
+position = Vector2(419, 7.0000005)
+scale = Vector2(0.44, 0.24000001)
+horizontal_speed = 100.0
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
 [connection signal="body_entered" from="Cutscene_Trigger2" to="Player" method="_on_cutscene_trigger_1_body_entered"]

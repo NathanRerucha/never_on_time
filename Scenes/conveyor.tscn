@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyayr5maq5jof"]
 
-[ext_resource type="Script" uid="uid://sd6edmr22664" path="res://Scripts/conveyor_area_2d.gd" id="1_uuasg"]
+[ext_resource type="Script" uid="uid://sd6edmr22664" path="res://Scripts/conveyor.gd" id="1_uuasg"]
 [ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="2_3o8x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndkag"]
