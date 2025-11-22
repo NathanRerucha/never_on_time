@@ -1,13 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyayr5maq5jof"]
+[gd_scene load_steps=11 format=3 uid="uid://cyayr5maq5jof"]
 
 [ext_resource type="Script" uid="uid://sd6edmr22664" path="res://Scripts/conveyor.gd" id="1_uuasg"]
 [ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="2_3o8x2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndkag"]
-size = Vector2(127.68547, 131.28204)
+[ext_resource type="Texture2D" uid="uid://dmujdlih52b4r" path="res://Sprites/Level1/LV1Past_Conveyor_1.png" id="3_k37nu"]
+[ext_resource type="Texture2D" uid="uid://bwupfaj6cq6mv" path="res://Sprites/Level1/LV1Past_Conveyor_2.png" id="4_3glj5"]
+[ext_resource type="Texture2D" uid="uid://yhuqv3dvsx8a" path="res://Sprites/Level1/LV1Past_Conveyor_3.png" id="5_5xoq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_754l8"]
 size = Vector2(406, 14)
+
+[sub_resource type="Animation" id="Animation_vkl7l"]
+resource_name = "conveying"
+length = 0.21
+loop_mode = 1
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_5xoq8"), ExtResource("4_3glj5"), ExtResource("3_k37nu")]
+}
+
+[sub_resource type="Animation" id="Animation_247tj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3o8x2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g8mpg"]
+_data = {
+&"RESET": SubResource("Animation_247tj"),
+&"conveying": SubResource("Animation_vkl7l")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndkag"]
+size = Vector2(127.68547, 119.794876)
 
 [node name="Conveyor Area2D" type="Area2D"]
 physics_interpolation_mode = 1
@@ -15,15 +57,10 @@ priority = 1
 script = ExtResource("1_uuasg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3.1796875, 0.3046875)
+position = Vector2(1.0000134, 2.4648438)
+scale = Vector2(0.4891429, 0.33588806)
 texture = ExtResource("2_3o8x2")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
-position = Vector2(0.15724564, 4.9230804)
-scale = Vector2(1.0000005, 1)
-shape = SubResource("RectangleShape2D_ndkag")
+flip_h = true
 
 [node name="ConveyorArea2d" type="Area2D" parent="."]
 scale = Vector2(1, 1.24)
@@ -33,3 +70,17 @@ metadata/_custom_type_script = "uid://sd6edmr22664"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConveyorArea2d"]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_754l8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g8mpg")
+}
+autoplay = "conveying"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(3.1796875, 0.3046875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.15724567, 10.666666)
+scale = Vector2(1.0000005, 1)
+shape = SubResource("RectangleShape2D_ndkag")
