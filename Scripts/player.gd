@@ -26,7 +26,7 @@ var freeze_timer = Timer.new()
 var freeze_duration = 1 # seconds
 
 @onready var sprite : Sprite2D = $PlayerSprite
-@onready var anim : AnimationPlayer = $AnimationPlayer
+@onready var anim : AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_timer = $CoyoteTimer
 
 func _ready():
@@ -108,14 +108,32 @@ func _process(_delta: float) -> void:
 		return
 	
 func _manage_animation():
+	var still_falling = false
+	if is_on_floor():
+		still_falling = false
 	#var tween = create_tween()
 	#tween.tween_property($Sprite, "scale", Vector2(2,2), 1)
 	if is_shifting:
 		return
-	if not is_on_floor():
+	if not is_on_floor() and velocity.y <  0:
+		if move_input > 0:
+			anim.flip_h = true
+		if move_input < 0:
+			anim.flip_h = false
 		anim.play("jump")
-	elif move_input != 0:
-		anim.play("move")
+	elif not is_on_floor() and !still_falling and velocity.y > 0:
+		still_falling = true
+		if move_input > 0:
+			anim.flip_h = true
+		if move_input < 0:
+			anim.flip_h = false
+		anim.play("fall")
+	elif move_input > 0:
+		anim.flip_h = true
+		anim.play("walk")
+	elif move_input < 0:
+		anim.flip_h = false
+		anim.play("walk")
 	else:
 		anim.play("idle")
 
