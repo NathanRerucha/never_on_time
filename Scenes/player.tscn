@@ -360,6 +360,11 @@ animations = [{
 "name": &"jump",
 "speed": 12.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2ijsl")
@@ -380,6 +385,11 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_cvnsp")
+move_speed = null
+acceleration = null
+braking = null
+gravity = null
+jump_force = null
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 visible = false
@@ -425,11 +435,12 @@ position = Vector2(0, -12)
 shape = SubResource("CapsuleShape2D_vgqql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -11)
-scale = Vector2(0.4857143, 0.3988301)
+position = Vector2(0, -14.716966)
+scale = Vector2(0.4857143, 0.5270012)
 sprite_frames = SubResource("SpriteFrames_y6uwr")
 animation = &"idle"
 flip_h = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

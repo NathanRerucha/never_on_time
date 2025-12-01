@@ -15,7 +15,6 @@ var is_climbing: bool
 var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
-var velocity_saved : Vector2
 var is_shifting : bool = false
 var can_shift : bool = false
 var check_climb_up: bool = Input.is_action_pressed("climb_ladder")
@@ -108,6 +107,7 @@ func _process(_delta: float) -> void:
 		return
 	
 func _manage_animation():
+	
 	var still_falling = false
 	if is_on_floor():
 		still_falling = false
@@ -115,13 +115,13 @@ func _manage_animation():
 	#tween.tween_property($Sprite, "scale", Vector2(2,2), 1)
 	if is_shifting:
 		return
-	if not is_on_floor() and velocity.y <  0:
+	if not is_on_floor() and !is_climbing and velocity.y <  0:
 		if move_input > 0:
 			anim.flip_h = true
 		if move_input < 0:
 			anim.flip_h = false
 		anim.play("jump")
-	elif not is_on_floor() and !still_falling and velocity.y > 0:
+	elif not is_on_floor() and !is_climbing and !still_falling and velocity.y > 0:
 		still_falling = true
 		if move_input > 0:
 			anim.flip_h = true
@@ -153,7 +153,7 @@ func _on_cutscene_trigger_1_body_entered(body) -> void:
 	
 func _time_shift():	
 	# current time: 0 = present, 1 = future, -1 = past
-	if Input.is_action_just_pressed("time_forward") and current_time == 0 and can_shift:
+	if Input.is_action_just_pressed("time_shift") and current_time == 0 and can_shift:
 		print("test")
 		is_shifting = true
 		anim.play("time_shift2")
@@ -163,7 +163,7 @@ func _time_shift():
 		# determines what time period player is in and sets the current_time variable accordingly
 		current_time = 1
 		
-	elif Input.is_action_just_pressed("time_forward") and current_time == 1 and can_shift:
+	elif Input.is_action_just_pressed("time_shift") and current_time == 1 and can_shift:
 		is_shifting = true
 		anim.play("time_shift2")
 		freeze_game()
@@ -174,11 +174,11 @@ func _on_animation_finished(anim_name):
 	if anim_name == "time_shift2":
 		is_shifting = false 
 		_manage_animation()
-		
-func _on_timer_timeout() -> void:
-	print("timeeout")
-	velocity = velocity_saved
 
 #func _death():
 	# will become more complex in future (ie. animaitons and such)
 	#position = spawn_points
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	pass
