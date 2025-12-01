@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7l76ig86g0ap"]
+[gd_scene load_steps=8 format=3 uid="uid://byhepduqlrgyg"]
 
-[ext_resource type="Script" uid="uid://bs2cn1nhvdr8u" path="res://Scripts/moving_platform.gd" id="1_btpls"]
-[ext_resource type="Texture2D" uid="uid://ceqx24xfpi8mq" path="res://Sprites/Characters/character_0014.png" id="1_qiuy2"]
+[ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_btpls"]
+[ext_resource type="Texture2D" uid="uid://cmoysq7jxn1kr" path="res://Sprites/Objects/LV1Present_Floating_Platform-sprite.png" id="2_anqd2"]
 
 [sub_resource type="Curve2D" id="Curve2D_cm5jo"]
 _data = {
@@ -10,6 +10,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btpls"]
+size = Vector2(302, 63)
 
 [sub_resource type="Animation" id="Animation_uamrk"]
 length = 0.001
@@ -54,12 +55,15 @@ curve = SubResource("Curve2D_cm5jo")
 script = ExtResource("1_btpls")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(87.37831, 0)
+position = Vector2(-1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-texture = ExtResource("1_qiuy2")
+position = Vector2(0, -9.094947e-13)
+scale = Vector2(0.4760101, 0.47421202)
+texture = ExtResource("2_anqd2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(2, 6.5)
 shape = SubResource("RectangleShape2D_btpls")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

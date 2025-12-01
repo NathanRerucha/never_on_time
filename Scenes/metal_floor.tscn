@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bupqh23gfhxct"]
+
+[ext_resource type="Texture2D" uid="uid://shnqpqufp2g4" path="res://Sprites/FLOOR/LV1Present_Metal_Floor-sprite.png" id="1_flcqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw2rm"]
+size = Vector2(198, 46)
+
+[node name="MetalFloor" type="StaticBody2D"]
+
+[node name="Lv1PresentMetalFloorSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("1_flcqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_bw2rm")

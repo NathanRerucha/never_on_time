@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12l3wbxdfnrd"]
+
+[ext_resource type="Texture2D" uid="uid://crwyavu8nimje" path="res://Sprites/Objects/LV1All_Box-sprite.png" id="1_ou872"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8grxe"]
+size = Vector2(90, 90)
+
+[node name="BasicBox" type="StaticBody2D"]
+
+[node name="Lv1AllBoxSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.3874598, 0.3874598)
+texture = ExtResource("1_ou872")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_8grxe")
