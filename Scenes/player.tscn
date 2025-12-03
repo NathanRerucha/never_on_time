@@ -385,11 +385,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_cvnsp")
-move_speed = null
-acceleration = null
-braking = null
-gravity = null
-jump_force = null
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 visible = false
@@ -438,7 +433,9 @@ shape = SubResource("CapsuleShape2D_vgqql")
 position = Vector2(0, -14.716966)
 scale = Vector2(0.4857143, 0.5270012)
 sprite_frames = SubResource("SpriteFrames_y6uwr")
-animation = &"idle"
+animation = &"fall"
+frame = 3
+frame_progress = 1.0
 flip_h = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

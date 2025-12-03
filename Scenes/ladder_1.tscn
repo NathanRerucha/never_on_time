@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://h3w673y8geid" path="res://Scripts/ladder_1.gd" id="2_flvdf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flvdf"]
-size = Vector2(137, 1201)
+size = Vector2(137, 1200)
 
 [node name="Sprite2D" type="Sprite2D" groups=["Ladders"]]
 texture = ExtResource("1_3d62w")
@@ -14,7 +14,8 @@ script = ExtResource("2_flvdf")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.5, -0.5)
+position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_flvdf")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
