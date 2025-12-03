@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://hdbqvew3mlqg"]
+
+[ext_resource type="Texture2D" uid="uid://crwyavu8nimje" path="res://Sprites/Objects/LV1All_Box-sprite.png" id="1_43ci2"]
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="2_7wivc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvaeh"]
+size = Vector2(345, 300)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_43ci2")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_7wivc")]
+position = Vector2(0, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_mvaeh")

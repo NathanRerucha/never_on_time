@@ -52,6 +52,7 @@ func _on_body_exited(body):
 	if body.is_in_group("Ladders"):
 		on_ladder = false
 		is_climbing = false # stops floating player when they get off ladder
+		print("test")
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -75,6 +76,7 @@ func _physics_process(delta: float) -> void:
 	var was_on_floor = is_on_floor()
 	
 	move_and_slide()
+	
 	
 	if was_on_floor && !is_on_floor():
 		coyote_timer.start()
@@ -109,8 +111,8 @@ func _process(_delta: float) -> void:
 func _manage_animation():
 	
 	var still_falling = false
-	if is_on_floor():
-		still_falling = false
+	if !is_on_floor():
+		still_falling = true
 	#var tween = create_tween()
 	#tween.tween_property($Sprite, "scale", Vector2(2,2), 1)
 	if is_shifting:
@@ -121,8 +123,8 @@ func _manage_animation():
 		if move_input < 0:
 			anim.flip_h = false
 		anim.play("jump")
-	elif not is_on_floor() and !is_climbing and !still_falling and velocity.y > 0:
-		still_falling = true
+	elif not is_on_floor() and !is_climbing and still_falling and velocity.y > 0:
+		#still_falling = true
 		if move_input > 0:
 			anim.flip_h = true
 		if move_input < 0:
