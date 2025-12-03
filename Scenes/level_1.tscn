@@ -2,8 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_6444e"]
-[ext_resource type="PackedScene" path="res://Scenes/walkway_past.tscn" id="3_xfk5q"]
-[ext_resource type="PackedScene" path="res://Scenes/ladders.tscn" id="4_evi0p"]
+[ext_resource type="PackedScene" uid="uid://3l6ppx1mm6h0" path="res://Scenes/walkway_past.tscn" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://gh6fyf6uorjy" path="res://Scenes/ladders.tscn" id="4_evi0p"]
 [ext_resource type="PackedScene" uid="uid://c5kfgavrc5wre" path="res://Scenes/box.tscn" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="7_lsmp6"]
 [ext_resource type="Texture2D" uid="uid://bbfqvb43cp3tk" path="res://Sprites/Backgrounds/LV1Past_Wall-sprite.png" id="8_chwpn"]
@@ -120,482 +120,683 @@ scale = Vector2(0.25110945, 0.15210354)
 texture = ExtResource("8_chwpn")
 
 [node name="WallTexturePresent" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2693.0486, 7317.384)
+position = Vector2(2630.0781, 22027.756)
 scale = Vector2(1.5222386, 1.5319158)
 texture = ExtResource("10_uy8f0")
 
 [node name="Lv1PastWallSprite2" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1326.3638, -16.436234)
+position = Vector2(1263.3933, 14693.9375)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite14" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2633.314, 611.4256)
+position = Vector2(2570.3435, 15321.799)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite16" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2641.2786, -32.872375)
+position = Vector2(2578.308, 14677.502)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite18" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2641.2786, -683.7448)
+position = Vector2(2578.308, 14026.629)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite19" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2641.2786, -1334.6172)
+position = Vector2(2578.308, 13375.756)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite20" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2641.2786, -1978.9152)
+position = Vector2(2578.308, 12731.459)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite21" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2641.2786, -2629.7874)
+position = Vector2(2578.308, 12080.586)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite17" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3947.482, -32.872375)
+position = Vector2(3884.5115, 14677.502)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite30" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(5257.6675, 19.723377)
+position = Vector2(5194.697, 14730.098)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite31" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(5257.667, 618)
+position = Vector2(5194.6963, 15328.373)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite32" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(6571.835, 525.9574)
+position = Vector2(6508.8643, 15236.33)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite33" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(7874.056, 525.9574)
+position = Vector2(7811.0854, 15236.33)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite34" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(7878.0386, 1176.8298)
+position = Vector2(7815.068, 15887.203)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite95" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(8957.25, 15883.917)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite96" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(8949.283, 15239.617)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite35" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.788, -3024.2556)
+position = Vector2(10124.817, 11686.117)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite114" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(10124.071, 11038.532)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite36" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.789, -2373.3833)
+position = Vector2(10124.818, 12336.99)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite37" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.787, -1729.0853)
+position = Vector2(10124.816, 12981.289)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite38" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.787, -1091.3618)
+position = Vector2(10124.816, 13619.012)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite39" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.788, -447.0638)
+position = Vector2(10124.817, 14263.311)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite40" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.787, 203.8085)
+position = Vector2(10124.816, 14914.182)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite41" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.787, 854.681)
+position = Vector2(10124.816, 15565.055)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite42" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.787, 1498.9789)
+position = Vector2(10124.816, 16209.352)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite45" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.788, 2149.8513)
+position = Vector2(10124.817, 16860.225)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite50" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(9092.649, 1821.1279)
+position = Vector2(9029.679, 16531.502)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite51" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(9092.648, 2472)
+position = Vector2(9029.678, 17182.373)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite52" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(9088.666, 3122.8726)
+position = Vector2(9025.695, 17833.246)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite55" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(7774.497, 3142.5962)
+position = Vector2(7711.5264, 17852.969)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite58" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(6460.33, 3149.1704)
+position = Vector2(6397.3594, 17859.543)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite61" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(5146.162, 3155.745)
+position = Vector2(5083.1914, 17866.117)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite62" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(5146.1616, 3806.617)
+position = Vector2(5083.191, 18516.99)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite63" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(5150.1445, 4457.4897)
+position = Vector2(5087.174, 19167.863)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite64" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 5213.5537)
+position = Vector2(4382.3022, 19923.926)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite68" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.272, 5864.426)
+position = Vector2(4382.3013, 20574.799)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite69" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 6515.2983)
+position = Vector2(4382.3022, 21225.672)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite70" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.272, 7166.171)
+position = Vector2(4382.3013, 21876.543)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite71" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 7817.0425)
+position = Vector2(4382.3022, 22527.416)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite72" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 8461.341)
+position = Vector2(4382.3022, 23171.715)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite73" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 9112.214)
+position = Vector2(4382.3022, 23822.586)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite75" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3131.1047, 9118.788)
+position = Vector2(3068.1343, 23829.16)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite76" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3131.1045, 8467.916)
+position = Vector2(3068.134, 23178.29)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite77" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3131.1047, 8152.3403)
+position = Vector2(3068.1343, 22862.713)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite78" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1816.9368, 8152.3403)
+position = Vector2(1753.9663, 22862.713)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite79" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1816.9368, 8803.213)
+position = Vector2(1753.9663, 23513.586)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite81" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(502.76877, 8809.788)
+position = Vector2(439.79822, 23520.16)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite83" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-811.39923, 8809.788)
+position = Vector2(-874.36975, 23520.16)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite85" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-811.3992, 8158.916)
+position = Vector2(-874.36975, 22869.29)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite87" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-811.39923, 7508.0435)
+position = Vector2(-874.36975, 22218.416)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite89" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-811.3992, 6857.171)
+position = Vector2(-874.36975, 21567.543)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite90" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(502.76874, 6857.171)
+position = Vector2(439.7982, 21567.543)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite91" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(502.76874, 6206.2983)
+position = Vector2(439.7982, 20916.672)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite92" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-811.39923, 6206.2983)
+position = Vector2(-874.36975, 20916.672)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite93" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-2125.5671, 6206.299)
+position = Vector2(-2188.5376, 20916.672)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite94" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-2125.5671, 6857.1714)
+position = Vector2(-2188.5376, 21567.545)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite88" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(502.76874, 7508.0435)
+position = Vector2(439.7982, 22218.416)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite86" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(502.76874, 8158.916)
+position = Vector2(439.7982, 22869.29)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite84" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-811.3992, 9460.66)
+position = Vector2(-874.36975, 24171.033)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite82" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(502.76877, 9460.661)
+position = Vector2(439.79822, 24171.035)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite80" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1816.9368, 9454.086)
+position = Vector2(1753.9663, 24164.459)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite74" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4449.2554, 9763.086)
+position = Vector2(4386.2847, 24473.459)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite65" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 3260.9363)
+position = Vector2(4382.3022, 17971.309)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite66" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 3911.809)
+position = Vector2(4382.3022, 18622.182)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite67" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4445.273, 4562.6816)
+position = Vector2(4382.3022, 19273.055)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite59" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(6460.33, 3800.0425)
+position = Vector2(6397.3594, 18510.416)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite60" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(6460.33, 4450.915)
+position = Vector2(6397.3594, 19161.29)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite56" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(7774.498, 3793.468)
+position = Vector2(7711.5273, 18503.842)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite57" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(7774.498, 4444.341)
+position = Vector2(7711.5273, 19154.715)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite53" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(9084.683, 3767.1707)
+position = Vector2(9021.712, 18477.543)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite54" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(9084.684, 4418.043)
+position = Vector2(9021.713, 19128.416)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite46" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.789, 2800.7236)
+position = Vector2(10124.818, 17511.098)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite47" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10183.806, 3445.0217)
+position = Vector2(10120.835, 18155.395)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite48" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10183.806, 4095.894)
+position = Vector2(10120.835, 18806.268)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite49" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(10187.788, 4746.7666)
+position = Vector2(10124.817, 19457.14)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite43" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(11067.883, 1439.8088)
+position = Vector2(11004.912, 16150.182)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite109" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(10996.2, 16797.768)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite110" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(10996.2, 17442.066)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite111" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(10996.201, 18092.938)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite112" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(11000.184, 18743.81)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite113" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(10992.218, 19394.684)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite44" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(11059.917, 1170.2554)
+position = Vector2(11004.164, 15864.191)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite97" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(12314.351, 15864.193)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite104" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(12310.368, 16515.066)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite105" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(12310.369, 17165.938)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite106" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(12310.368, 17816.809)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite107" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(12310.369, 18467.684)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite108" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(12306.387, 19111.982)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite98" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(13624.536, 15864.193)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite99" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(13624.537, 16515.064)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite100" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(13624.537, 17165.936)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite101" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(13624.536, 17816.809)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite102" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(13624.535, 18467.682)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite103" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(13624.536, 19118.555)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite15" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3943.4993, 611.42554)
+position = Vector2(3880.5288, 15321.799)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite4" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-14.933775, -696.8938)
+position = Vector2(-77.90433, 14013.48)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite5" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1295.2517, -696.89374)
+position = Vector2(1232.2813, 14013.48)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite6" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1291.2695, -1341.1917)
+position = Vector2(1228.2991, 13369.182)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite7" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1291.2694, -1992.064)
+position = Vector2(1228.2988, 12718.309)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite8" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-22.898436, -1341.1917)
+position = Vector2(-85.86899, 13369.182)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite9" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-22.898436, -1992.064)
+position = Vector2(-85.86899, 12718.309)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite10" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1283.3048, -2596.9153)
+position = Vector2(1220.3342, 12113.459)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite22" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1550.1206, -2642.9365)
+position = Vector2(1487.1501, 12067.4375)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite13" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-18.916115, -2590.3406)
+position = Vector2(-81.886665, 12120.033)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite11" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(-22.898436, -3241.2131)
+position = Vector2(-85.86899, 11469.16)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite12" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1287.2871, -3241.2131)
+position = Vector2(1224.3167, 11469.16)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite23" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2601.4548, -3241.2131)
+position = Vector2(2538.4844, 11469.16)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite24" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2649.243, -3234.6387)
+position = Vector2(2586.2725, 11475.734)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite25" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3959.4287, -3234.6387)
+position = Vector2(3896.4583, 11475.734)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite26" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3955.4463, -2590.3408)
+position = Vector2(3892.4758, 12120.033)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite27" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3955.4463, -1939.4683)
+position = Vector2(3892.4758, 12770.904)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite28" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3951.4639, -1288.5958)
+position = Vector2(3888.4934, 13421.777)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite29" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(3951.4639, -683.74475)
+position = Vector2(3888.4934, 14026.629)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
 [node name="Lv1PresentBrokenElevatorSprite(1)" type="Sprite2D" parent="Present_Backgrounds"]
+z_index = 1
 position = Vector2(4532.884, 3747.4475)
 scale = Vector2(0.9211145, 1.528564)
 texture = ExtResource("9_af3po")
 
 [node name="Lv1PastWallSprite3" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(2695.04, 6199.725)
+position = Vector2(2632.0696, 20910.1)
 scale = Vector2(1.8998525, 1.8191484)
 texture = ExtResource("8_chwpn")
 
 [node name="WallTexturePresent2" type="Sprite2D" parent="Present_Backgrounds"]
 position = Vector2(12609.042, 1893.447)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent5" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(9447.076, -2399.6802)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent6" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(10108.143, -348.44702)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent7" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(10112.125, 1715.936)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent15" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(9391.322, 3793.4685)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent16" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(6173.603, 3786.894)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent18" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(4405.4497, 5844.703)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent19" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(3457.6558, 7915.66)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent21" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(1514.2798, 6640.213)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent22" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(1514.2798, 6640.213)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent23" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(235.95282, 8711.17)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent24" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(-1707.423, 6633.6396)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent20" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(3453.6733, 9980.044)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent17" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(2951.9, 3786.894)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent8" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(1251.4462, -2333.9365)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent9" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(4473.149, -2340.5107)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent10" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(4473.149, -269.55325)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent14" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(7220.954, 1117.6597)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent13" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(2959.8647, 1761.9578)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent11" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(1171.7996, -276.12772)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
+[node name="WallTexturePresent12" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(-1990.1682, -256.4043)
 scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
@@ -605,7 +806,7 @@ scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
 [node name="WallTexturePresent4" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(8896.52, 1076.5692)
+position = Vector2(9144.419, 1019.0427)
 scale = Vector2(1.0592052, 2.207447)
 texture = ExtResource("11_8yhm2")
 
