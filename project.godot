@@ -23,6 +23,7 @@ InteractionManager="*res://interaction/interaction_manager.tscn"
 
 Box="RgidibBody Box group??"
 Ladders=""
+cutscene_triggers=""
 
 [input]
 

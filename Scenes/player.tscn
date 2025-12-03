@@ -402,6 +402,12 @@ shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -433,9 +439,7 @@ shape = SubResource("CapsuleShape2D_vgqql")
 position = Vector2(0, -14.716966)
 scale = Vector2(0.4857143, 0.5270012)
 sprite_frames = SubResource("SpriteFrames_y6uwr")
-animation = &"fall"
-frame = 3
-frame_progress = 1.0
+animation = &"jump"
 flip_h = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
