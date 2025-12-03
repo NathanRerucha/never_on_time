@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b86povdnvq228"]
+
+[ext_resource type="Texture2D" uid="uid://c6es3copo2lli" path="res://Sprites/Objects/LV1Present_Minecart-sprite (1).png" id="1_1flhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvfph"]
+size = Vector2(122.47202, 74.29416)
+
+[node name="Broken Cart" type="StaticBody2D"]
+
+[node name="Lv1PresentMinecartSprite(1)" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.21966687, 0.20613062)
+texture = ExtResource("1_1flhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5796821, 2.809208)
+rotation = 0.25221545
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_rvfph")
