@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=26 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_6444e"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="12_dlmop"]
 [ext_resource type="Texture2D" uid="uid://dmd7ly0fa7rot" path="res://Sprites/Objects/LV1Present_Lab_Desk-sprite (1).png" id="12_pjppf"]
 [ext_resource type="Texture2D" uid="uid://crwyavu8nimje" path="res://Sprites/Objects/LV1All_Box-sprite.png" id="12_yltlr"]
-[ext_resource type="PackedScene" uid="uid://b86povdnvq228" path="res://Scenes/PresentBrokenCart.tscn" id="13_dlmop"]
+[ext_resource type="PackedScene" path="res://Scenes/PresentBrokenCart.tscn" id="13_dlmop"]
 [ext_resource type="Texture2D" uid="uid://c6s8j3s12he6f" path="res://Sprites/Objects/LV1Present_Broken_Key_Box-sprite (1).png" id="13_yltlr"]
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
 [ext_resource type="Texture2D" uid="uid://lvuiinuswgu4" path="res://Sprites/Objects/LV1Past_Conveyor_1.png" id="15_imks0"]
@@ -194,8 +194,18 @@ position = Vector2(6508.8643, 15236.33)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
+[node name="Lv1PastWallSprite115" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(6500.1533, 14588.746)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
 [node name="Lv1PastWallSprite33" type="Sprite2D" parent="Present_Backgrounds"]
 position = Vector2(7811.0854, 15236.33)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite116" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(7810.339, 14601.8955)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
@@ -731,7 +741,7 @@ scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
 [node name="WallTexturePresent15" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(9391.322, 3793.4685)
+position = Vector2(9391.323, 3734.2983)
 scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
@@ -761,7 +771,7 @@ scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
 [node name="WallTexturePresent23" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(235.95282, 8711.17)
+position = Vector2(235.95282, 8638.853)
 scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
@@ -820,6 +830,11 @@ position = Vector2(12613.024, 3780.3198)
 scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
+[node name="WallTexturePresent25" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(12613.024, 3780.3198)
+scale = Vector2(1.9063337, 3.3510647)
+texture = ExtResource("10_uy8f0")
+
 [node name="WallTexturePresent4" type="Sprite2D" parent="Present_Backgrounds"]
 position = Vector2(9144.419, 1019.0427)
 scale = Vector2(1.0592052, 2.207447)
@@ -828,7 +843,7 @@ texture = ExtResource("11_8yhm2")
 [node name="Icon" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 z_index = -1
-position = Vector2(2239.0635, 8796.64)
+position = Vector2(4481.1133, 10992.513)
 scale = Vector2(308.4748, 302.27148)
 texture = ExtResource("12_dlmop")
 
@@ -840,8 +855,8 @@ texture = ExtResource("12_dlmop")
 
 [node name="Icon3" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(5233.773, -2629.7874)
-scale = Vector2(17.22824, 34.15)
+position = Vector2(5233.773, -2644.3748)
+scale = Vector2(17.22824, 33.922073)
 texture = ExtResource("12_dlmop")
 
 [node name="Icon4" type="Sprite2D" parent="Present_Backgrounds"]
@@ -900,8 +915,8 @@ texture = ExtResource("12_dlmop")
 
 [node name="Icon12" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(11665.231, -1275.4469)
-scale = Vector2(17.22824, 34.15)
+position = Vector2(11665.231, -1553.4237)
+scale = Vector2(17.22824, 38.49339)
 texture = ExtResource("12_dlmop")
 
 [node name="Icon13" type="Sprite2D" parent="Present_Backgrounds"]
@@ -912,8 +927,8 @@ texture = ExtResource("12_dlmop")
 
 [node name="Icon14" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(8367.866, 2412.8298)
-scale = Vector2(3.747053, 6.6370683)
+position = Vector2(8129.3623, 2412.8298)
+scale = Vector2(7.47368, 6.6370683)
 texture = ExtResource("12_dlmop")
 
 [node name="Icon15" type="Sprite2D" parent="Present_Backgrounds"]
@@ -1156,6 +1171,18 @@ position = Vector2(9020.967, 14983.212)
 scale = Vector2(11.275819, 1.818574)
 texture = ExtResource("12_dlmop")
 
+[node name="Icon85" type="Sprite2D" parent="Present_Backgrounds"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(7351.9463, 14452.994)
+scale = Vector2(24.08728, 4.4533362)
+texture = ExtResource("12_dlmop")
+
+[node name="Icon86" type="Sprite2D" parent="Present_Backgrounds"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(8185.567, 14601.897)
+scale = Vector2(5.150687, 4.4533362)
+texture = ExtResource("12_dlmop")
+
 [node name="Icon81" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 position = Vector2(9557.016, 12926.381)
@@ -1218,7 +1245,7 @@ texture = ExtResource("12_dlmop")
 
 [node name="Icon28" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(-1325.1194, 5009.7456)
+position = Vector2(-1317.1549, 4930.8516)
 scale = Vector2(41.724503, 16.176847)
 texture = ExtResource("12_dlmop")
 
