@@ -7,7 +7,6 @@ extends CharacterBody2D
 @export var jump_force : float = 230
 
 var conveyor_velocity: float = 0.0
-# is this variable still used? ^ line 63 -Nathan
 var base_speed: float
 var move_input : float
 var on_ladder: bool
@@ -16,7 +15,7 @@ var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
 var is_shifting : bool = false
-var can_shift : bool = false
+var can_shift : bool = true
 var check_climb_up: bool = Input.is_action_pressed("climb_ladder")
 var check_climb_down: bool = Input.is_action_pressed("climb_ladder_down")
 
@@ -26,9 +25,11 @@ var freeze_duration = 1 # seconds
 
 @onready var sprite : Sprite2D = $PlayerSprite
 @onready var anim : AnimatedSprite2D = $AnimatedSprite2D
+@onready var time_anim : AnimationPlayer = $AnimationPlayer
 @onready var coyote_timer = $CoyoteTimer
 
 func _ready():
+	time_anim.play("time_shift2") # had to do this to like "preload" the timeshift animation, not pretty but it works. Will probably have to change later -Nathan
 	base_speed = move_speed
 	#animation tween
 	# Setting up timer for pausing between shifts
@@ -52,7 +53,7 @@ func _on_body_exited(body):
 	if body.is_in_group("Ladders"):
 		on_ladder = false
 		is_climbing = false # stops floating player when they get off ladder
-		print("test")
+		print("ladder exit")
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -113,18 +114,16 @@ func _manage_animation():
 	var still_falling = false
 	if !is_on_floor():
 		still_falling = true
-	#var tween = create_tween()
-	#tween.tween_property($Sprite, "scale", Vector2(2,2), 1)
 	if is_shifting:
 		return
+		
 	if not is_on_floor() and !is_climbing and velocity.y <  0:
 		if move_input > 0:
 			anim.flip_h = true
 		if move_input < 0:
 			anim.flip_h = false
 		anim.play("jump")
-	elif not is_on_floor() and !is_climbing and still_falling and velocity.y > 0:
-		#still_falling = true
+	elif not is_on_floor() and !is_climbing and !still_falling and velocity.y > 0:
 		if move_input > 0:
 			anim.flip_h = true
 		if move_input < 0:
@@ -144,38 +143,33 @@ func freeze_game():
 	freeze_timer.start(freeze_duration)
 
 func _unfreeze_game():
-	is_shifting = false
 	get_tree().paused = false
+	is_shifting = false
 	print("Game unpaused")
-
-func _on_cutscene_trigger_1_body_entered(body) -> void:
-	if body.get_class() == "CharacterBody2D":
-		print("can shift")
-		can_shift = true
 	
 func _time_shift():	
-	# current time: 0 = present, 1 = future, -1 = past
 	if Input.is_action_just_pressed("time_shift") and current_time == 0 and can_shift:
-		print("test")
-		is_shifting = true
-		anim.play("time_shift2")
-		# shift player vertically a set amount of pixels, sourced from level 
+		time_anim.play("time_shift2")
 		freeze_game()
+		is_shifting = true
+		print("shift past")
+		# shift player vertically a set amount of pixels, sourced from level 
 		position.y -= shift_dist
 		# determines what time period player is in and sets the current_time variable accordingly
 		current_time = 1
 		
 	elif Input.is_action_just_pressed("time_shift") and current_time == 1 and can_shift:
-		is_shifting = true
-		anim.play("time_shift2")
+		time_anim.play("time_shift2")
 		freeze_game()
+		is_shifting = true
+		print("shift present")
 		position.y += shift_dist
 		current_time = 0
 			
 func _on_animation_finished(anim_name):
 	if anim_name == "time_shift2":
 		is_shifting = false 
-		_manage_animation()
+		#_manage_animation()
 
 #func _death():
 	# will become more complex in future (ie. animaitons and such)
