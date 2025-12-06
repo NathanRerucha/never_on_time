@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcq7k5xeh3eap"]
+
+[ext_resource type="Texture2D" uid="uid://1dmg7dh6r7xm" path="res://Sprites/Ladders/LV1Present_Ladder_Complete-sprite.png" id="1_us46x"]
+[ext_resource type="Script" uid="uid://h3w673y8geid" path="res://Scripts/first_ladder.gd" id="2_w5fen"]
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="3_1j4gw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flvdf"]
+size = Vector2(137, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hngqn"]
+size = Vector2(138, 1202)
+
+[node name="first_ladder" type="Sprite2D" groups=["Ladders"]]
+texture = ExtResource("1_us46x")
+script = ExtResource("2_w5fen")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Ladders"]]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_flvdf")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_1j4gw")]
+position = Vector2(-1, 353)
+action_name = "W: Climb"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-3, -352)
+shape = SubResource("RectangleShape2D_hngqn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
