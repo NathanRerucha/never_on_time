@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://0mrvfwkcmf85"]
+
+[ext_resource type="Texture2D" uid="uid://dd54ddrfg6rav" path="res://Sprites/Objects/LV1Past_Generator-sprite.png" id="1_yoayw"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Lv1PastGeneratorSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_yoayw")

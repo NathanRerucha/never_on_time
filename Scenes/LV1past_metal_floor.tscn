@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpdomfnesvsxj"]
+
+[ext_resource type="Texture2D" uid="uid://cu367vjuv64pm" path="res://Sprites/FLOOR/Past_Metal_Floor.png" id="1_n1bbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1bbu"]
+size = Vector2(297, 70)
+
+[node name="PastMetalFloor" type="StaticBody2D"]
+
+[node name="PastMetalFloor" type="Sprite2D" parent="."]
+scale = Vector2(0.16493055, 0.16493055)
+texture = ExtResource("1_n1bbu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_n1bbu")
