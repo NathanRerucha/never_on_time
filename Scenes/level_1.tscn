@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=36 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_6444e"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dmd7ly0fa7rot" path="res://Sprites/Objects/LV1Present_Lab_Desk-sprite (1).png" id="12_pjppf"]
 [ext_resource type="PackedScene" uid="uid://b86povdnvq228" path="res://Scenes/PresentBrokenCart.tscn" id="13_dlmop"]
 [ext_resource type="Texture2D" uid="uid://c6s8j3s12he6f" path="res://Sprites/Objects/LV1Present_Broken_Key_Box-sprite (1).png" id="13_yltlr"]
+[ext_resource type="PackedScene" uid="uid://lxxd72tjrq6f" path="res://Scenes/key.tscn" id="14_nwpk5"]
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
 [ext_resource type="Texture2D" uid="uid://lvuiinuswgu4" path="res://Sprites/Objects/LV1Past_Conveyor_1.png" id="15_imks0"]
 [ext_resource type="Texture2D" uid="uid://dapdubfj21ij8" path="res://Sprites/Objects/LV1Both_Key-sprite (1).png" id="16_dlmop"]
@@ -22,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cmoysq7jxn1kr" path="res://Sprites/Objects/LV1Present_Floating_Platform-sprite.png" id="19_yltlr"]
 [ext_resource type="PackedScene" uid="uid://dbqnwjyser8mu" path="res://Scenes/grass_floor.tscn" id="20_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
-[ext_resource type="PackedScene" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
+[ext_resource type="PackedScene" uid="uid://cj5y327umt8rf" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
 [ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
 [ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
@@ -169,7 +170,6 @@ horizontal_speed = 100.0
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -1397,6 +1397,14 @@ modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 position = Vector2(5703.689, -433.91495)
 scale = Vector2(6.716292, 2.7848394)
 texture = ExtResource("12_dlmop")
+
+[node name="StaticBody2D" parent="Present_Backgrounds" instance=ExtResource("31_xub2v")]
+position = Vector2(1374.8986, 8987.298)
+scale = Vector2(1.97, 1.97)
+
+[node name="key" parent="Present_Backgrounds" instance=ExtResource("14_nwpk5")]
+position = Vector2(2808.5361, 9316.021)
+scale = Vector2(0.275, 0.4)
 
 [node name="PR_Collision_Objects" type="Sprite2D" parent="."]
 

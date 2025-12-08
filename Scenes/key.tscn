@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://lxxd72tjrq6f"]
+
+[ext_resource type="Texture2D" uid="uid://dapdubfj21ij8" path="res://Sprites/Objects/LV1Both_Key-sprite (1).png" id="1_brn0f"]
+[ext_resource type="Script" uid="uid://dayuw5h3oup2i" path="res://Scripts/key.gd" id="2_brn0f"]
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="3_58hov"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvjb5"]
+
+[node name="key" type="Sprite2D"]
+texture = ExtResource("1_brn0f")
+script = ExtResource("2_brn0f")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_58hov")]
+position = Vector2(3, 0)
+action_name = "F: pickup"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -0.99999994)
+scale = Vector2(38.345, 38.345)
+shape = SubResource("CircleShape2D_qvjb5")
