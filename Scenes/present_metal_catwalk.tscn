@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj5y327umt8rf"]
+
+[ext_resource type="Texture2D" uid="uid://ujviufxogiyw" path="res://Sprites/FLOOR/LV1Present_DrillArea_WalkwayPiece-sprite.png" id="1_4j0rn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpjqh"]
+size = Vector2(20.27827, 10.944641)
+
+[node name="PresentMetalCatwalk" type="StaticBody2D"]
+
+[node name="Lv1PresentDrillAreaWalkwayPieceSprite" type="Sprite2D" parent="."]
+rotation = 3.1415925
+scale = Vector2(0.26739177, -0.22265278)
+texture = ExtResource("1_4j0rn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17)
+scale = Vector2(3.8917055, -0.73095125)
+shape = SubResource("RectangleShape2D_tpjqh")

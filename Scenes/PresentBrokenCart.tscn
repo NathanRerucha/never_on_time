@@ -6,6 +6,7 @@
 size = Vector2(122.47202, 74.29416)
 
 [node name="Broken Cart" type="StaticBody2D"]
+rotation = -3.3918273
 
 [node name="Lv1PresentMinecartSprite(1)" type="Sprite2D" parent="."]
 position = Vector2(-2, 0)
