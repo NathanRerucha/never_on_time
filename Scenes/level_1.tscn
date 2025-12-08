@@ -12,10 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bb2235bxr62gw" path="res://Sprites/Backgrounds/Wall_Texture_Present.png" id="11_8yhm2"]
 [ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="12_dlmop"]
 [ext_resource type="Texture2D" uid="uid://dmd7ly0fa7rot" path="res://Sprites/Objects/LV1Present_Lab_Desk-sprite (1).png" id="12_pjppf"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://crwyavu8nimje" path="res://Sprites/Objects/LV1All_Box-sprite.png" id="12_yltlr"]
-=======
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://b86povdnvq228" path="res://Scenes/PresentBrokenCart.tscn" id="13_dlmop"]
 [ext_resource type="Texture2D" uid="uid://c6s8j3s12he6f" path="res://Sprites/Objects/LV1Present_Broken_Key_Box-sprite (1).png" id="13_yltlr"]
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
@@ -26,15 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://cmoysq7jxn1kr" path="res://Sprites/Objects/LV1Present_Floating_Platform-sprite.png" id="19_yltlr"]
 [ext_resource type="PackedScene" uid="uid://dbqnwjyser8mu" path="res://Scenes/grass_floor.tscn" id="20_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
-<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
 [ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
 [ext_resource type="PackedScene" uid="uid://br7tol1ag7s1j" path="res://Scenes/ladder_3.tscn" id="27_xub2v"]
 [ext_resource type="PackedScene" uid="uid://coqyjh3hwa5p0" path="res://Scenes/ladder_4.tscn" id="28_x5u8r"]
-=======
 [ext_resource type="PackedScene" uid="uid://cj5y327umt8rf" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
->>>>>>> Stashed changes
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8ffim"]
 b = Vector2(0, 111)
@@ -1604,7 +1598,6 @@ position = Vector2(3177, 238)
 [node name="MetalFloor32" parent="MetalFloor" instance=ExtResource("21_imks0")]
 position = Vector2(-243, 1049)
 
-<<<<<<< Updated upstream
 [node name="first_ladder" parent="." instance=ExtResource("24_u0op5")]
 position = Vector2(164.00003, -270.99997)
 scale = Vector2(0.13912134, 0.07208332)
@@ -1624,7 +1617,7 @@ scale = Vector2(0.1, 0.07)
 [node name="ladder_4" parent="." instance=ExtResource("28_x5u8r")]
 position = Vector2(383, -267)
 scale = Vector2(0.1, 0.07)
-=======
+
 [node name="BasicBox" parent="." instance=ExtResource("14_sda17")]
 visible = false
 position = Vector2(-78, 1358)
@@ -1645,4 +1638,3 @@ scale = Vector2(0.7389954, 0.7389954)
 [node name="BasicBox4" parent="." instance=ExtResource("14_sda17")]
 position = Vector2(648, 90.00001)
 scale = Vector2(0.31936997, 0.31936997)
->>>>>>> Stashed changes

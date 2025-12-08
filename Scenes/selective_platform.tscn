@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bld71aal3ae54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t20j8"]
+size = Vector2(66, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1tl5"]
+size = Vector2(66, 2)
+
+[node name="SelectivePlatform" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_t20j8")
+
+[node name="BottomZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomZone"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_e1tl5")
