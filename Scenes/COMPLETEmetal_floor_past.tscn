@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=3 uid="uid://mmwixnyqcbbs"]
+
+[ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="1_elif6"]
+
+[node name="MetalFloorPast" type="CanvasGroup"]
+
+[node name="MetalFloor2" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1557, 102)
+
+[node name="MetalFloor3" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1755, 102)
+
+[node name="MetalFloor4" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1953, 102)
+
+[node name="MetalFloor" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(692, 1173)
+
+[node name="MetalFloor5" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(890, 1173)
+
+[node name="MetalFloor6" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1018, 1173)
+
+[node name="MetalFloor7" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(478, 1174)
+
+[node name="MetalFloor8" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(2852, 238)
+
+[node name="MetalFloor33" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(2661, 236)
+
+[node name="MetalFloor9" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(2979, 383)
+
+[node name="MetalFloor10" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(3177, 383)
+
+[node name="MetalFloor11" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(3374, 383)
+
+[node name="MetalFloor12" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(567, 1012)
+
+[node name="MetalFloor13" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(765, 1012)
+
+[node name="MetalFloor14" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(963, 1012)
+
+[node name="MetalFloor15" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1179, 1012)
+
+[node name="MetalFloor16" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(-45, 1427)
+
+[node name="MetalFloor17" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(153, 1427)
+
+[node name="MetalFloor18" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(351, 1427)
+
+[node name="MetalFloor19" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(548, 1427)
+
+[node name="MetalFloor20" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(746, 1427)
+
+[node name="MetalFloor21" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(944, 1427)
+
+[node name="MetalFloor22" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1142, 1427)
+
+[node name="MetalFloor23" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1340, 1427)
+
+[node name="MetalFloor24" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1484, 684)
+
+[node name="MetalFloor25" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1682, 684)
+
+[node name="MetalFloor26" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(1880, 684)
+
+[node name="MetalFloor27" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(2078, 684)
+
+[node name="MetalFloor28" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(2276, 684)
+
+[node name="MetalFloor29" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(2474, 684)
+
+[node name="MetalFloor30" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(2979, 238)
+
+[node name="MetalFloor31" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(3177, 238)
+
+[node name="MetalFloor32" parent="." instance=ExtResource("1_elif6")]
+position = Vector2(-243, 1049)
