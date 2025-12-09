@@ -12,6 +12,8 @@ size = Vector2(66, 2)
 size = Vector2(66, 2)
 
 [node name="SelectivePlatform" type="StaticBody2D"]
+scale = Vector2(0.4848881, 1)
+collision_mask = 0
 script = ExtResource("1_e1tl5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

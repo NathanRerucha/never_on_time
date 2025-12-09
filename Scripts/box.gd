@@ -25,14 +25,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_left_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		player_pos = body.global_position
 		direction = 1
 		push = true
 
 
 func _on_left_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		player_pos = body.global_position
 		print("exit")
 		direction = 0
@@ -40,14 +40,14 @@ func _on_left_body_exited(body: Node2D) -> void:
 
 
 func _on_right_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		player_pos = body.global_position
 		direction = -1
 		push = true
 
 
 func _on_right_body_exited(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		player_pos = body.global_position
 		direction = 0
 		push = false

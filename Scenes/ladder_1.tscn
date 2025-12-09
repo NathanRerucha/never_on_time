@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fom7oa1cqhlu"]
+[gd_scene load_steps=5 format=3 uid="uid://fom7oa1cqhlu"]
 
 [ext_resource type="Texture2D" uid="uid://1dmg7dh6r7xm" path="res://Sprites/Ladders/LV1Present_Ladder_Complete-sprite.png" id="1_3d62w"]
 [ext_resource type="Script" uid="uid://cv7246clt842t" path="res://Scripts/ladder_1.gd" id="2_flvdf"]
+[ext_resource type="PackedScene" uid="uid://bld71aal3ae54" path="res://Scenes/selective_platform.tscn" id="3_q1sbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3d62w"]
 size = Vector2(138, 1200)
@@ -15,6 +16,10 @@ script = ExtResource("2_flvdf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_3d62w")
+
+[node name="SelectivePlatform" parent="." instance=ExtResource("3_q1sbi")]
+position = Vector2(-3, -600)
+scale = Vector2(2.0448947, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

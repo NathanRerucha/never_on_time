@@ -2,23 +2,28 @@ extends StaticBody2D
 
 @onready var platform = $"."
 
+var player_on_platform = false
+var climbing_down = false
+var climbing_up = false
+
 func _on_bottom_zone_body_entered(body: Node2D) -> void:
-	pass
+	if body.is_in_group("Player"):
+		platform.set_collision_layer_value(1, false)
 
 func _on_bottom_zone_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
-
+	if body.is_in_group("Player"):
+		platform.set_collision_layer_value(1, true)
+		body.velocity.y = 0
 
 func _on_top_zone_body_entered(body: Node2D) -> void:
-	print("on platform")
-
+	if body.is_in_group("Player"):
+		player_on_platform = true
+		print("player on platform: ", player_on_platform)
 
 func _on_top_zone_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("Player"):
+		platform.set_collision_layer_value(1, true)
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("climb_ladder_down"):
-		print(collision_layer)
-		platform.collision_layer = 3
-		platform.collision_mask = 3
-		print(collision_layer)
+	if player_on_platform and Input.is_action_pressed("climb_ladder_down"):
+			platform.set_collision_layer_value(1, false)

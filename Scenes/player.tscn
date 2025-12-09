@@ -384,7 +384,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 3
 script = ExtResource("1_cvnsp")
 

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 175
+@export var move_speed : float = 120
+@export var sprint_speed : float = 175
 @export var acceleration : float = 50
 @export var braking : float = 20
 @export var gravity : float = 700
@@ -15,9 +16,7 @@ var shift_dist : int
 var current_time : int = 0
 var spawn_point : Vector2 
 var is_shifting : bool = false
-var can_shift : bool = true
-var check_climb_up: bool = Input.is_action_pressed("climb_ladder")
-var check_climb_down: bool = Input.is_action_pressed("climb_ladder_down")
+var can_shift : bool = false
 
 # Moved timer variables with rest for consistency
 var freeze_timer = Timer.new()
@@ -45,7 +44,9 @@ func apply_speed_modifier(modifier: float):
 func remove_speed_modifier():
 	move_speed = base_speed
 	
-func _on_body_entered(body):
+func _on_body_entered(body: Node2D):
+	if body.is_in_group("cutscene_triggers"):
+		print("trigger")
 	if body.is_in_group("Ladders"):
 		on_ladder = true
 	
@@ -63,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	# get the move input
 	move_input = Input.get_axis("move_left", "move_right")
 	
-	var target_velocity_x = (move_input * move_speed) + conveyor_velocity # <-- is this variable still used? -Nathan
+	var target_velocity_x = (move_input * move_speed) + conveyor_velocity
 	
 	if move_input != 0:
 		velocity.x = lerp(velocity.x, target_velocity_x, acceleration * delta)
@@ -178,3 +179,9 @@ func _on_animation_finished(anim_name):
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	pass
+
+
+func _on_cutscene_trigger_1_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		can_shift = true
+		print("Player can now time shift")
