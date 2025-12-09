@@ -834,7 +834,7 @@ scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
 [node name="WallTexturePresent10" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(4047.04, -361.59583)
+position = Vector2(4047.04, -295.85114)
 scale = Vector2(1.9063337, 3.3510647)
 texture = ExtResource("10_uy8f0")
 
@@ -876,7 +876,7 @@ texture = ExtResource("11_8yhm2")
 [node name="Icon" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 z_index = -1
-position = Vector2(3700.578, 10262.746)
+position = Vector2(4317.84, 13208.109)
 scale = Vector2(308.4748, 302.35635)
 texture = ExtResource("12_dlmop")
 
