@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var move_speed : float = 120
-@export var sprint_speed : float = 175
+@export var sprint_speed : float = 200
 @export var acceleration : float = 50
 @export var braking : float = 20
 @export var gravity : float = 700
@@ -13,6 +13,7 @@ var move_input : float
 var on_ladder: bool
 var is_climbing: bool
 var shift_dist : int
+var last_checkpoint : Vector2
 var current_time : int = 0
 var spawn_point : Vector2 
 var is_shifting : bool = false
@@ -45,8 +46,6 @@ func remove_speed_modifier():
 	move_speed = base_speed
 	
 func _on_body_entered(body: Node2D):
-	if body.is_in_group("cutscene_triggers"):
-		print("trigger")
 	if body.is_in_group("Ladders"):
 		on_ladder = true
 	
@@ -64,7 +63,12 @@ func _physics_process(delta: float) -> void:
 	# get the move input
 	move_input = Input.get_axis("move_left", "move_right")
 	
-	var target_velocity_x = (move_input * move_speed) + conveyor_velocity
+	var target_velocity_x
+	if Input.is_action_pressed("sprint"):
+		target_velocity_x = (move_input * sprint_speed) + conveyor_velocity
+	else:
+		target_velocity_x = (move_input * move_speed) + conveyor_velocity
+	
 	
 	if move_input != 0:
 		velocity.x = lerp(velocity.x, target_velocity_x, acceleration * delta)
@@ -132,10 +136,16 @@ func _manage_animation():
 		anim.play("fall")
 	elif move_input > 0:
 		anim.flip_h = true
-		anim.play("walk")
+		if Input.is_action_pressed("sprint"):
+			anim.play("sprint")
+		else:
+			anim.play("walk")
 	elif move_input < 0:
 		anim.flip_h = false
-		anim.play("walk")
+		if Input.is_action_pressed("sprint"):
+			anim.play("sprint")
+		else:
+			anim.play("walk")
 	else:
 		anim.play("idle")
 
@@ -172,9 +182,8 @@ func _on_animation_finished(anim_name):
 		is_shifting = false 
 		#_manage_animation()
 
-#func _death():
-	# will become more complex in future (ie. animaitons and such)
-	#position = spawn_points
+func death():
+	global_position = last_checkpoint
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=37 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scenes/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://c6s8j3s12he6f" path="res://Sprites/Objects/LV1Present_Broken_Key_Box-sprite (1).png" id="13_yltlr"]
 [ext_resource type="PackedScene" uid="uid://lxxd72tjrq6f" path="res://Scenes/key.tscn" id="14_nwpk5"]
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
-[ext_resource type="Texture2D" uid="uid://lvuiinuswgu4" path="res://Sprites/Objects/LV1Past_Conveyor_1.png" id="15_imks0"]
 [ext_resource type="Texture2D" uid="uid://dapdubfj21ij8" path="res://Sprites/Objects/LV1Both_Key-sprite (1).png" id="16_dlmop"]
 [ext_resource type="Texture2D" uid="uid://by1dloi2l0e0l" path="res://Sprites/Objects/LV1Present_Robot_Core-sprite (1).png" id="17_sda17"]
 [ext_resource type="Texture2D" uid="uid://c3vpq3hymcebe" path="res://Sprites/Elevator/LV1Past_Elevator_Light_Off-sprite (1).png" id="19_6ssoq"]
@@ -32,6 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://wxlwvt114mv8" path="res://Scenes/LV1generator_present.tscn" id="30_xub2v"]
 [ext_resource type="PackedScene" uid="uid://bm18kyqx0v5jc" path="res://Scenes/LV1Present_Closed_Door.tscn" id="31_xub2v"]
 [ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/Past_Generator.tscn" id="32_x5u8r"]
+[ext_resource type="PackedScene" uid="uid://cpa7t2v00ux06" path="res://Scenes/checkpoint.tscn" id="33_lk3dh"]
+[ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="33_nwpk5"]
+[ext_resource type="PackedScene" uid="uid://de63g3xci0oat" path="res://Scenes/kill_zone.tscn" id="34_lk3dh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -44,7 +46,7 @@ script = ExtResource("1_nwpk5")
 metadata/_edit_horizontal_guides_ = [72.0]
 
 [node name="Player" parent="." instance=ExtResource("3_6444e")]
-position = Vector2(348, -406)
+position = Vector2(106.155396, -245.55457)
 floor_stop_on_slope = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -162,6 +164,7 @@ position = Vector2(168, 0)
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -1464,16 +1467,6 @@ scale = Vector2(0.092378706, 0.11233466)
 skew = -0.06806784
 texture = ExtResource("13_yltlr")
 
-[node name="Lv1PastConveyor1" type="Sprite2D" parent="PR_Collision_Objects"]
-position = Vector2(121, 1160)
-scale = Vector2(0.21003325, 0.20149235)
-texture = ExtResource("15_imks0")
-
-[node name="Lv1PastConveyor2" type="Sprite2D" parent="PR_Collision_Objects"]
-position = Vector2(-36, 1077.9999)
-scale = Vector2(0.21003325, 0.20149235)
-texture = ExtResource("15_imks0")
-
 [node name="Lv1BothKeySprite(1)" type="Sprite2D" parent="."]
 position = Vector2(506.00006, 959)
 rotation = 0.53930676
@@ -1823,5 +1816,42 @@ scale = Vector2(0.29581657, 0.29581657)
 [node name="StaticBody2D2" parent="." instance=ExtResource("32_x5u8r")]
 position = Vector2(3002, 3455.8516)
 scale = Vector2(0.31228295, 0.31228295)
+
+[node name="Conveyor Area2D2" parent="." instance=ExtResource("33_nwpk5")]
+position = Vector2(-35.779568, 1074.9961)
+scale = Vector2(0.42384207, 0.6184056)
+
+[node name="Conveyor Area2D3" parent="." instance=ExtResource("33_nwpk5")]
+position = Vector2(118.999985, 1157.6821)
+scale = Vector2(0.42384207, 0.6184056)
+
+[node name="Checkpoint" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(106.31143, -282.75867)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(1190.175, -48.051605)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(2556.7146, 154.64551)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(1123.4634, 1344.146)
+
+[node name="Checkpoint5" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(124.13791, 2577.142)
+
+[node name="Checkpoint6" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(1180.325, 2806.8813)
+
+[node name="Checkpoint7" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(2559.3909, 3017.9934)
+
+[node name="Checkpoint8" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(1124.4421, 4203.9526)
+
+[node name="KillZone" parent="." instance=ExtResource("34_lk3dh")]
+position = Vector2(382.6, -18.902344)
+rotation = 1.5707964
+scale = Vector2(0.43494126, -0.45544553)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]

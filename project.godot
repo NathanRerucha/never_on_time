@@ -25,7 +25,8 @@ Globals="*res://Scripts/globals.gd"
 Box="RgidibBody Box group??"
 Ladders=""
 Cutscene_triggers=""
-cutscene_triggers=""
+Checkpoint=""
+Player=""
 
 [input]
 

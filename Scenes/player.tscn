@@ -361,10 +361,22 @@ animations = [{
 "name": &"jump",
 "speed": 12.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ijsl")
+}, {
+"duration": 1.11,
+"texture": SubResource("AtlasTexture_p1odr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gysh")
+}, {
+"duration": 1.11,
+"texture": SubResource("AtlasTexture_vfarp")
+}],
 "loop": true,
-"name": &"new_animation",
-"speed": 5.0
+"name": &"sprint",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -381,7 +393,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -442,7 +454,8 @@ z_index = 2
 position = Vector2(0, -14.716966)
 scale = Vector2(0.4857143, 0.5270012)
 sprite_frames = SubResource("SpriteFrames_y6uwr")
-animation = &"idle"
+animation = &"sprint"
+frame_progress = 0.05587039
 flip_h = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
