@@ -2106,40 +2106,30 @@ position = Vector2(162, 1238.0001)
 rotation = -1.0340055
 scale = Vector2(0.42384207, 0.6184056)
 
-[node name="Checkpoint" parent="." instance=ExtResource("33_lk3dh")]
-position = Vector2(126, -284)
 [node name="Checkpoint" parent="." groups=["Present_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(77, -283)
 
-[node name="Checkpoint2" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint2" parent="." groups=["Present_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(1190.175, -48.051605)
 
-[node name="Checkpoint3" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint3" parent="." groups=["Present_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(1437, 597.54047)
 
-[node name="Checkpoint9" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint9" parent="." groups=["Present_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(2556.7146, 154.64551)
 
-[node name="Checkpoint4" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint4" parent="." groups=["Present_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(1123.4634, 1344.146)
 
-[node name="Checkpoint5" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint5" parent="." groups=["Past_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(124.13791, 2577.142)
 
-[node name="Checkpoint6" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint6" parent="." groups=["Past_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(1180.325, 2806.8813)
 
-[node name="Checkpoint7" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint7" parent="." groups=["Past_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(2559.3909, 3017.9934)
 
-[node name="Checkpoint8" parent="." instance=ExtResource("33_lk3dh")]
 [node name="Checkpoint8" parent="." groups=["Past_Checkpoint"] instance=ExtResource("33_lk3dh")]
 position = Vector2(1124.4421, 4203.9526)
 
@@ -2165,7 +2155,6 @@ position = Vector2(-2850.487, -5329.04)
 scale = Vector2(17.044798, -0.17476495)
 
 [node name="KillZone3" parent="KillZone" instance=ExtResource("36_7sml1")]
-position = Vector2(-1862.213, 2017.0752)
 position = Vector2(-1862.213, 4000.1904)
 scale = Vector2(38.100372, 0.96848434)
 
