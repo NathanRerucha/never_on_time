@@ -1,16 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://byhepduqlrgyg"]
+[gd_scene load_steps=9 format=3 uid="uid://d3pnh831j5woh"]
 
-[ext_resource type="Script" uid="uid://bs2cn1nhvdr8u" path="res://Scripts/moving_platform.gd" id="1_btpls"]
-[ext_resource type="Texture2D" uid="uid://cmoysq7jxn1kr" path="res://Sprites/Objects/LV1Present_Floating_Platform-sprite.png" id="2_anqd2"]
+[ext_resource type="Script" uid="uid://bs2cn1nhvdr8u" path="res://Scripts/moving_platform.gd" id="1_n3ex4"]
+[ext_resource type="Texture2D" uid="uid://b0pulxitreh2j" path="res://Sprites/Elevator/LV1Past_Elevator_Light_On-sprite (1).png" id="2_dmimb"]
 
 [sub_resource type="Curve2D" id="Curve2D_cm5jo"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 160, 0, 0, 0, 0, 0, 162.6499, 1424.5176)
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -0.6833496, 1389.4297)
 }
-point_count = 3
+point_count = 2
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
-size = Vector2(304, 66)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btpls"]
+size = Vector2(392, 12.5)
 
 [sub_resource type="Animation" id="Animation_uamrk"]
 length = 0.001
@@ -29,8 +29,23 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0mlds"]
 resource_name = "move"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 4),
+"transitions": PackedFloat32Array(-1.56, -1.56, 1),
+"update": 0,
+"values": [0.0, 0.01, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_n3ex4"]
+resource_name = "move back"
 length = 2.0
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -41,33 +56,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(-1.56, 1),
 "update": 0,
-"values": [0.0, 1.0]
+"values": [1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2wr3d"]
 _data = {
 &"RESET": SubResource("Animation_uamrk"),
-&"move": SubResource("Animation_0mlds")
+&"move": SubResource("Animation_0mlds"),
+&"move back": SubResource("Animation_n3ex4")
 }
 
 [node name="Path2D" type="Path2D"]
 curve = SubResource("Curve2D_cm5jo")
-script = ExtResource("1_btpls")
-loop = null
-speed = null
-speed_scale = null
+script = ExtResource("1_n3ex4")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-0.6833496, 1389.4297)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(0, -9.094947e-13)
 scale = Vector2(0.4760101, 0.47421202)
-texture = ExtResource("2_anqd2")
+texture = ExtResource("2_dmimb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(3, 7)
-shape = SubResource("RectangleShape2D_anqd2")
+position = Vector2(-2, 239.25)
+shape = SubResource("RectangleShape2D_btpls")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-1, 0)

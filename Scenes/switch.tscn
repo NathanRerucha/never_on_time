@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://isb1ou86dcn"]
+
+[ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="1_v71cw"]
+[ext_resource type="Script" uid="uid://4a2e14cj6g73" path="res://Scripts/switch.gd" id="2_og4gy"]
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="3_1xkr6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jg1gy"]
+
+[node name="Switch" type="Sprite2D"]
+texture = ExtResource("1_v71cw")
+script = ExtResource("2_og4gy")
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_1xkr6")]
+action_name = "F: Turn on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(11.095, 11.095)
+shape = SubResource("CircleShape2D_jg1gy")

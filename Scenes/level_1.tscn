@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=39 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scenes/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://cpa7t2v00ux06" path="res://Scenes/checkpoint.tscn" id="33_lk3dh"]
 [ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="33_nwpk5"]
 [ext_resource type="PackedScene" uid="uid://de63g3xci0oat" path="res://Scenes/kill_zone.tscn" id="34_lk3dh"]
+[ext_resource type="PackedScene" uid="uid://d3pnh831j5woh" path="res://Scenes/Elevator.tscn" id="35_ts4pv"]
+[ext_resource type="PackedScene" uid="uid://isb1ou86dcn" path="res://Scenes/switch.tscn" id="36_bd6hb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -164,7 +166,6 @@ position = Vector2(168, 0)
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -1484,6 +1485,7 @@ scale = Vector2(0.19349748, 0.18373932)
 texture = ExtResource("19_yltlr")
 
 [node name="Lv1PastElevatorLightOffSprite(1)" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1251.7189, 3393.1016)
 scale = Vector2(0.2810923, 0.25791654)
 texture = ExtResource("19_6ssoq")
@@ -1853,5 +1855,14 @@ position = Vector2(1124.4421, 4203.9526)
 position = Vector2(382.6, -18.902344)
 rotation = 1.5707964
 scale = Vector2(0.43494126, -0.45544553)
+
+[node name="Path2D" parent="." instance=ExtResource("35_ts4pv")]
+position = Vector2(1251.41, 3391.025)
+scale = Vector2(0.6, 0.57)
+loop = false
+
+[node name="Switch" parent="." instance=ExtResource("36_bd6hb")]
+position = Vector2(1413, 3513.5)
+scale = Vector2(0.234375, 0.2265625)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
