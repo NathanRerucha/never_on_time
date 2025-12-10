@@ -35,11 +35,11 @@ text = "Quit
 
 [node name="Lv1PresentDrillAreaFull2Background" type="Sprite2D" parent="VBoxContainer"]
 z_index = -1
-position = Vector2(377, -242)
+position = Vector2(248, -215)
 texture = ExtResource("2_ylmtb")
 
 [node name="PlayerPrototype1Front" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(706, -88)
+position = Vector2(578.00006, -61)
 scale = Vector2(0.12155963, 0.11399475)
 texture = ExtResource("3_0ft63")
 
