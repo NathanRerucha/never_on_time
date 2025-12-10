@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://0mrvfwkcmf85"]
 
-[ext_resource type="Script" uid="uid://dln3tcld7uc0i" path="res://Scenes/past_generator.gd" id="1_gvtdu"]
+[ext_resource type="Script" uid="uid://dln3tcld7uc0i" path="res://Scripts/past_generator.gd" id="1_gvtdu"]
 [ext_resource type="Texture2D" uid="uid://dd54ddrfg6rav" path="res://Sprites/Objects/LV1Past_Generator-sprite.png" id="1_yoayw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ii63n"]

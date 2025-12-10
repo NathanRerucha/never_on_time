@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfe7drrmb8g01"]
+
+[ext_resource type="Script" uid="uid://dnuhn36vraah" path="res://Scripts/menu_screen.gd" id="1_tuusc"]
+[ext_resource type="Texture2D" uid="uid://dk4u08e8qoage" path="res://Sprites/Backgrounds/LV1Present_DrillArea_Full2-background.png" id="2_ylmtb"]
+[ext_resource type="Texture2D" uid="uid://cef0tny10j0a0" path="res://Sprites/Player/player_prototype_1_front.png" id="3_0ft63"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tuusc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = -146.0
+offset_right = 140.0
+offset_bottom = -80.0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Lv1PresentDrillAreaFull2Background" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(377, -242)
+texture = ExtResource("2_ylmtb")
+
+[node name="PlayerPrototype1Front" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(706, -88)
+scale = Vector2(0.12155963, 0.11399475)
+texture = ExtResource("3_0ft63")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
