@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxbctjb8y11q6"]
+
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="1_y13w5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgqjh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_y13w5")]
+action_name = "WASD: Move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(3.46, 3.46)
+shape = SubResource("CircleShape2D_wgqjh")

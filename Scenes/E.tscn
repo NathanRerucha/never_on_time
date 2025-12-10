@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bblcp2070mtvv"]
+
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="1_m6xi2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxpof"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_m6xi2")]
+action_name = "E: Change Time"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(2.77, 2.77)
+shape = SubResource("CircleShape2D_wxpof")

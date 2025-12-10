@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6o1knc5frf5y"]
+
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="1_vvpx4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0fei"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_vvpx4")]
+action_name = "SHIFT: Sprint"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+scale = Vector2(3.22, 3.22)
+shape = SubResource("CircleShape2D_l0fei")

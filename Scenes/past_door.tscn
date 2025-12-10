@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://j2x1p5cl2ugs"]
+
+[ext_resource type="Script" uid="uid://blsajh3sedpbd" path="res://Scripts/static_body_2d.gd" id="1_tv1gl"]
+[ext_resource type="Texture2D" uid="uid://dlu516v6qcl55" path="res://Sprites/LV1Past_DoorClosed-sprite.png" id="2_hbq31"]
+[ext_resource type="Texture2D" uid="uid://qt4l1ydkj23i" path="res://Sprites/LV1Past_DoorOpen-sprite.png" id="3_ilh8g"]
+[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="4_ww7gr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq1uj"]
+size = Vector2(32, 486)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl5xa"]
+size = Vector2(109, 511)
+
+[node name="past_door" type="StaticBody2D"]
+script = ExtResource("1_tv1gl")
+
+[node name="past_closed" type="Sprite2D" parent="."]
+position = Vector2(102.36, 0)
+texture = ExtResource("2_hbq31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_cq1uj")
+
+[node name="past_open" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(101.06, 0)
+texture = ExtResource("3_ilh8g")
+
+[node name="InteractionArea" parent="." instance=ExtResource("4_ww7gr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(44.5, 8.5)
+shape = SubResource("RectangleShape2D_yl5xa")
