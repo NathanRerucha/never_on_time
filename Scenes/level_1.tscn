@@ -1,6 +1,6 @@
-[gd_scene load_steps=39 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=38 format=4 uid="uid://ds75lvm8eqf4l"]
 
-[ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scenes/level_1.gd" id="1_nwpk5"]
+[ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://3l6ppx1mm6h0" path="res://Scenes/walkway_past.tscn" id="3_xfk5q"]
@@ -33,7 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/Past_Generator.tscn" id="32_x5u8r"]
 [ext_resource type="PackedScene" uid="uid://cpa7t2v00ux06" path="res://Scenes/checkpoint.tscn" id="33_lk3dh"]
 [ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="33_nwpk5"]
-[ext_resource type="PackedScene" uid="uid://de63g3xci0oat" path="res://Scenes/kill_zone.tscn" id="34_lk3dh"]
 [ext_resource type="PackedScene" uid="uid://d3pnh831j5woh" path="res://Scenes/Elevator.tscn" id="35_ts4pv"]
 [ext_resource type="PackedScene" uid="uid://isb1ou86dcn" path="res://Scenes/switch.tscn" id="36_bd6hb"]
 
@@ -48,7 +47,6 @@ script = ExtResource("1_nwpk5")
 metadata/_edit_horizontal_guides_ = [72.0]
 
 [node name="Player" parent="." instance=ExtResource("3_6444e")]
-position = Vector2(106.155396, -245.55457)
 position = Vector2(106.31143, -245.55457)
 floor_stop_on_slope = false
 
@@ -1812,13 +1810,6 @@ scale = Vector2(0.31936997, 0.31936997)
 [node name="GeneratorPresent" parent="." instance=ExtResource("30_xub2v")]
 position = Vector2(3016, 572)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("31_xub2v")]
-position = Vector2(422.00003, 4193.8516)
-scale = Vector2(0.29581657, 0.29581657)
-
-position = Vector2(3002, 3455.8516)
-scale = Vector2(0.31228295, 0.31228295)
-
 [node name="Conveyor Area2D2" parent="." instance=ExtResource("33_nwpk5")]
 position = Vector2(-35.779568, 1074.9961)
 scale = Vector2(0.42384207, 0.6184056)
@@ -1851,12 +1842,6 @@ position = Vector2(2559.3909, 3017.9934)
 [node name="Checkpoint8" parent="." instance=ExtResource("33_lk3dh")]
 position = Vector2(1124.4421, 4203.9526)
 
-[node name="KillZone" parent="." instance=ExtResource("34_lk3dh")]
-position = Vector2(382.6, -18.902344)
-rotation = 1.5707964
-scale = Vector2(0.43494126, -0.45544553)
-
-<<<<<<< Updated upstream
 [node name="Path2D" parent="." instance=ExtResource("35_ts4pv")]
 position = Vector2(1251.41, 3391.025)
 scale = Vector2(0.6, 0.57)
@@ -1865,7 +1850,9 @@ loop = false
 [node name="Switch" parent="." instance=ExtResource("36_bd6hb")]
 position = Vector2(1413, 3513.5)
 scale = Vector2(0.234375, 0.2265625)
-=======
->>>>>>> Stashed changes
+
+[node name="LV1generator_present" parent="." instance=ExtResource("32_x5u8r")]
+position = Vector2(2975, 3467.8516)
+scale = Vector2(0.27495614, 0.27495614)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
