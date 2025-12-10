@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://brf0w0pt7p2vp"]
+
+[ext_resource type="Texture2D" uid="uid://cmoysq7jxn1kr" path="res://Sprites/Objects/LV1Present_Floating_Platform-sprite.png" id="1_efuxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0dbn"]
+size = Vector2(193, 42)
+
+[node name="Present_Floating_Plat" type="StaticBody2D"]
+
+[node name="Lv1PresentFloatingPlatformSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.29894966, 0.29942694)
+texture = ExtResource("1_efuxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 4)
+shape = SubResource("RectangleShape2D_o0dbn")

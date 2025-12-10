@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://yc6ro4qovq8o"]
+
+[ext_resource type="Texture2D" uid="uid://q1vv42aq38ei" path="res://Sprites/Objects/LV1DeskButton_Top-sprite.png" id="1_e6kfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmtph"]
+size = Vector2(1024, 417)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-58, 83.5)
+shape = SubResource("RectangleShape2D_hmtph")
+
+[node name="Lv1DeskButtonTopSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_e6kfj")

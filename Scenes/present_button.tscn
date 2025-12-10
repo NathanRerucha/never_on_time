@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dton6503g06v6"]
+
+[ext_resource type="Texture2D" uid="uid://dlcwkgt8kt4rj" path="res://Sprites/Objects/LV1Present_DeskButton_Top-sprite.png" id="1_2j4n0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ieqa0"]
+size = Vector2(1031, 426)
+
+[node name="Present_Button" type="StaticBody2D"]
+
+[node name="Lv1PresentDeskButtonTopSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_2j4n0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-58.5, 82)
+shape = SubResource("RectangleShape2D_ieqa0")
