@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5kfgavrc5wre"]
 
-[ext_resource type="Script" path="res://Scripts/box.gd" id="1_ego7h"]
+[ext_resource type="Script" uid="uid://bolq4kawb6soe" path="res://Scripts/box.gd" id="1_ego7h"]
 [ext_resource type="Texture2D" uid="uid://cqohxa0okoaj" path="res://Sprites/Objects/LV1Pushable_Box-sprite.png" id="2_ego7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ego7h"]
@@ -12,7 +12,7 @@ size = Vector2(16, 19)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6vpp"]
 size = Vector2(16, 19)
 
-[node name="Box" type="CharacterBody2D"]
+[node name="Box" type="CharacterBody2D" groups=["Box"]]
 script = ExtResource("1_ego7h")
 
 [node name="Lv1PushableBoxSprite" type="Sprite2D" parent="."]

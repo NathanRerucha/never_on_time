@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var braking : float = 20
 @export var gravity : float = 700
 @export var jump_force : float = 230
+@export var can_shift : bool = false
 
 var conveyor_velocity: float = 0.0
 var base_speed: float
@@ -17,7 +18,6 @@ var last_checkpoint : Vector2
 var current_time : int = 0
 var spawn_point : Vector2 
 var is_shifting : bool = false
-var can_shift : bool = false
 
 # Moved timer variables with rest for consistency
 var freeze_timer = Timer.new()
