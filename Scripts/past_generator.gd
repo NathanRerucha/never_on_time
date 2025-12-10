@@ -13,4 +13,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Box"):
 		emit_signal("power_on")
 		sprite.texture = gen_on_tex
+		Globals.power_on = true
 		

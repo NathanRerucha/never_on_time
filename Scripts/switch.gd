@@ -12,4 +12,5 @@ func _process(delta: float) -> void:
 	pass
 
 func on_interact():
-	Globals.go_down = true
+	if Globals.power_on == true:
+		Globals.go_down = true
