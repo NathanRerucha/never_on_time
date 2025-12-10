@@ -2717,7 +2717,7 @@ scale = Vector2(0.99999523, 1.0000229)
 skew = -0.006057024
 
 [node name="walkway_past12" parent="." instance=ExtResource("3_xfk5q")]
-z_index = 8
+z_index = 5
 position = Vector2(3391, 3476.9998)
 scale = Vector2(-0.7598733, 0.69506544)
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://dv0g1jn3n7ini"]
+[gd_scene load_steps=38 format=3 uid="uid://dv0g1jn3n7ini"]
 
 [ext_resource type="Script" uid="uid://dm4f85m18rkkw" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cef0tny10j0a0" path="res://Sprites/Player/player_prototype_1_front.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://bafldpo5p0eni" path="res://Sprites/Player/Cropped_Player_Sprite_Sheet-Texture.png" id="4_fkybt"]
 [ext_resource type="Texture2D" uid="uid://cgh5qfiovfdf4" path="res://Sprites/Backgrounds/timeShiftPlaceholder.png" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://qsq5aje1tkn6" path="res://Sprites/Player/image.jpg" id="4_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 6.0
@@ -436,9 +437,9 @@ one_shot = true
 [node name="TimeShiftSprite" type="Sprite2D" parent="."]
 visible = false
 show_behind_parent = true
-z_index = 1
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_vgqql")
+z_index = 12
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_x3wgy")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 3
