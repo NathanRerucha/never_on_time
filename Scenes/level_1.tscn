@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=49 format=4 uid="uid://ds75lvm8eqf4l"]
+=======
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -21,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://c3vpq3hymcebe" path="res://Sprites/Elevator/LV1Past_Elevator_Light_Off-sprite (1).png" id="19_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://dbqnwjyser8mu" path="res://Scenes/grass_floor.tscn" id="20_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
-[ext_resource type="PackedScene" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
 [ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
 [ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
@@ -2192,7 +2194,6 @@ position = Vector2(2665.206, 3520.8364)
 scale = Vector2(0.68942535, 0.60076225)
 
 [node name="KillZone5" parent="KillZone" instance=ExtResource("36_7sml1")]
-position = Vector2(-3110.249, -544.2754)
 scale = Vector2(18.944519, -0.00018920192)
 
 [node name="KillZone4" parent="KillZone" instance=ExtResource("36_7sml1")]
@@ -2499,6 +2500,7 @@ position = Vector2(-4683.7837, -1090.7439)
 rotation = 6.2847733
 scale = Vector2(0.39784434, 1.356602)
 
+<<<<<<< Updated upstream
 [node name="Present_Dirt_Wall" parent="." instance=ExtResource("41_bvyvf")]
 position = Vector2(-370, 969)
 scale = Vector2(-0.17935582, 0.16607039)
@@ -2810,5 +2812,7 @@ position = Vector2(24.90625, 5244.7813)
 rotation = -0.0015548023
 scale = Vector2(0.99999523, 1.0000229)
 skew = -0.006057024
+=======
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
