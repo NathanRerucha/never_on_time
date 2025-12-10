@@ -185,13 +185,13 @@ func _on_animation_finished(anim_name):
 		#_manage_animation()
 
 func death():
-	if last_checkpoint.y > -2741:
+	if last_checkpoint_past.y > -2741:
 		print("died present")
 		current_time = 0
 	else:
 		print("died past")
 		current_time = 1
-	global_position = last_checkpoint
+	global_position = last_checkpoint_past
 	print("Player died")
 
 
