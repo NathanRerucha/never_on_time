@@ -1730,7 +1730,7 @@ position = Vector2(8050, 19914.285)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="ladder_5" parent="ladder_1" instance=ExtResource("26_pm77i")]
-position = Vector2(549.99976, 171.42865)
+position = Vector2(550.00006, 157.14294)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="LadderTAPR" parent="ladder_1" instance=ExtResource("27_xub2v")]
@@ -1844,7 +1844,7 @@ position = Vector2(2559.3909, 3017.9934)
 [node name="Checkpoint8" parent="." instance=ExtResource("33_lk3dh")]
 position = Vector2(1124.4421, 4203.9526)
 
-[node name="Path2D" parent="." instance=ExtResource("35_ts4pv")]
+[node name="Elevator" parent="." instance=ExtResource("35_ts4pv")]
 position = Vector2(1251.41, 3391.025)
 scale = Vector2(0.6, 0.57)
 loop = false

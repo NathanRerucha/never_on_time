@@ -5,7 +5,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_cm5jo"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -0.6833496, 1389.4297)
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -0.6833496, 1273.6406)
 }
 point_count = 2
 
@@ -71,7 +71,7 @@ curve = SubResource("Curve2D_cm5jo")
 script = ExtResource("1_n3ex4")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(-0.6833496, 1389.4297)
+position = Vector2(-1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 position = Vector2(0, -9.094947e-13)
