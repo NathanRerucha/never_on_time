@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://djkgp1cjbx7gb"]
+
+[ext_resource type="Texture2D" uid="uid://dmutwuisc7k7b" path="res://Sprites/Objects/LV1Present_DoorClosed-sprite.png" id="1_cbwdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i0hu"]
+size = Vector2(30, 485)
+
+[node name="Past_Door_Locked" type="StaticBody2D"]
+
+[node name="Lv1PresentDoorClosedSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_cbwdf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-104, -0.5)
+shape = SubResource("RectangleShape2D_2i0hu")

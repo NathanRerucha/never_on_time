@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyksbsb0247uh"]
+
+[ext_resource type="Texture2D" uid="uid://cwvyxmolbmqta" path="res://Sprites/Objects/Robot Core.png" id="1_4idq7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jyf45"]
+radius = 7.0
+
+[node name="END_GOAL_CORE" type="StaticBody2D"]
+
+[node name="RobotCore" type="Sprite2D" parent="."]
+texture = ExtResource("1_4idq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_jyf45")
