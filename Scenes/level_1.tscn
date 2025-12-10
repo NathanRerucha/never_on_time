@@ -49,6 +49,7 @@ metadata/_edit_horizontal_guides_ = [72.0]
 
 [node name="Player" parent="." instance=ExtResource("3_6444e")]
 position = Vector2(106.155396, -245.55457)
+position = Vector2(106.31143, -245.55457)
 floor_stop_on_slope = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -1815,7 +1816,6 @@ position = Vector2(3016, 572)
 position = Vector2(422.00003, 4193.8516)
 scale = Vector2(0.29581657, 0.29581657)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("32_x5u8r")]
 position = Vector2(3002, 3455.8516)
 scale = Vector2(0.31228295, 0.31228295)
 
@@ -1856,6 +1856,7 @@ position = Vector2(382.6, -18.902344)
 rotation = 1.5707964
 scale = Vector2(0.43494126, -0.45544553)
 
+<<<<<<< Updated upstream
 [node name="Path2D" parent="." instance=ExtResource("35_ts4pv")]
 position = Vector2(1251.41, 3391.025)
 scale = Vector2(0.6, 0.57)
@@ -1864,5 +1865,7 @@ loop = false
 [node name="Switch" parent="." instance=ExtResource("36_bd6hb")]
 position = Vector2(1413, 3513.5)
 scale = Vector2(0.234375, 0.2265625)
+=======
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
