@@ -35,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://de63g3xci0oat" path="res://Scenes/kill_zone.tscn" id="36_7sml1"]
 [ext_resource type="PackedScene" uid="uid://isb1ou86dcn" path="res://Scenes/switch.tscn" id="36_bd6hb"]
 [ext_resource type="PackedScene" uid="uid://brf0w0pt7p2vp" path="res://Scenes/present_floating_plat.tscn" id="37_bd6hb"]
-[ext_resource type="PackedScene" uid="uid://cgcum7yrw3c7p" path="res://dead_robot.tscn" id="37_vyomg"]
 [ext_resource type="PackedScene" uid="uid://yc6ro4qovq8o" path="res://Scenes/Past_Button.tscn" id="37_x68w5"]
 [ext_resource type="PackedScene" uid="uid://dton6503g06v6" path="res://Scenes/present_button.tscn" id="38_vyomg"]
 [ext_resource type="Texture2D" uid="uid://f2qwkia1yhpe" path="res://Sprites/Objects/LV1Past_Key_Box-sprite (1).png" id="38_x68w5"]
@@ -49,6 +48,8 @@
 [ext_resource type="PackedScene" uid="uid://o2t2kfct26eu" path="res://Scenes/SPACE.tscn" id="47_5ceot"]
 [ext_resource type="PackedScene" uid="uid://b6o1knc5frf5y" path="res://Scenes/SHIFT.tscn" id="48_lcsmq"]
 [ext_resource type="PackedScene" uid="uid://bblcp2070mtvv" path="res://Scenes/E.tscn" id="49_hv30f"]
+[ext_resource type="PackedScene" uid="uid://dmre7h3vtpl7o" path="res://Scenes/dead_robot_level_exit.tscn" id="44_wlonh"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -67,7 +68,7 @@ script = ExtResource("1_nwpk5")
 metadata/_edit_horizontal_guides_ = [72.0]
 
 [node name="Player" parent="." instance=ExtResource("3_6444e")]
-position = Vector2(106.31143, -221.78607)
+position = Vector2(76, -222)
 floor_stop_on_slope = false
 jump_force = 250.0
 can_shift = true
@@ -296,7 +297,6 @@ position = Vector2(168, 0)
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -308,7 +308,12 @@ scale = Vector2(1.5222386, 1.5319158)
 texture = ExtResource("10_uy8f0")
 
 [node name="Lv1PastWallSprite2" type="Sprite2D" parent="Present_Backgrounds"]
-position = Vector2(1263.3933, 18861.176)
+position = Vector2(1259.411, 18829.28)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite117" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(-26.88078, 18829.277)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
@@ -349,6 +354,11 @@ texture = ExtResource("8_chwpn")
 
 [node name="Lv1PastWallSprite30" type="Sprite2D" parent="Present_Backgrounds"]
 position = Vector2(5194.697, 18897.336)
+scale = Vector2(0.97312236, 1.0531917)
+texture = ExtResource("8_chwpn")
+
+[node name="Lv1PastWallSprite118" type="Sprite2D" parent="Present_Backgrounds"]
+position = Vector2(5189.968, 18572.875)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
 
@@ -1021,7 +1031,7 @@ texture = ExtResource("11_8yhm2")
 [node name="Icon" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 z_index = -1
-position = Vector2(4313.856, 12925.405)
+position = Vector2(2633.3105, 12346.848)
 scale = Vector2(308.4748, 302.35635)
 texture = ExtResource("12_dlmop")
 
@@ -1167,6 +1177,12 @@ texture = ExtResource("12_dlmop")
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 position = Vector2(3488.0205, 10427.107)
 scale = Vector2(27.775183, 10.99169)
+texture = ExtResource("12_dlmop")
+
+[node name="Icon89" type="Sprite2D" parent="Present_Backgrounds"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(-1695.4758, 9016.884)
+scale = Vector2(10.204713, 29.122843)
 texture = ExtResource("12_dlmop")
 
 [node name="Icon50" type="Sprite2D" parent="Present_Backgrounds"]
@@ -1351,8 +1367,8 @@ texture = ExtResource("12_dlmop")
 
 [node name="Icon85" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(7351.9463, 18620.23)
-scale = Vector2(24.08728, 4.4533362)
+position = Vector2(7135.335, 18472.793)
+scale = Vector2(27.471834, 6.7570457)
 texture = ExtResource("12_dlmop")
 
 [node name="Icon86" type="Sprite2D" parent="Present_Backgrounds"]
@@ -1381,8 +1397,14 @@ texture = ExtResource("12_dlmop")
 
 [node name="Icon84" type="Sprite2D" parent="Present_Backgrounds"]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
-position = Vector2(817.37256, 18880.898)
-scale = Vector2(11.542528, 6.1559396)
+position = Vector2(-1090.1621, 16705.969)
+scale = Vector2(11.542528, 24.753185)
+texture = ExtResource("12_dlmop")
+
+[node name="Icon90" type="Sprite2D" parent="Present_Backgrounds"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(774.5625, 17976.182)
+scale = Vector2(18.77605, 4.750137)
 texture = ExtResource("12_dlmop")
 
 [node name="Icon76" type="Sprite2D" parent="Present_Backgrounds"]
@@ -1413,6 +1435,18 @@ texture = ExtResource("12_dlmop")
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 position = Vector2(-162.27989, 999.31915)
 scale = Vector2(32.86101, 10.468026)
+texture = ExtResource("12_dlmop")
+
+[node name="Icon87" type="Sprite2D" parent="Present_Backgrounds"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(277.76755, -723.1915)
+scale = Vector2(25.854017, 7.293552)
+texture = ExtResource("12_dlmop")
+
+[node name="Icon88" type="Sprite2D" parent="Present_Backgrounds"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(-1202.6628, -2626.5002)
+scale = Vector2(12.211432, 22.753822)
 texture = ExtResource("12_dlmop")
 
 [node name="Icon27" type="Sprite2D" parent="Present_Backgrounds"]
@@ -2072,7 +2106,7 @@ rotation = -1.0340055
 scale = Vector2(0.42384207, 0.6184056)
 
 [node name="Checkpoint" parent="." instance=ExtResource("33_lk3dh")]
-position = Vector2(106.31143, -282.75867)
+position = Vector2(126, -284)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("33_lk3dh")]
 position = Vector2(1190.175, -48.051605)
@@ -2149,9 +2183,6 @@ scale = Vector2(0.5927637, 0.5927637)
 
 [node name="Present_Floating_Plat2" parent="Present_Floating_Plat" instance=ExtResource("37_bd6hb")]
 position = Vector2(214.25063, -219.31152)
-
-[node name="Dead_Robot" parent="." instance=ExtResource("37_vyomg")]
-position = Vector2(-249, 1012)
 
 [node name="Lv1PastKeyBoxSprite(1)" type="Sprite2D" parent="."]
 position = Vector2(505.00003, 3778.9995)
@@ -2862,5 +2893,8 @@ position = Vector2(203, -252)
 
 [node name="Node2D4" parent="." instance=ExtResource("49_hv30f")]
 position = Vector2(3200, 639)
+
+[node name="DeadRobot" parent="." instance=ExtResource("44_wlonh")]
+position = Vector2(-262, 1013)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]

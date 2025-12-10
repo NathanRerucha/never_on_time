@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmre7h3vtpl7o"]
+
+[ext_resource type="Script" uid="uid://b7yg52rdil4yd" path="res://dead_robot_end_level.gd" id="1_brsmr"]
+[ext_resource type="PackedScene" uid="uid://dddsm6r3gd0sr" path="res://Scenes/end_screen.tscn" id="2_nw533"]
+[ext_resource type="Texture2D" uid="uid://cpn65iw3au1ot" path="res://Sprites/Objects/Dead Robot.png" id="2_qftgh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw533"]
+size = Vector2(34, 30)
+
+[node name="Root" type="Node2D"]
+
+[node name="Dead Robot End Level" type="Area2D" parent="."]
+script = ExtResource("1_brsmr")
+target_level = ExtResource("2_nw533")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dead Robot End Level"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_nw533")
+
+[node name="DeadRobot" type="Sprite2D" parent="Dead Robot End Level"]
+texture = ExtResource("2_qftgh")
+
+[connection signal="body_entered" from="Dead Robot End Level" to="Dead Robot End Level" method="_on_body_entered"]
