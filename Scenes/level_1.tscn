@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=56 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bm18kyqx0v5jc" path="res://Scenes/LV1Present_Closed_Door.tscn" id="31_xub2v"]
 [ext_resource type="PackedScene" uid="uid://cpa7t2v00ux06" path="res://Scenes/checkpoint.tscn" id="33_lk3dh"]
 [ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="33_nwpk5"]
+[ext_resource type="Texture2D" uid="uid://dswhwiqftsey6" path="res://Sprites/Objects/caution_sign.png" id="34_lcsmq"]
 [ext_resource type="PackedScene" uid="uid://d3pnh831j5woh" path="res://Scenes/Elevator.tscn" id="35_ts4pv"]
 [ext_resource type="PackedScene" uid="uid://de63g3xci0oat" path="res://Scenes/kill_zone.tscn" id="36_7sml1"]
 [ext_resource type="PackedScene" uid="uid://isb1ou86dcn" path="res://Scenes/switch.tscn" id="36_bd6hb"]
@@ -69,7 +70,9 @@ metadata/_edit_horizontal_guides_ = [72.0]
 
 [node name="Player" parent="." instance=ExtResource("3_6444e")]
 position = Vector2(76, -222)
-floor_stop_on_slope = false
+floor_constant_speed = true
+floor_block_on_wall = false
+floor_snap_length = 4.0
 move_speed = 120.0
 sprint_speed = 200.0
 acceleration = 50.0
@@ -1729,18 +1732,18 @@ position = Vector2(1755, 102)
 position = Vector2(1953, 102)
 
 [node name="MetalFloor62" parent="MetalFloor" instance=ExtResource("21_imks0")]
-position = Vector2(2124, 152.00006)
-rotation = 0.576843
+position = Vector2(2126, 148)
+rotation = 0.5198323
 
 [node name="MetalFloor63" parent="MetalFloor/MetalFloor62" instance=ExtResource("21_imks0")]
-position = Vector2(70.17749, -0.32629395)
+position = Vector2(88.684784, -0.060841084)
 
 [node name="MetalFloor63" parent="MetalFloor" instance=ExtResource("21_imks0")]
 position = Vector2(1302, 40)
 rotation = 0.3474272
 
 [node name="MetalFloor63" parent="MetalFloor/MetalFloor63" instance=ExtResource("21_imks0")]
-position = Vector2(70.17749, -0.32629395)
+position = Vector2(85.094086, 0.028904915)
 
 [node name="MetalFloor5" parent="MetalFloor" instance=ExtResource("21_imks0")]
 position = Vector2(820, 1173)
@@ -2410,6 +2413,26 @@ scale = Vector2(0.39784434, 1.356602)
 position = Vector2(-4683.7837, -1090.7439)
 rotation = 6.2847733
 scale = Vector2(0.39784434, 1.356602)
+
+[node name="CautionSign" type="Sprite2D" parent="PRESENT_Wall_Metal"]
+position = Vector2(1579.9742, 6384.0605)
+scale = Vector2(9.166043, 9.166043)
+texture = ExtResource("34_lcsmq")
+
+[node name="CautionSign2" type="Sprite2D" parent="PRESENT_Wall_Metal"]
+position = Vector2(1579.9744, 5493.821)
+scale = Vector2(9.166043, 9.166043)
+texture = ExtResource("34_lcsmq")
+
+[node name="CautionSign3" type="Sprite2D" parent="PRESENT_Wall_Metal"]
+position = Vector2(1579.9742, 5060.7314)
+scale = Vector2(9.166043, 9.166043)
+texture = ExtResource("34_lcsmq")
+
+[node name="CautionSign4" type="Sprite2D" parent="PRESENT_Wall_Metal"]
+position = Vector2(1579.9752, 5918.89)
+scale = Vector2(9.166043, 9.166043)
+texture = ExtResource("34_lcsmq")
 
 [node name="Present_Dirt_Wall" parent="." instance=ExtResource("41_bvyvf")]
 position = Vector2(-370, 969)
