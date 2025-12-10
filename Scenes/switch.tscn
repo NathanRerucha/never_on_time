@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://isb1ou86dcn"]
+[gd_scene load_steps=6 format=3 uid="uid://isb1ou86dcn"]
 
 [ext_resource type="Texture2D" uid="uid://bm4j0gp13xyht" path="res://icon.svg" id="1_v71cw"]
 [ext_resource type="Script" uid="uid://4a2e14cj6g73" path="res://Scripts/switch.gd" id="2_og4gy"]
 [ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="3_1xkr6"]
+[ext_resource type="Texture2D" uid="uid://bwvbtmedmavxp" path="res://Sprites/Objects/Button_elevator_past.png" id="3_og4gy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jg1gy"]
 
@@ -10,9 +11,14 @@
 texture = ExtResource("1_v71cw")
 script = ExtResource("2_og4gy")
 
+[node name="ButtonElevatorPast" type="Sprite2D" parent="."]
+position = Vector2(114, 66)
+texture = ExtResource("3_og4gy")
+
 [node name="InteractionArea" parent="." instance=ExtResource("3_1xkr6")]
 action_name = "F: Turn on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-1.0000001, 0)
 scale = Vector2(11.095, 11.095)
 shape = SubResource("CircleShape2D_jg1gy")
