@@ -45,7 +45,7 @@ scale = Vector2(0.12155963, 0.11399475)
 texture = ExtResource("3_0ft63")
 
 [node name="NotLogo2" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(298.99997, -283)
+position = Vector2(160.00002, -311)
 scale = Vector2(1.83156, 1.83156)
 texture = ExtResource("4_vrhsl")
 
