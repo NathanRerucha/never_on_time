@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://budt3nt5g7ma5"]
+
+[ext_resource type="Texture2D" uid="uid://bce4oiivo3r8s" path="res://Sprites/Walls/LV1Past_Wallside1-sprite.png" id="1_cbcub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nbs6"]
+size = Vector2(626, 1032)
+
+[node name="Past_Metal_Wall" type="StaticBody2D"]
+
+[node name="Lv1PastWallside1Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_cbcub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_6nbs6")
