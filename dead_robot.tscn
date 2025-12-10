@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgcum7yrw3c7p"]
+
+[ext_resource type="Texture2D" uid="uid://cpn65iw3au1ot" path="res://Sprites/Objects/Dead Robot.png" id="1_bbfy5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7r4n"]
+size = Vector2(32, 21)
+
+[node name="Dead_Robot" type="StaticBody2D"]
+
+[node name="DeadRobot" type="Sprite2D" parent="."]
+texture = ExtResource("1_bbfy5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_n7r4n")
