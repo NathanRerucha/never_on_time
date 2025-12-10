@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dusxbmdqex3cx"]
+
+[ext_resource type="Script" uid="uid://da4bu1r357trf" path="res://splash_screen.gd" id="1_6b1b0"]
+[ext_resource type="Texture2D" uid="uid://ese6mjmth2mw" path="res://Scenes/Here kid.jpg" id="2_wwf30"]
+
+[node name="Splash Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6b1b0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 490.0
+offset_right = 647.0
+offset_bottom = 530.0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Enter Facility"
+
+[node name="HereKid" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(36.999985, -164.49998)
+scale = Vector2(0.6511112, 0.5575)
+texture = ExtResource("2_wwf30")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

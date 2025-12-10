@@ -20,15 +20,15 @@
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
 [ext_resource type="PackedScene" uid="uid://dbqnwjyser8mu" path="res://Scenes/grass_floor.tscn" id="20_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
-[ext_resource type="PackedScene" uid="uid://cj5y327umt8rf" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
+[ext_resource type="PackedScene" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
 [ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
 [ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
+[ext_resource type="PackedScene" path="res://Scenes/LVgenerator_past.tscn" id="25_wlonh"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
 [ext_resource type="PackedScene" uid="uid://br7tol1ag7s1j" path="res://Scenes/ladder_3.tscn" id="27_xub2v"]
 [ext_resource type="PackedScene" uid="uid://bpdomfnesvsxj" path="res://Scenes/LV1past_metal_floor.tscn" id="30_pm77i"]
 [ext_resource type="PackedScene" uid="uid://wxlwvt114mv8" path="res://Scenes/LV1generator_present.tscn" id="30_xub2v"]
 [ext_resource type="PackedScene" uid="uid://bm18kyqx0v5jc" path="res://Scenes/LV1Present_Closed_Door.tscn" id="31_xub2v"]
-[ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/LVgenerator_past.tscn" id="32_x5u8r"]
 [ext_resource type="PackedScene" uid="uid://cpa7t2v00ux06" path="res://Scenes/checkpoint.tscn" id="33_lk3dh"]
 [ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="33_nwpk5"]
 [ext_resource type="PackedScene" uid="uid://d3pnh831j5woh" path="res://Scenes/Elevator.tscn" id="35_ts4pv"]
@@ -1883,6 +1883,10 @@ position = Vector2(624.959, -440.22726)
 [node name="PastMetalFloor4" parent="PastMetalFloor/PastMetalFloor5" instance=ExtResource("30_pm77i")]
 position = Vector2(400.27115, -440.22726)
 
+[node name="LV1generator_present" parent="PastMetalFloor/PastMetalFloor5" instance=ExtResource("25_wlonh")]
+position = Vector2(-297.60004, 333.5324)
+scale = Vector2(0.40411437, 0.40411437)
+
 [node name="PastMetalFloor6" parent="PastMetalFloor" instance=ExtResource("30_pm77i")]
 position = Vector2(772.27124, 871.96704)
 
@@ -2103,9 +2107,19 @@ loop = false
 position = Vector2(1413, 3513.5)
 scale = Vector2(0.234375, 0.2265625)
 
-[node name="LV1generator_present" parent="." instance=ExtResource("32_x5u8r")]
+[node name="LV1generator_present" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(2975, 3467.8516)
 scale = Vector2(0.27495614, 0.27495614)
+script = null
 
 [node name="KillZone" parent="." instance=ExtResource("36_7sml1")]
 position = Vector2(2665.206, 3520.8364)
@@ -2137,7 +2151,7 @@ scale = Vector2(0.07395494, 0.07395494)
 
 [node name="Conveyor Area2D" parent="." instance=ExtResource("33_nwpk5")]
 position = Vector2(-13, 3947)
-scale = Vector2(0.55584717, 0.55584717)
+scale = Vector2(-0.6041533, 0.55846626)
 
 [node name="Conveyor Area2D4" parent="." instance=ExtResource("33_nwpk5")]
 position = Vector2(96.00001, 4072.0002)
@@ -2838,5 +2852,13 @@ scale = Vector2(0.46639094, 0.46639094)
 [node name="Present_Floating_Plat3" parent="." instance=ExtResource("37_bd6hb")]
 position = Vector2(3538.6643, 556.23456)
 scale = Vector2(0.46639094, 0.46639094)
+
+[node name="BasicBox3" parent="." instance=ExtResource("14_sda17")]
+position = Vector2(192, 4037.9998)
+scale = Vector2(0.38748598, 0.38748598)
+
+[node name="BasicBox5" parent="." instance=ExtResource("14_sda17")]
+position = Vector2(-107, 3913.0002)
+scale = Vector2(0.38748598, 0.38748598)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
