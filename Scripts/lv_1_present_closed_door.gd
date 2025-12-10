@@ -6,13 +6,18 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	interaction_area.interact = Callable(self, "on_interact")
-	pass # Replace with function body.
+	if Globals.door_open == true:
+		collision_layer = 0
+		closed.visible = false
+		open.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Globals.door_open == true:
+		collision_layer = 0
+		closed.visible = false
+		open.visible = true
 
 func on_interact():
 	if Globals.key_taken == true:

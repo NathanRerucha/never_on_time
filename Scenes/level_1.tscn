@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=54 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -20,10 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
 [ext_resource type="PackedScene" uid="uid://dbqnwjyser8mu" path="res://Scenes/grass_floor.tscn" id="20_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
-[ext_resource type="PackedScene" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
+[ext_resource type="PackedScene" uid="uid://cj5y327umt8rf" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
 [ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
 [ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
-[ext_resource type="PackedScene" path="res://Scenes/LVgenerator_past.tscn" id="25_wlonh"]
+[ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/LVgenerator_past.tscn" id="25_wlonh"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
 [ext_resource type="PackedScene" uid="uid://br7tol1ag7s1j" path="res://Scenes/ladder_3.tscn" id="27_xub2v"]
 [ext_resource type="PackedScene" uid="uid://bpdomfnesvsxj" path="res://Scenes/LV1past_metal_floor.tscn" id="30_pm77i"]
@@ -44,6 +44,11 @@
 [ext_resource type="PackedScene" uid="uid://blec3c44ncugg" path="res://Scenes/present_dirt_wall.tscn" id="41_bvyvf"]
 [ext_resource type="PackedScene" uid="uid://budt3nt5g7ma5" path="res://Scenes/past_metal_wall.tscn" id="42_0wb0u"]
 [ext_resource type="PackedScene" uid="uid://142j74l0udp2" path="res://Scenes/past_dirt_floor.tscn" id="43_wlonh"]
+[ext_resource type="PackedScene" uid="uid://j2x1p5cl2ugs" path="res://Scenes/past_door.tscn" id="45_s764c"]
+[ext_resource type="PackedScene" uid="uid://dxbctjb8y11q6" path="res://Scenes/WASD.tscn" id="46_g6dp3"]
+[ext_resource type="PackedScene" uid="uid://o2t2kfct26eu" path="res://Scenes/SPACE.tscn" id="47_5ceot"]
+[ext_resource type="PackedScene" uid="uid://b6o1knc5frf5y" path="res://Scenes/SHIFT.tscn" id="48_lcsmq"]
+[ext_resource type="PackedScene" uid="uid://bblcp2070mtvv" path="res://Scenes/E.tscn" id="49_hv30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -88,7 +93,7 @@ z_index = 2
 position = Vector2(3475, 3524.8516)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("31_xub2v")]
-position = Vector2(460.00006, 1334.9999)
+position = Vector2(467.00003, 1336)
 scale = Vector2(0.49468562, 0.299644)
 
 [node name="key" parent="." instance=ExtResource("14_nwpk5")]
@@ -2029,7 +2034,6 @@ position = Vector2(-593.71155, -0.00048828125)
 position = Vector2(296.1116, -0.00048828125)
 
 [node name="BasicBox" parent="." instance=ExtResource("14_sda17")]
-visible = false
 position = Vector2(-78, 1358)
 
 [node name="BasicBox2" parent="." instance=ExtResource("14_sda17")]
@@ -2045,10 +2049,6 @@ skew = -1.7404556e-05
 [node name="BasicBox5" parent="BasicBox2/BasicBox3" instance=ExtResource("14_sda17")]
 position = Vector2(-82.35296, -26.803223)
 scale = Vector2(1.030217, 1.5672662)
-
-[node name="StaticBody2D" parent="BasicBox2/BasicBox3" instance=ExtResource("31_xub2v")]
-position = Vector2(642.5588, 3296.1016)
-scale = Vector2(0.34974027, 0.34974027)
 
 [node name="Broken Cart" parent="." instance=ExtResource("13_dlmop")]
 position = Vector2(708.00006, 70.99998)
@@ -2106,20 +2106,6 @@ loop = false
 [node name="Switch" parent="." instance=ExtResource("36_bd6hb")]
 position = Vector2(1413, 3513.5)
 scale = Vector2(0.234375, 0.2265625)
-
-[node name="LV1generator_present" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(2975, 3467.8516)
-scale = Vector2(0.27495614, 0.27495614)
-script = null
 
 [node name="KillZone" parent="." instance=ExtResource("36_7sml1")]
 position = Vector2(2665.206, 3520.8364)
@@ -2860,5 +2846,21 @@ scale = Vector2(0.38748598, 0.38748598)
 [node name="BasicBox5" parent="." instance=ExtResource("14_sda17")]
 position = Vector2(-107, 3913.0002)
 scale = Vector2(0.38748598, 0.38748598)
+
+[node name="past_door" parent="." instance=ExtResource("45_s764c")]
+position = Vector2(470.99997, 4192)
+scale = Vector2(0.3, 0.3)
+
+[node name="Node2D" parent="." instance=ExtResource("46_g6dp3")]
+position = Vector2(79, -252)
+
+[node name="Node2D2" parent="." instance=ExtResource("47_5ceot")]
+position = Vector2(141, -251)
+
+[node name="Node2D3" parent="." instance=ExtResource("48_lcsmq")]
+position = Vector2(203, -252)
+
+[node name="Node2D4" parent="." instance=ExtResource("49_hv30f")]
+position = Vector2(3200, 639)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]

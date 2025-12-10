@@ -20,3 +20,4 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		if not disable_platform:
 			body.is_climbing = false
 			body.on_ladder = false
+			

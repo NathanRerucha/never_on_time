@@ -1,15 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm18kyqx0v5jc"]
+[gd_scene load_steps=5 format=3 uid="uid://bm18kyqx0v5jc"]
 
 [ext_resource type="Script" uid="uid://cixkguoyfp37w" path="res://Scripts/lv_1_present_closed_door.gd" id="1_aeql8"]
 [ext_resource type="Texture2D" uid="uid://dmutwuisc7k7b" path="res://Sprites/Objects/LV1Present_DoorClosed-sprite.png" id="1_diw87"]
-[ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="2_f65d5"]
 [ext_resource type="Texture2D" uid="uid://b8jmdqedpg0ax" path="res://Sprites/LV1Present_DoorOpen-sprite.png" id="4_omvil"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f65d5"]
 size = Vector2(28, 487)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeql8"]
-size = Vector2(90, 487)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_aeql8")
@@ -21,13 +17,6 @@ texture = ExtResource("1_diw87")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -8.5)
 shape = SubResource("RectangleShape2D_f65d5")
-
-[node name="InteractionArea" parent="." instance=ExtResource("2_f65d5")]
-action_name = "F: open (requires key)"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, -8.5)
-shape = SubResource("RectangleShape2D_aeql8")
 
 [node name="Lvl1PresentDoorOpenSprite" type="Sprite2D" parent="."]
 visible = false
