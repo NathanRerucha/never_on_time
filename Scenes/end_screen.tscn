@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dddsm6r3gd0sr"]
+
+[ext_resource type="Script" uid="uid://b0l5ikjxxt8yx" path="res://end_screen.gd" id="1_f2mtv"]
+[ext_resource type="Texture2D" uid="uid://1n83ybmsx42t" path="res://End Screen.jpg" id="2_1gwaw"]
+
+[node name="End_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f2mtv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 542.0
+offset_top = 526.0
+offset_right = 629.0
+offset_bottom = 566.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[node name="EndScreen" type="Sprite2D" parent="VBoxContainer"]
+z_index = -1
+position = Vector2(33.49998, -199)
+scale = Vector2(0.64166665, 0.5450001)
+texture = ExtResource("2_1gwaw")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
