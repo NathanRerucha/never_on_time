@@ -5,7 +5,7 @@ extends Node2D
 var power_is_on : bool = false
 
 func _ready() -> void:
-	player.shift_dist = -2859
+	player.shift_dist = -2858
 	
 func _on_lv_1_generator_past_power_on() -> void:
 	power_is_on = true
