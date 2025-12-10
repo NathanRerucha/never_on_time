@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://batcylner4def"]
+
+[ext_resource type="Texture2D" uid="uid://cg78cgfcuid80" path="res://Sprites/Walls/LV1Present_Wallside1-sprite.png" id="1_glv31"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cevcm"]
+size = Vector2(629, 1036)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Lv1PresentWallside1Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_glv31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -5)
+shape = SubResource("RectangleShape2D_cevcm")
