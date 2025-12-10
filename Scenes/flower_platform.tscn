@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://sojrem40hfnh"]
+
+[ext_resource type="Texture2D" uid="uid://cypcvxn2j3ljb" path="res://Sprites/Objects/LV1FlowerPlatform-sprite.png" id="1_up7uk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ms3gp"]
+size = Vector2(374, 35)
+
+[node name="Flower_Platform" type="StaticBody2D"]
+
+[node name="Lv1FlowerPlatformSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_up7uk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -369.5)
+shape = SubResource("RectangleShape2D_ms3gp")

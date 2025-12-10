@@ -20,10 +20,11 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 94.0
-offset_top = -146.0
-offset_right = 140.0
-offset_bottom = -80.0
+offset_top = -148.0
+offset_right = 239.0
+offset_bottom = -73.0
 grow_vertical = 0
+alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -45,7 +46,7 @@ scale = Vector2(0.12155963, 0.11399475)
 texture = ExtResource("3_0ft63")
 
 [node name="NotLogo2" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(298.99997, -283)
+position = Vector2(204, -318)
 scale = Vector2(1.83156, 1.83156)
 texture = ExtResource("4_vrhsl")
 
