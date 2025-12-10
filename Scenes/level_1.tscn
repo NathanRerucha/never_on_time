@@ -1,5 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://ds75lvm8eqf4l"]
-[gd_scene load_steps=52 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=57 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -44,17 +43,15 @@
 [ext_resource type="PackedScene" uid="uid://blec3c44ncugg" path="res://Scenes/present_dirt_wall.tscn" id="41_bvyvf"]
 [ext_resource type="PackedScene" uid="uid://budt3nt5g7ma5" path="res://Scenes/past_metal_wall.tscn" id="42_0wb0u"]
 [ext_resource type="PackedScene" uid="uid://142j74l0udp2" path="res://Scenes/past_dirt_floor.tscn" id="43_wlonh"]
-[ext_resource type="PackedScene" uid="uid://j2x1p5cl2ugs" path="res://Scenes/past_door.tscn" id="45_s764c"]
-[ext_resource type="PackedScene" uid="uid://dxbctjb8y11q6" path="res://Scenes/WASD.tscn" id="46_g6dp3"]
-[ext_resource type="PackedScene" uid="uid://o2t2kfct26eu" path="res://Scenes/SPACE.tscn" id="47_5ceot"]
-[ext_resource type="PackedScene" uid="uid://b6o1knc5frf5y" path="res://Scenes/SHIFT.tscn" id="48_lcsmq"]
-[ext_resource type="PackedScene" uid="uid://bblcp2070mtvv" path="res://Scenes/E.tscn" id="49_hv30f"]
-[ext_resource type="PackedScene" uid="uid://dmre7h3vtpl7o" path="res://Scenes/dead_robot_level_exit.tscn" id="44_wlonh"]
 [ext_resource type="PackedScene" path="res://Scenes/dead_robot_level_exit.tscn" id="44_wlonh"]
+[ext_resource type="PackedScene" path="res://Scenes/past_door.tscn" id="45_s764c"]
 [ext_resource type="Texture2D" uid="uid://ddswhj1kfp1au" path="res://Sprites/Objects/Elevator_Button_Present.png" id="45_yaxpm"]
 [ext_resource type="Texture2D" uid="uid://cjt2g2oevrfrn" path="res://Sprites/Elevator/Elevator_Sign_Present.png" id="46_8f0cu"]
+[ext_resource type="PackedScene" path="res://Scenes/WASD.tscn" id="46_g6dp3"]
+[ext_resource type="PackedScene" path="res://Scenes/SPACE.tscn" id="47_5ceot"]
 [ext_resource type="Texture2D" uid="uid://dktmnx76l6ulu" path="res://Sprites/Elevator/Elevator_Sign_Past.png" id="47_g6dp3"]
-
+[ext_resource type="PackedScene" path="res://Scenes/SHIFT.tscn" id="48_lcsmq"]
+[ext_resource type="PackedScene" path="res://Scenes/E.tscn" id="49_hv30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -302,7 +299,6 @@ position = Vector2(168, 0)
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -1941,20 +1937,6 @@ position = Vector2(624.959, -440.22726)
 
 [node name="PastMetalFloor4" parent="PastMetalFloor/PastMetalFloor5" instance=ExtResource("30_pm77i")]
 position = Vector2(400.27115, -440.22726)
-
-[node name="LV1generator_present" parent="PastMetalFloor/PastMetalFloor5"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(-297.60004, 333.5324)
-scale = Vector2(0.40411437, 0.40411437)
-script = null
 
 [node name="PastMetalFloor6" parent="PastMetalFloor" instance=ExtResource("30_pm77i")]
 position = Vector2(772.27124, 871.96704)
