@@ -400,6 +400,13 @@ animations = [{
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 3
 script = ExtResource("1_cvnsp")
+move_speed = null
+sprint_speed = null
+acceleration = null
+braking = null
+gravity = null
+jump_force = null
+can_shift = null
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 visible = false
