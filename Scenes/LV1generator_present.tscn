@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://wxlwvt114mv8"]
+[gd_scene load_steps=4 format=3 uid="uid://wxlwvt114mv8"]
 
 [ext_resource type="Texture2D" uid="uid://c87evu6jmr8hb" path="res://Sprites/Objects/LV1Present_Generator-sprite.png" id="1_espgd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ihcek"]
-size = Vector2(233, 211)
+size = Vector2(233, 150.12138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_espgd"]
+size = Vector2(166.52194, 60.237442)
 
 [node name="GeneratorPresent" type="StaticBody2D"]
 
@@ -12,5 +15,9 @@ scale = Vector2(0.3569425, 0.3569425)
 texture = ExtResource("1_espgd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, -1.5)
+position = Vector2(-2.5, -31.939308)
 shape = SubResource("RectangleShape2D_ihcek")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-35.39212, 72.92147)
+shape = SubResource("RectangleShape2D_espgd")

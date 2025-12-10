@@ -13,10 +13,10 @@ size = Vector2(11.245841, 7.363351)
 size = Vector2(30.677734, 287.75357)
 
 [node name="LV1generator_present" type="StaticBody2D"]
+z_index = 10
 script = ExtResource("1_gvtdu")
 
 [node name="Lv1PastGeneratorSprite" type="Sprite2D" parent="."]
-z_index = 10
 texture = ExtResource("1_yoayw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

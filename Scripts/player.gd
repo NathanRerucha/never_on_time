@@ -45,15 +45,15 @@ func apply_speed_modifier(modifier: float):
 func remove_speed_modifier():
 	move_speed = base_speed
 	
-func _on_body_entered(body: Node2D):
-	if body.is_in_group("Ladders"):
-		on_ladder = true
-	
-func _on_body_exited(body):
-	if body.is_in_group("Ladders"):
-		on_ladder = false
-		is_climbing = false # stops floating player when they get off ladder
-		print("ladder exit")
+#func _on_body_entered(body: Node2D):
+	#if body.is_in_group("Ladders"):
+		#on_ladder = true
+	#
+#func _on_body_exited(body: Node2D):
+	#if body.is_in_group("Ladders"):
+		#on_ladder = false
+		#is_climbing = false # stops floating player when they get off ladder
+		#print("ladder exit")
 
 func _physics_process(delta: float) -> void:
 	# gravity

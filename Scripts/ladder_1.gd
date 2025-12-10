@@ -1,22 +1,22 @@
 extends Sprite2D
 
-# Called when the node enters the scene tree for the first time.
+@onready var platform = $SelectivePlatform
+
+@export var disable_platform = false
+
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+	if disable_platform:
+		remove_child($SelectivePlatform)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("ladder")
 	if body.is_in_group("Player"):
 		body.on_ladder = true
+		print("ladder")
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		body.on_ladder = false
-		body.is_climbing = false
+		print("exit ladder")
+		if not disable_platform:
+			body.is_climbing = false
+			body.on_ladder = false

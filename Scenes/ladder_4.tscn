@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://coqyjh3hwa5p0"]
 
 [ext_resource type="Texture2D" uid="uid://d4niqyhm6i5q5" path="res://Sprites/Ladders/LV1Past_Ladder_Broken-sprite.png" id="1_40rmp"]
-[ext_resource type="Script" uid="uid://bcik3438ptlas" path="res://Scripts/ladder_4.gd" id="2_u0txa"]
+[ext_resource type="Script" uid="uid://cv7246clt842t" path="res://Scripts/ladder_1.gd" id="2_u0txa"]
 [ext_resource type="PackedScene" uid="uid://bld71aal3ae54" path="res://Scenes/selective_platform.tscn" id="3_u0txa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vq6j"]

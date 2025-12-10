@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ceg3uecx0r7o7"]
 
 [ext_resource type="Texture2D" uid="uid://dref8w5yasqtq" path="res://Sprites/Ladders/LV1Present_Ladder_Broken-sprite.png" id="1_35gps"]
-[ext_resource type="Script" uid="uid://bp41pcpuyoehl" path="res://Scripts/ladder_2.gd" id="2_66l3i"]
+[ext_resource type="Script" uid="uid://cv7246clt842t" path="res://Scripts/ladder_1.gd" id="2_io8ia"]
 [ext_resource type="PackedScene" uid="uid://bld71aal3ae54" path="res://Scenes/selective_platform.tscn" id="3_io8ia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obltv"]
@@ -9,7 +9,7 @@ size = Vector2(138, 665)
 
 [node name="ladder_2" type="Sprite2D"]
 texture = ExtResource("1_35gps")
-script = ExtResource("2_66l3i")
+script = ExtResource("2_io8ia")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

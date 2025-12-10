@@ -18,8 +18,8 @@ position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_3d62w")
 
 [node name="SelectivePlatform" parent="." instance=ExtResource("3_q1sbi")]
-position = Vector2(-3, -600)
-scale = Vector2(2.0448947, 1)
+position = Vector2(-4, -600)
+scale = Vector2(2.2048955, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

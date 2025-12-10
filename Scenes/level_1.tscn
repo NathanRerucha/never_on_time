@@ -18,19 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://cxwdxdmv6bas5" path="res://Sprites/Backgrounds/LV1BigRoom-bg.png" id="14_8f0cu"]
 [ext_resource type="PackedScene" uid="uid://lxxd72tjrq6f" path="res://Scenes/key.tscn" id="14_nwpk5"]
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
-[ext_resource type="Texture2D" uid="uid://c3vpq3hymcebe" path="res://Sprites/Elevator/LV1Past_Elevator_Light_Off-sprite (1).png" id="19_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://dbqnwjyser8mu" path="res://Scenes/grass_floor.tscn" id="20_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
-[ext_resource type="PackedScene" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
+[ext_resource type="PackedScene" uid="uid://cj5y327umt8rf" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
 [ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
 [ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
 [ext_resource type="PackedScene" uid="uid://br7tol1ag7s1j" path="res://Scenes/ladder_3.tscn" id="27_xub2v"]
-[ext_resource type="PackedScene" uid="uid://coqyjh3hwa5p0" path="res://Scenes/ladder_4.tscn" id="28_x5u8r"]
 [ext_resource type="PackedScene" uid="uid://bpdomfnesvsxj" path="res://Scenes/LV1past_metal_floor.tscn" id="30_pm77i"]
 [ext_resource type="PackedScene" uid="uid://wxlwvt114mv8" path="res://Scenes/LV1generator_present.tscn" id="30_xub2v"]
 [ext_resource type="PackedScene" uid="uid://bm18kyqx0v5jc" path="res://Scenes/LV1Present_Closed_Door.tscn" id="31_xub2v"]
-[ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/Past_Generator.tscn" id="32_x5u8r"]
+[ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/LVgenerator_past.tscn" id="32_x5u8r"]
 [ext_resource type="PackedScene" uid="uid://cpa7t2v00ux06" path="res://Scenes/checkpoint.tscn" id="33_lk3dh"]
 [ext_resource type="PackedScene" uid="uid://cyayr5maq5jof" path="res://Scenes/conveyor.tscn" id="33_nwpk5"]
 [ext_resource type="PackedScene" uid="uid://d3pnh831j5woh" path="res://Scenes/Elevator.tscn" id="35_ts4pv"]
@@ -50,16 +48,23 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlonh"]
+size = Vector2(20, 199.5031)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjppf"]
 size = Vector2(358.64136, 150.40698)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpjai"]
+size = Vector2(418.99048, 20)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nwpk5")
 metadata/_edit_horizontal_guides_ = [72.0]
 
 [node name="Player" parent="." instance=ExtResource("3_6444e")]
-position = Vector2(106.31143, -245.55457)
+position = Vector2(106.31143, -221.78607)
 floor_stop_on_slope = false
+jump_force = 250.0
 can_shift = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -79,6 +84,7 @@ position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_nwpk5")
 
 [node name="Box" parent="." instance=ExtResource("5_6444e")]
+z_index = 2
 position = Vector2(3475, 3524.8516)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("31_xub2v")]
@@ -115,18 +121,16 @@ scale = Vector2(0.39999968, 0.39999968)
 position = Vector2(556, 40)
 scale = Vector2(0.39999968, 0.39999968)
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walkways/walkway_past13"]
+position = Vector2(137.86707, 42.039)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_wlonh")
+
 [node name="walkway_past7" parent="Walkways" instance=ExtResource("3_xfk5q")]
 position = Vector2(870, 2912)
 scale = Vector2(-0.7598733, 0.69506544)
 
 [node name="walkway_past6" parent="Walkways/walkway_past7" instance=ExtResource("3_xfk5q")]
-position = Vector2(-223.72156, 0)
-
-[node name="walkway_past12" parent="Walkways" instance=ExtResource("3_xfk5q")]
-position = Vector2(3391, 3476.9998)
-scale = Vector2(-0.7598733, 0.69506544)
-
-[node name="walkway_past6" parent="Walkways/walkway_past12" instance=ExtResource("3_xfk5q")]
 position = Vector2(-223.72156, 0)
 
 [node name="walkway_past9" parent="Walkways" instance=ExtResource("3_xfk5q")]
@@ -225,12 +229,6 @@ position = Vector2(2666, 660)
 [node name="GrassFloor13" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
 position = Vector2(2666, 625)
 
-[node name="GrassFloor21" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
-position = Vector2(1264, 679)
-
-[node name="GrassFloor22" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
-position = Vector2(1215, 679)
-
 [node name="GrassFloor9" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
 position = Vector2(3585, 697)
 
@@ -247,9 +245,11 @@ position = Vector2(3168, 3561.8516)
 position = Vector2(-204, 0)
 
 [node name="GrassFloorPast3" parent="GrassFloor/GrassFloorPast2" instance=ExtResource("20_6ssoq")]
+z_index = 7
 position = Vector2(407, 0)
 
 [node name="GrassFloorPast" parent="GrassFloor/GrassFloorPast2/GrassFloorPast3" instance=ExtResource("20_6ssoq")]
+z_index = 5
 position = Vector2(-204, 0)
 
 [node name="GrassFloorPast3" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
@@ -291,6 +291,7 @@ position = Vector2(168, 0)
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -1529,6 +1530,10 @@ position = Vector2(5703.689, -433.91495)
 scale = Vector2(6.716292, 2.7848394)
 texture = ExtResource("12_dlmop")
 
+[node name="KillZone" parent="Present_Backgrounds" instance=ExtResource("36_7sml1")]
+position = Vector2(10162.459, 4177.642)
+scale = Vector2(2.8358622, 13.997315)
+
 [node name="PR_Collision_Objects" type="Sprite2D" parent="."]
 
 [node name="Lv1PresentLabDeskSprite(1)2" type="Sprite2D" parent="PR_Collision_Objects"]
@@ -1582,12 +1587,20 @@ scale = Vector2(0.9999996, 1)
 shape = SubResource("RectangleShape2D_pjppf")
 
 [node name="Broken Cart2" parent="PR_Collision_Objects/Lv1PresentLabDeskSprite(1)2" instance=ExtResource("13_dlmop")]
-position = Vector2(8189.6274, -3017.5532)
-scale = Vector2(2.364215, 3.073346)
+position = Vector2(8802.004, -2947.6973)
+scale = Vector2(1.7511393, 2.2235065)
 
 [node name="BasicBox" parent="PR_Collision_Objects/Lv1PresentLabDeskSprite(1)2" instance=ExtResource("14_sda17")]
-position = Vector2(7866.4565, -3031.654)
+position = Vector2(9155.199, -3028.4236)
 scale = Vector2(2.7547455, 3.230493)
+
+[node name="BasicBox4" parent="PR_Collision_Objects/Lv1PresentLabDeskSprite(1)2" instance=ExtResource("14_sda17")]
+position = Vector2(9186.927, -3237.4597)
+scale = Vector2(1.17806, 1.3815124)
+
+[node name="BasicBox5" parent="PR_Collision_Objects/Lv1PresentLabDeskSprite(1)2" instance=ExtResource("14_sda17")]
+position = Vector2(8978.039, -2947.697)
+scale = Vector2(1.17806, 1.3815124)
 
 [node name="BasicBox2" parent="PR_Collision_Objects/Lv1PresentLabDeskSprite(1)2" instance=ExtResource("14_sda17")]
 position = Vector2(10711.939, -1508.7761)
@@ -1602,11 +1615,6 @@ position = Vector2(495.00006, 923.99994)
 scale = Vector2(0.092378706, 0.11233466)
 skew = -0.06806784
 texture = ExtResource("13_yltlr")
-
-[node name="Lv1PastElevatorLightOffSprite(1)" type="Sprite2D" parent="."]
-position = Vector2(1251.7189, 3393.1016)
-scale = Vector2(0.2810923, 0.25791654)
-texture = ExtResource("19_6ssoq")
 
 [node name="PresentMetalCatwalk2" parent="." instance=ExtResource("22_sda17")]
 position = Vector2(1049, 42.000004)
@@ -2016,97 +2024,6 @@ position = Vector2(-593.71155, -0.00048828125)
 [node name="PastMetalFloor3" parent="PastMetalFloor/PastMetalFloor11" instance=ExtResource("30_pm77i")]
 position = Vector2(296.1116, -0.00048828125)
 
-[node name="ladder_1" parent="." instance=ExtResource("25_1f27d")]
-position = Vector2(261, -298)
-scale = Vector2(0.1, 0.07)
-
-[node name="first_ladder" parent="ladder_1" instance=ExtResource("24_u0op5")]
-position = Vector2(-969.99963, 385.71484)
-scale = Vector2(1.3912133, 1.0297616)
-
-[node name="LadderSHPR" parent="ladder_1" instance=ExtResource("26_pm77i")]
-position = Vector2(-1909.9998, 271.42822)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderSHPR2" parent="ladder_1" instance=ExtResource("26_pm77i")]
-position = Vector2(5010, 4571.4287)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderSHPR3" parent="ladder_1" instance=ExtResource("26_pm77i")]
-position = Vector2(4430, 23657.143)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderSHPR4" parent="ladder_1" instance=ExtResource("26_pm77i")]
-position = Vector2(7940, 19914.285)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="ladder_5" parent="ladder_1" instance=ExtResource("26_pm77i")]
-position = Vector2(1120, 128.57152)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(-470, 171.42871)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR13" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(30110, 53714.285)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR14" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(31000, 49028.57)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR2" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(6739.9995, -214.28554)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR5" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(22520, 7971.428)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR10" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(4429.9995, 21500)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR12" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(7939.999, 18985.715)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR11" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(4429.9995, 22700)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR6" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(22520, 9157.143)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR7" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(22520, 10357.143)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR8" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(22520, 11528.571)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR9" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(22520, 12700)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR3" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(5019.9995, 1414.286)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPR4" parent="ladder_1" instance=ExtResource("27_xub2v")]
-position = Vector2(5019.9995, 3028.5715)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderSHPA" parent="ladder_1" instance=ExtResource("28_x5u8r")]
-position = Vector2(380.00006, -242.85712)
-scale = Vector2(0.99999994, 0.99999994)
-
-[node name="LadderTAPA" parent="ladder_1" instance=ExtResource("25_1f27d")]
-position = Vector2(1120, -800.0001)
-
 [node name="BasicBox" parent="." instance=ExtResource("14_sda17")]
 visible = false
 position = Vector2(-78, 1358)
@@ -2157,6 +2074,9 @@ position = Vector2(106.31143, -282.75867)
 position = Vector2(1190.175, -48.051605)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("33_lk3dh")]
+position = Vector2(1437, 597.54047)
+
+[node name="Checkpoint9" parent="." instance=ExtResource("33_lk3dh")]
 position = Vector2(2556.7146, 154.64551)
 
 [node name="Checkpoint4" parent="." instance=ExtResource("33_lk3dh")]
@@ -2233,25 +2153,6 @@ position = Vector2(214.25063, -219.31152)
 [node name="Dead_Robot" parent="." instance=ExtResource("37_vyomg")]
 position = Vector2(-249, 1012)
 
-[node name="Present_Floating_Plat5" parent="." instance=ExtResource("37_bd6hb")]
-position = Vector2(3592.0002, 501)
-scale = Vector2(0.46639094, 0.46639094)
-
-[node name="Present_Floating_Plat8" parent="Present_Floating_Plat5" instance=ExtResource("37_bd6hb")]
-position = Vector2(-162.95389, -285.16846)
-
-[node name="Present_Floating_Plat7" parent="Present_Floating_Plat5" instance=ExtResource("37_bd6hb")]
-position = Vector2(57.89108, -203.69174)
-
-[node name="Present_Floating_Plat6" parent="Present_Floating_Plat5" instance=ExtResource("37_bd6hb")]
-position = Vector2(-2.144043, -120.07129)
-
-[node name="Present_Floating_Plat5" parent="Present_Floating_Plat5" instance=ExtResource("37_bd6hb")]
-position = Vector2(-240.1416, -60.035156)
-
-[node name="Present_Floating_Plat3" parent="Present_Floating_Plat5" instance=ExtResource("37_bd6hb")]
-position = Vector2(-130.7915, 79.33301)
-
 [node name="Lv1PastKeyBoxSprite(1)" type="Sprite2D" parent="."]
 position = Vector2(505.00003, 3778.9995)
 rotation = -0.10320011
@@ -2261,6 +2162,10 @@ texture = ExtResource("38_x68w5")
 [node name="Flower_Platform" parent="." instance=ExtResource("39_vyomg")]
 position = Vector2(2665, 391.00003)
 scale = Vector2(0.436929, 0.436929)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Flower_Platform"]
+position = Vector2(-6.2157784, -380.37213)
+shape = SubResource("RectangleShape2D_kpjai")
 
 [node name="PRESENT_Wall_Metal" parent="." instance=ExtResource("40_xcdlm")]
 position = Vector2(1190, -171)
@@ -2810,5 +2715,128 @@ position = Vector2(24.90625, 5244.7813)
 rotation = -0.0015548023
 scale = Vector2(0.99999523, 1.0000229)
 skew = -0.006057024
+
+[node name="walkway_past12" parent="." instance=ExtResource("3_xfk5q")]
+z_index = 8
+position = Vector2(3391, 3476.9998)
+scale = Vector2(-0.7598733, 0.69506544)
+
+[node name="walkway_past14" parent="." instance=ExtResource("3_xfk5q")]
+z_index = 8
+position = Vector2(3561, 3476.9998)
+rotation = 3.1415927
+scale = Vector2(0.7598733, -0.69506544)
+
+[node name="KillZone2" parent="." instance=ExtResource("36_7sml1")]
+position = Vector2(2662.3896, 597.54047)
+scale = Vector2(0.66665584, 1.1333518)
+
+[node name="first_ladder" parent="." instance=ExtResource("24_u0op5")]
+position = Vector2(374.243, -353.6436)
+scale = Vector2(0.09282979, 0.0702235)
+
+[node name="LadderSHPR2" parent="." instance=ExtResource("26_pm77i")]
+position = Vector2(762, 22)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderSHPR3" parent="." instance=ExtResource("26_pm77i")]
+position = Vector2(704, 1358)
+scale = Vector2(0.099999994, 0.06999999)
+disable_platform = true
+
+[node name="LadderSHPR4" parent="." instance=ExtResource("26_pm77i")]
+position = Vector2(1055, 1096)
+scale = Vector2(0.099999994, 0.06999999)
+disable_platform = true
+
+[node name="LadderTAPR13" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(3272, 3462)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderTAPR14" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(3361, 3134)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderTAPR2" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(934.99994, -313)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderTAPR5" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(2513, 260)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderTAPR10" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(704, 1207)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderTAPR12" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(1055, 1031)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderTAPR11" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(704, 1291)
+scale = Vector2(0.099999994, 0.06999999)
+disable_platform = true
+
+[node name="LadderTAPR6" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(2513, 343)
+scale = Vector2(0.099999994, 0.06999999)
+disable_platform = true
+
+[node name="LadderTAPR7" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(2513, 427)
+scale = Vector2(0.099999994, 0.06999999)
+disable_platform = true
+
+[node name="LadderTAPR8" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(2513, 509)
+scale = Vector2(0.099999994, 0.06999999)
+disable_platform = true
+
+[node name="LadderTAPR9" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(2513, 591)
+scale = Vector2(0.099999994, 0.06999999)
+disable_platform = true
+
+[node name="LadderTAPR3" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(763, -198.99997)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="LadderTAPR4" parent="." instance=ExtResource("27_xub2v")]
+position = Vector2(763, -85.999985)
+scale = Vector2(0.099999994, 0.06999999)
+
+[node name="ladder_1" parent="." instance=ExtResource("25_1f27d")]
+position = Vector2(374.1502, -272.88998)
+scale = Vector2(0.08963606, 0.08963606)
+disable_platform = true
+
+[node name="Lv1PresentBrokenElevatorSprite(1)" type="Sprite2D" parent="."]
+position = Vector2(1249.6101, 1276.4226)
+scale = Vector2(0.237117, 0.23711698)
+texture = ExtResource("9_af3po")
+
+[node name="KillZone3" parent="." instance=ExtResource("36_7sml1")]
+position = Vector2(1251, 1239)
+
+[node name="Present_Floating_Plat8" parent="." instance=ExtResource("37_bd6hb")]
+position = Vector2(3520.075, 379.32)
+scale = Vector2(0.46639094, 0.46639094)
+
+[node name="Present_Floating_Plat7" parent="." instance=ExtResource("37_bd6hb")]
+position = Vector2(3614.9614, 425.97433)
+scale = Vector2(0.46639094, 0.46639094)
+
+[node name="Present_Floating_Plat6" parent="." instance=ExtResource("37_bd6hb")]
+position = Vector2(3524.6443, 472.01627)
+scale = Vector2(0.46639094, 0.46639094)
+
+[node name="Present_Floating_Plat9" parent="." instance=ExtResource("37_bd6hb")]
+position = Vector2(3419.454, 519.0848)
+scale = Vector2(0.46639094, 0.46639094)
+
+[node name="Present_Floating_Plat3" parent="." instance=ExtResource("37_bd6hb")]
+position = Vector2(3538.6643, 556.23456)
+scale = Vector2(0.46639094, 0.46639094)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
