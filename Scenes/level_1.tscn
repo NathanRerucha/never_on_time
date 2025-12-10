@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=42 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://yc6ro4qovq8o" path="res://Scenes/Past_Button.tscn" id="37_x68w5"]
 [ext_resource type="PackedScene" uid="uid://dton6503g06v6" path="res://Scenes/present_button.tscn" id="38_vyomg"]
 [ext_resource type="Texture2D" uid="uid://f2qwkia1yhpe" path="res://Sprites/Objects/LV1Past_Key_Box-sprite (1).png" id="38_x68w5"]
+[ext_resource type="PackedScene" uid="uid://sojrem40hfnh" path="res://Scenes/flower_platform.tscn" id="39_vyomg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -185,6 +186,12 @@ position = Vector2(1074, 117)
 
 [node name="GrassFloor8" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
 position = Vector2(2975, 697)
+
+[node name="GrassFloor12" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
+position = Vector2(2666, 660)
+
+[node name="GrassFloor13" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
+position = Vector2(2666, 625)
 
 [node name="GrassFloor9" parent="GrassFloor" instance=ExtResource("20_6ssoq")]
 position = Vector2(3585, 697)
@@ -2018,5 +2025,9 @@ position = Vector2(505.00003, 3778.9995)
 rotation = -0.10320011
 scale = Vector2(0.18214287, 0.18214284)
 texture = ExtResource("38_x68w5")
+
+[node name="Flower_Platform" parent="." instance=ExtResource("39_vyomg")]
+position = Vector2(2665, 391.00003)
+scale = Vector2(0.436929, 0.436929)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
