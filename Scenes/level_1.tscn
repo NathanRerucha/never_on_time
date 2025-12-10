@@ -1,11 +1,13 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=49 format=4 uid="uid://ds75lvm8eqf4l"]
+=======
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://3l6ppx1mm6h0" path="res://Scenes/walkway_past.tscn" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://c5kfgavrc5wre" path="res://Scenes/box.tscn" id="5_6444e"]
-[ext_resource type="Texture2D" uid="uid://08uniop8xeqy" path="res://Sprites/Level1/lv1drill_past_walkway_strut_seg.png" id="8_bvyvf"]
 [ext_resource type="Texture2D" uid="uid://bbfqvb43cp3tk" path="res://Sprites/Backgrounds/LV1Past_Wall-sprite.png" id="8_chwpn"]
 [ext_resource type="Texture2D" uid="uid://bwgo6e7mks7t8" path="res://Sprites/Elevator/LV1present_broken_elevator-sprite (1).png" id="9_af3po"]
 [ext_resource type="Texture2D" uid="uid://ijtojb55oik3" path="res://Sprites/Backgrounds/LV1BigRoomLighting-bg.png" id="9_kpjai"]
@@ -50,13 +52,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcdlm"]
-size = Vector2(20, 198.21336)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjppf"]
 size = Vector2(358.64136, 150.40698)
-
-size = Vector2(410.0913, 20)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nwpk5")
@@ -119,191 +116,6 @@ scale = Vector2(0.39999968, 0.39999968)
 [node name="walkway_past13" parent="Walkways" instance=ExtResource("3_xfk5q")]
 position = Vector2(556, 40)
 scale = Vector2(0.39999968, 0.39999968)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walkways/walkway_past13"]
-position = Vector2(136.24304, 41.394135)
-scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_xcdlm")
-
-[node name="Lv1DrillPastWalkwayStrutSeg" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-203.00209, 146.37503)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg3" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-495.5003, 146.25005)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg2" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(62.039993, 146.25005)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg4" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1077.9904, 146.25005)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg5" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1370.4995, 146.25005)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg6" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-788.0076, 146.25005)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg7" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-203.00209, 249.25018)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg8" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-495.5003, 249.1252)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg9" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(62.039993, 249.1252)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg10" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1077.9904, 249.1252)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg11" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1370.4995, 249.1252)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg12" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-788.0076, 249.1252)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg13" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-203.00209, 355.1252)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg14" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-495.5003, 355.00024)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg15" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(62.039993, 355.00024)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg16" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1077.9904, 355.00024)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg17" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1370.4995, 355.00024)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg18" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-788.0076, 355.00024)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg19" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-203.00209, 460.87527)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg20" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-495.5003, 460.7503)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg21" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(62.039993, 460.7503)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg22" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1077.9904, 460.7503)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg23" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1370.4995, 460.7503)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg24" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-788.0076, 460.7503)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg25" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-203.00209, 566.7503)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg26" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-495.5003, 566.62537)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg27" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(62.039993, 566.62537)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg28" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1077.9904, 566.62537)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg29" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1370.4995, 566.62537)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg30" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-788.0076, 566.62537)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg31" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-203.00209, 672.62537)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg32" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-495.5003, 672.50037)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg33" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(62.039993, 672.50037)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg34" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1077.9904, 672.50037)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg35" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-1370.4995, 672.50037)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg36" type="Sprite2D" parent="Walkways/walkway_past13"]
-position = Vector2(-788.0076, 672.50037)
-scale = Vector2(1.0000217, 0.99764216)
-texture = ExtResource("8_bvyvf")
 
 [node name="walkway_past7" parent="Walkways" instance=ExtResource("3_xfk5q")]
 position = Vector2(870, 2912)
@@ -1837,9 +1649,6 @@ scale = Vector2(1, -0.9090916)
 [node name="PresentMetalCatwalk2" parent="PresentMetalCatwalk5" instance=ExtResource("22_sda17")]
 position = Vector2(-207.92824, -15.539107)
 
-[node name="PresentMetalCatwalk2" parent="PresentMetalCatwalk5/PresentMetalCatwalk2" instance=ExtResource("22_sda17")]
-position = Vector2(143.92188, 15.539109)
-
 [node name="PresentMetalCatwalk3" parent="PresentMetalCatwalk5" instance=ExtResource("22_sda17")]
 position = Vector2(-207.92824, -15.539107)
 
@@ -2385,7 +2194,6 @@ position = Vector2(2665.206, 3520.8364)
 scale = Vector2(0.68942535, 0.60076225)
 
 [node name="KillZone5" parent="KillZone" instance=ExtResource("36_7sml1")]
-position = Vector2(-3116.173, -542.289)
 scale = Vector2(18.944519, -0.00018920192)
 
 [node name="KillZone4" parent="KillZone" instance=ExtResource("36_7sml1")]
@@ -2454,10 +2262,6 @@ texture = ExtResource("38_x68w5")
 [node name="Flower_Platform" parent="." instance=ExtResource("39_vyomg")]
 position = Vector2(2665, 391.00003)
 scale = Vector2(0.436929, 0.436929)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Flower_Platform"]
-position = Vector2(-3.1833804, -382.7278)
-shape = SubResource("RectangleShape2D_bvyvf")
 
 [node name="PRESENT_Wall_Metal" parent="." instance=ExtResource("40_xcdlm")]
 position = Vector2(1190, -171)
@@ -2696,6 +2500,7 @@ position = Vector2(-4683.7837, -1090.7439)
 rotation = 6.2847733
 scale = Vector2(0.39784434, 1.356602)
 
+<<<<<<< Updated upstream
 [node name="Present_Dirt_Wall" parent="." instance=ExtResource("41_bvyvf")]
 position = Vector2(-370, 969)
 scale = Vector2(-0.17935582, 0.16607039)
@@ -3007,153 +2812,7 @@ position = Vector2(24.90625, 5244.7813)
 rotation = -0.0015548023
 scale = Vector2(0.99999523, 1.0000229)
 skew = -0.006057024
-
-[node name="Lv1DrillPastWalkwayStrutSeg" type="Sprite2D" parent="."]
-position = Vector2(419.64255, 3007.164)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg3" type="Sprite2D" parent="."]
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg4" type="Sprite2D" parent="."]
-position = Vector2(118.62501, 3007.1736)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-[node name="Lv1DrillPastWalkwayStrutSeg5" type="Sprite2D" parent="."]
-position = Vector2(40.59702, 3007.163)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg2" type="Sprite2D" parent="."]
-position = Vector2(570.60693, 3007.16)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg6" type="Sprite2D" parent="."]
-position = Vector2(419.6449, 3071.1174)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg7" type="Sprite2D" parent="."]
-position = Vector2(269.63965, 3071.1096)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg8" type="Sprite2D" parent="."]
-position = Vector2(118.62736, 3071.127)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg9" type="Sprite2D" parent="."]
-position = Vector2(40.59937, 3071.1165)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg10" type="Sprite2D" parent="."]
-position = Vector2(570.60925, 3071.1133)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg11" type="Sprite2D" parent="."]
-position = Vector2(419.64487, 3135.0735)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg12" type="Sprite2D" parent="."]
-position = Vector2(269.63962, 3135.0657)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg13" type="Sprite2D" parent="."]
-position = Vector2(118.62735, 3135.083)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg14" type="Sprite2D" parent="."]
-position = Vector2(40.599346, 3135.0725)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg15" type="Sprite2D" parent="."]
-position = Vector2(570.6092, 3135.0693)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg16" type="Sprite2D" parent="."]
-position = Vector2(419.65237, 3199.0361)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg17" type="Sprite2D" parent="."]
-position = Vector2(269.64713, 3199.0283)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg18" type="Sprite2D" parent="."]
-position = Vector2(118.63485, 3199.0457)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg19" type="Sprite2D" parent="."]
-position = Vector2(40.606846, 3199.0352)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg20" type="Sprite2D" parent="."]
-position = Vector2(570.6167, 3199.032)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg21" type="Sprite2D" parent="."]
-position = Vector2(419.65237, 3262.0293)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg22" type="Sprite2D" parent="."]
-position = Vector2(269.64713, 3262.0215)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg23" type="Sprite2D" parent="."]
-position = Vector2(118.63485, 3262.0388)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg24" type="Sprite2D" parent="."]
-position = Vector2(40.606846, 3262.0283)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg25" type="Sprite2D" parent="."]
-position = Vector2(570.6167, 3262.0251)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg26" type="Sprite2D" parent="."]
-position = Vector2(419.65237, 3325.9956)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg27" type="Sprite2D" parent="."]
-position = Vector2(269.64713, 3325.9878)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg28" type="Sprite2D" parent="."]
-position = Vector2(118.63485, 3326.0051)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg29" type="Sprite2D" parent="."]
-position = Vector2(40.606846, 3325.9946)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
-
-[node name="Lv1DrillPastWalkwayStrutSeg30" type="Sprite2D" parent="."]
-position = Vector2(570.6167, 3325.9915)
-scale = Vector2(-0.52577627, 0.60346556)
-texture = ExtResource("8_bvyvf")
+=======
+>>>>>>> Stashed changes
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
