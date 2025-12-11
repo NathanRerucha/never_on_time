@@ -6,6 +6,10 @@ var power_is_on : bool = false
 
 func _ready() -> void:
 	player.shift_dist = -2858
-	
-func _on_lv_1_generator_past_power_on() -> void:
-	power_is_on = true
+
+func _process(_delta: float) -> void:
+	if Globals.remove_elevator_killzone:
+		$ElevatorKillZone.queue_free()
+		$ElevatorKillZone2.queue_free()
+		Globals.remove_elevator_killzone = false
+		print("Removed Killzones")

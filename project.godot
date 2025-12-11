@@ -13,6 +13,7 @@ config_version=5
 config/name="Never On Time but we are losing our minds"
 run/main_scene="uid://bfe7drrmb8g01"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/image="uid://bm4j0gp13xyht"
 config/icon="res://icon.svg"
 
 [autoload]

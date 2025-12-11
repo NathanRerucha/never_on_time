@@ -1,5 +1,5 @@
 extends StaticBody2D
-@onready var interaction_area: interaction_area = $InteractionArea
+#@onready var interaction_area: interaction_area = $InteractionArea
 @onready var closed = $Lv1PresentDoorClosedSprite
 @onready var open = $Lvl1PresentDoorOpenSprite
 

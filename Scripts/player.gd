@@ -44,16 +44,6 @@ func apply_speed_modifier(modifier: float):
 	
 func remove_speed_modifier():
 	move_speed = base_speed
-	
-#func _on_body_entered(body: Node2D):
-	#if body.is_in_group("Ladders"):
-		#on_ladder = true
-	#
-#func _on_body_exited(body: Node2D):
-	#if body.is_in_group("Ladders"):
-		#on_ladder = false
-		#is_climbing = false # stops floating player when they get off ladder
-		#print("ladder exit")
 
 func _physics_process(delta: float) -> void:
 	# gravity
@@ -71,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if move_input != 0:
+		print("walking")
 		velocity.x = lerp(velocity.x, target_velocity_x, acceleration * delta)
 	else:
 		velocity.x = lerp(velocity.x, target_velocity_x, braking * delta)
@@ -106,6 +97,9 @@ func _physics_process(delta: float) -> void:
 	_time_shift()
 
 func _process(_delta: float) -> void:
+	if is_climbing:
+		velocity.x = 0
+		print(velocity.x)
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
 	
@@ -179,7 +173,7 @@ func _on_animation_finished(anim_name):
 		is_shifting = false 
 		#_manage_animation()
 
-func 	death():
+func death():
 	global_position = last_checkpoint
 	print("Player died")
 

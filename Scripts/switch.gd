@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 func on_interact():
 	if Globals.power_on == true:
 		Globals.go_down = true
+		Globals.remove_elevator_killzone = true
