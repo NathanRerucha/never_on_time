@@ -76,7 +76,7 @@ script = ExtResource("1_nwpk5")
 metadata/_edit_horizontal_guides_ = [72.0]
 
 [node name="Player" parent="." instance=ExtResource("3_6444e")]
-position = Vector2(1603.9882, 568.6141)
+position = Vector2(76.890564, -223.03958)
 floor_constant_speed = true
 floor_block_on_wall = false
 floor_snap_length = 4.0
@@ -302,7 +302,6 @@ position = Vector2(168, 0)
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -2958,5 +2957,9 @@ scale = Vector2(0.15427689, 0.48967713)
 [node name="SelectivePlatform6" parent="." instance=ExtResource("55_mdi36")]
 position = Vector2(692.53314, 1165.2737)
 scale = Vector2(0.118618704, 0.48967713)
+
+[node name="KillZone3" parent="." instance=ExtResource("36_7sml1")]
+position = Vector2(708.3725, 68.5244)
+scale = Vector2(0.32324237, -3.1509864)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]

@@ -61,7 +61,6 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if move_input != 0:
-		print("walking")
 		velocity.x = lerp(velocity.x, target_velocity_x, acceleration * delta)
 	else:
 		velocity.x = lerp(velocity.x, target_velocity_x, braking * delta)
@@ -97,9 +96,6 @@ func _physics_process(delta: float) -> void:
 	_time_shift()
 
 func _process(_delta: float) -> void:
-	if is_climbing:
-		velocity.x = 0
-		print(velocity.x)
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
 	
