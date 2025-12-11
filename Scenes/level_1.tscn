@@ -2862,8 +2862,8 @@ scale = Vector2(0.11341157, 0.11341155)
 texture = ExtResource("47_g6dp3")
 
 [node name="KillZone4" parent="." instance=ExtResource("36_7sml1")]
-position = Vector2(2666.6394, 603.43414)
-scale = Vector2(0.7121118, 2.1290412)
+position = Vector2(2668.0002, 626.00006)
+scale = Vector2(0.779, 4.634)
 
 [node name="UntitledArtwork1" type="Sprite2D" parent="."]
 position = Vector2(948, 4225.0005)
@@ -2921,5 +2921,11 @@ scale = Vector2(0.093, 0.089)
 [node name="long_ladder3" parent="." instance=ExtResource("56_h3d7q")]
 position = Vector2(1051.0001, 1097.0001)
 scale = Vector2(0.093, 0.06)
+
+[node name="Node2D5" parent="." instance=ExtResource("49_hv30f")]
+position = Vector2(504, -423)
+
+[node name="Node2D6" parent="." instance=ExtResource("49_hv30f")]
+position = Vector2(2547, 3047)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
