@@ -14,8 +14,7 @@ var move_input : float
 var on_ladder: bool
 var is_climbing: bool
 var shift_dist : int
-var last_checkpoint_present : Vector2
-var last_checkpoint_past : Vector2
+var last_checkpoint : Vector2
 var current_time : int = 0
 var spawn_point : Vector2 
 var is_shifting : bool = false
@@ -163,8 +162,6 @@ func _time_shift():
 		time_anim.play("time_shift2")
 		freeze_game()
 		is_shifting = true
-		print("shift past")
-		print("PLAYER POSITION:", global_position)
 		# shift player vertically a set amount of pixels, sourced from level 
 		position.y -= shift_dist
 		# determines what time period player is in and sets the current_time variable accordingly
@@ -174,8 +171,6 @@ func _time_shift():
 		time_anim.play("time_shift2")
 		freeze_game()
 		is_shifting = true
-		print("shift present")
-		print("PLAYER POSITION:", global_position)
 		position.y += shift_dist
 		current_time = 0
 			
@@ -184,14 +179,8 @@ func _on_animation_finished(anim_name):
 		is_shifting = false 
 		#_manage_animation()
 
-func death():
-	if last_checkpoint_past.y > -2741:
-		print("died present")
-		current_time = 0
-	else:
-		print("died past")
-		current_time = 1
-	global_position = last_checkpoint_past
+func 	death():
+	global_position = last_checkpoint
 	print("Player died")
 
 

@@ -73,11 +73,6 @@ position = Vector2(76, -222)
 floor_constant_speed = true
 floor_block_on_wall = false
 floor_snap_length = 4.0
-move_speed = 120.0
-sprint_speed = 200.0
-acceleration = 50.0
-braking = 20.0
-gravity = 700.0
 jump_force = 250.0
 can_shift = true
 
@@ -307,7 +302,6 @@ position = Vector2(168, 0)
 [node name="Background Sprite (Metal)" type="Sprite2D" parent="."]
 
 [node name="Present_Backgrounds" type="Sprite2D" parent="."]
-visible = false
 show_behind_parent = true
 position = Vector2(114.750015, -31.999996)
 scale = Vector2(0.25110945, 0.15210354)
@@ -897,12 +891,6 @@ texture = ExtResource("8_chwpn")
 position = Vector2(3888.4934, 18193.867)
 scale = Vector2(0.97312236, 1.0531917)
 texture = ExtResource("8_chwpn")
-
-[node name="Lv1PresentBrokenElevatorSprite(1)" type="Sprite2D" parent="Present_Backgrounds"]
-z_index = 1
-position = Vector2(4532.884, 3747.4475)
-scale = Vector2(0.9211145, 1.528564)
-texture = ExtResource("9_af3po")
 
 [node name="Lv1PastWallSprite3" type="Sprite2D" parent="Present_Backgrounds"]
 position = Vector2(2632.0696, 25077.338)
@@ -1579,10 +1567,6 @@ modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 position = Vector2(5703.689, -433.91495)
 scale = Vector2(6.716292, 2.7848394)
 texture = ExtResource("12_dlmop")
-
-[node name="KillZone" parent="Present_Backgrounds" instance=ExtResource("36_7sml1")]
-position = Vector2(10162.459, 4177.642)
-scale = Vector2(2.8358622, 13.997315)
 
 [node name="PR_Collision_Objects" type="Sprite2D" parent="."]
 
@@ -2416,21 +2400,7 @@ scale = Vector2(0.39784434, 1.356602)
 
 [node name="CautionSign" type="Sprite2D" parent="PRESENT_Wall_Metal"]
 position = Vector2(1579.9742, 6384.0605)
-scale = Vector2(9.166043, 9.166043)
-texture = ExtResource("34_lcsmq")
-
-[node name="CautionSign2" type="Sprite2D" parent="PRESENT_Wall_Metal"]
-position = Vector2(1579.9744, 5493.821)
-scale = Vector2(9.166043, 9.166043)
-texture = ExtResource("34_lcsmq")
-
-[node name="CautionSign3" type="Sprite2D" parent="PRESENT_Wall_Metal"]
-position = Vector2(1579.9742, 5060.7314)
-scale = Vector2(9.166043, 9.166043)
-texture = ExtResource("34_lcsmq")
-
-[node name="CautionSign4" type="Sprite2D" parent="PRESENT_Wall_Metal"]
-position = Vector2(1579.9752, 5918.89)
+rotation = 0.10004284
 scale = Vector2(9.166043, 9.166043)
 texture = ExtResource("34_lcsmq")
 
@@ -2864,5 +2834,9 @@ texture = ExtResource("46_8f0cu")
 position = Vector2(2467.0002, 3039)
 scale = Vector2(0.11341157, 0.11341155)
 texture = ExtResource("47_g6dp3")
+
+[node name="KillZone4" parent="." instance=ExtResource("36_7sml1")]
+position = Vector2(2666.6394, 603.43414)
+scale = Vector2(0.7121118, 2.1290412)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
