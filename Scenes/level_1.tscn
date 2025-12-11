@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://ds75lvm8eqf4l"]
+[gd_scene load_steps=58 format=4 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Script" uid="uid://c88ikgsyyufgh" path="res://Scripts/level_1.gd" id="1_nwpk5"]
 [ext_resource type="TileSet" uid="uid://bphy4st8ym4ie" path="res://Sprites/Tiles/new_tile_set.tres" id="2_7p6j4"]
@@ -20,10 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://c12l3wbxdfnrd" path="res://Scenes/BasicBox.tscn" id="14_sda17"]
 [ext_resource type="PackedScene" uid="uid://dbqnwjyser8mu" path="res://Scenes/grass_floor.tscn" id="20_6ssoq"]
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
-[ext_resource type="PackedScene" uid="uid://cj5y327umt8rf" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
+[ext_resource type="PackedScene" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
+[ext_resource type="Texture2D" uid="uid://sq350ryb5jwj" path="res://Sprites/Backgrounds/Untitled_Artwork.png" id="23_v6i5l"]
 [ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
 [ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
-[ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/LVgenerator_past.tscn" id="25_wlonh"]
+[ext_resource type="PackedScene" path="res://Scenes/LVgenerator_past.tscn" id="25_wlonh"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
 [ext_resource type="PackedScene" uid="uid://br7tol1ag7s1j" path="res://Scenes/ladder_3.tscn" id="27_xub2v"]
 [ext_resource type="PackedScene" uid="uid://bpdomfnesvsxj" path="res://Scenes/LV1past_metal_floor.tscn" id="30_pm77i"]
@@ -42,15 +43,16 @@
 [ext_resource type="PackedScene" uid="uid://blec3c44ncugg" path="res://Scenes/present_dirt_wall.tscn" id="41_bvyvf"]
 [ext_resource type="PackedScene" uid="uid://budt3nt5g7ma5" path="res://Scenes/past_metal_wall.tscn" id="42_0wb0u"]
 [ext_resource type="PackedScene" uid="uid://142j74l0udp2" path="res://Scenes/past_dirt_floor.tscn" id="43_wlonh"]
-[ext_resource type="PackedScene" uid="uid://dmre7h3vtpl7o" path="res://Scenes/dead_robot_level_exit.tscn" id="44_wlonh"]
-[ext_resource type="PackedScene" uid="uid://j2x1p5cl2ugs" path="res://Scenes/past_door.tscn" id="45_s764c"]
+[ext_resource type="PackedScene" path="res://Scenes/dead_robot_level_exit.tscn" id="44_wlonh"]
+[ext_resource type="PackedScene" path="res://Scenes/past_door.tscn" id="45_s764c"]
 [ext_resource type="Texture2D" uid="uid://ddswhj1kfp1au" path="res://Sprites/Objects/Elevator_Button_Present.png" id="45_yaxpm"]
 [ext_resource type="Texture2D" uid="uid://cjt2g2oevrfrn" path="res://Sprites/Elevator/Elevator_Sign_Present.png" id="46_8f0cu"]
-[ext_resource type="PackedScene" uid="uid://dxbctjb8y11q6" path="res://Scenes/WASD.tscn" id="46_g6dp3"]
-[ext_resource type="PackedScene" uid="uid://o2t2kfct26eu" path="res://Scenes/SPACE.tscn" id="47_5ceot"]
+[ext_resource type="PackedScene" path="res://Scenes/WASD.tscn" id="46_g6dp3"]
+[ext_resource type="PackedScene" path="res://Scenes/SPACE.tscn" id="47_5ceot"]
 [ext_resource type="Texture2D" uid="uid://dktmnx76l6ulu" path="res://Sprites/Elevator/Elevator_Sign_Past.png" id="47_g6dp3"]
-[ext_resource type="PackedScene" uid="uid://b6o1knc5frf5y" path="res://Scenes/SHIFT.tscn" id="48_lcsmq"]
-[ext_resource type="PackedScene" uid="uid://bblcp2070mtvv" path="res://Scenes/E.tscn" id="49_hv30f"]
+[ext_resource type="PackedScene" path="res://Scenes/SHIFT.tscn" id="48_lcsmq"]
+[ext_resource type="PackedScene" path="res://Scenes/E.tscn" id="49_hv30f"]
+[ext_resource type="Texture2D" uid="uid://cdq5l7mxswa2p" path="res://Sprites/Backgrounds/Untitled_Artwork 1.png" id="53_nx6ne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -1775,6 +1777,7 @@ position = Vector2(548, 1427)
 position = Vector2(746, 1427)
 
 [node name="MetalFloor21" parent="MetalFloor" instance=ExtResource("21_imks0")]
+z_index = 1
 position = Vector2(944, 1427)
 
 [node name="MetalFloor22" parent="MetalFloor" instance=ExtResource("21_imks0")]
@@ -1877,6 +1880,7 @@ position = Vector2(1792, 411)
 position = Vector2(1975, 411)
 
 [node name="MetalFloor47" parent="MetalFloor" instance=ExtResource("21_imks0")]
+z_index = 1
 position = Vector2(2388, 240)
 
 [node name="MetalFloor60" parent="MetalFloor" instance=ExtResource("21_imks0")]
@@ -2009,6 +2013,7 @@ position = Vector2(-297.5996, -0.00048828125)
 position = Vector2(562.46356, -266.35193)
 
 [node name="PastMetalFloor5" parent="PastMetalFloor/PastMetalFloor14" instance=ExtResource("30_pm77i")]
+z_index = 1
 position = Vector2(723.1674, -266.35193)
 
 [node name="PastMetalFloor8" parent="PastMetalFloor/PastMetalFloor14" instance=ExtResource("30_pm77i")]
@@ -2023,10 +2028,16 @@ position = Vector2(729.1194, -546.0957)
 [node name="PastMetalFloor3" parent="PastMetalFloor/PastMetalFloor14" instance=ExtResource("30_pm77i")]
 position = Vector2(296.1116, -0.00048828125)
 
+[node name="UntitledArtwork" type="Sprite2D" parent="PastMetalFloor/PastMetalFloor14"]
+position = Vector2(-1482.0469, -2833.15)
+scale = Vector2(0.20215863, 0.20215863)
+texture = ExtResource("23_v6i5l")
+
 [node name="PastMetalFloor8" parent="PastMetalFloor" instance=ExtResource("30_pm77i")]
 position = Vector2(-992.49524, 1970.1106)
 
 [node name="PastMetalFloor2" parent="PastMetalFloor/PastMetalFloor8" instance=ExtResource("30_pm77i")]
+z_index = 1
 position = Vector2(-297.5996, -0.00048828125)
 
 [node name="PastMetalFloor3" parent="PastMetalFloor/PastMetalFloor8" instance=ExtResource("30_pm77i")]
@@ -2838,5 +2849,10 @@ texture = ExtResource("47_g6dp3")
 [node name="KillZone4" parent="." instance=ExtResource("36_7sml1")]
 position = Vector2(2666.6394, 603.43414)
 scale = Vector2(0.7121118, 2.1290412)
+
+[node name="UntitledArtwork1" type="Sprite2D" parent="."]
+position = Vector2(948, 4225.0005)
+scale = Vector2(0.12391362, 0.13256869)
+texture = ExtResource("53_nx6ne")
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
