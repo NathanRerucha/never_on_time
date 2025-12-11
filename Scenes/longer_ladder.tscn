@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://75pjelnph8m0"]
+
+[ext_resource type="Texture2D" uid="uid://1dmg7dh6r7xm" path="res://Sprites/Ladders/LV1Present_Ladder_Complete-sprite.png" id="1_cl1fr"]
+[ext_resource type="Script" uid="uid://c37jxpe1giewf" path="res://longer_ladder.gd" id="2_cuan5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hwse"]
+size = Vector2(137, 3601)
+
+[node name="longer_ladder" type="Sprite2D"]
+texture = ExtResource("1_cl1fr")
+script = ExtResource("2_cuan5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1200)
+texture = ExtResource("1_cl1fr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.5, -0.5)
+shape = SubResource("RectangleShape2D_4hwse")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -1200)
+texture = ExtResource("1_cl1fr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

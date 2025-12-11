@@ -16,7 +16,7 @@ position = Vector2(114, 66)
 texture = ExtResource("3_og4gy")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_1xkr6")]
-action_name = "F: Turn on"
+action_name = "F: Turn on (Requires Power)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-1.0000001, 0)

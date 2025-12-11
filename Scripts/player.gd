@@ -78,6 +78,8 @@ func _physics_process(delta: float) -> void:
 	
 	#ladder movement (this part is fine)
 	if on_ladder:
+		if Input.is_action_just_pressed("move_left") or ("move_right"):
+			velocity.x = 0
 		# checks if player is currently pressing W or S, if not, use normal gravity
 		if Input.is_action_pressed("climb_ladder") or Input.is_action_pressed("climb_ladder_down"):
 			is_climbing = true # if player is still on ladder, freeze gravity

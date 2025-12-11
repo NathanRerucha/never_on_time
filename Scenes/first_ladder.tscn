@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcq7k5xeh3eap"]
+[gd_scene load_steps=6 format=3 uid="uid://dcq7k5xeh3eap"]
 
 [ext_resource type="Texture2D" uid="uid://1dmg7dh6r7xm" path="res://Sprites/Ladders/LV1Present_Ladder_Complete-sprite.png" id="1_us46x"]
 [ext_resource type="Script" uid="uid://cv7246clt842t" path="res://Scripts/ladder_1.gd" id="2_w5fen"]
 [ext_resource type="PackedScene" uid="uid://jivihc4761h8" path="res://interaction/interaction_area/interaction_area.tscn" id="3_1j4gw"]
-[ext_resource type="PackedScene" uid="uid://bld71aal3ae54" path="res://Scenes/selective_platform.tscn" id="4_w5fen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flvdf"]
 size = Vector2(137, 1200)
@@ -29,10 +28,6 @@ action_name = "W: Climb"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(-3, -352)
 shape = SubResource("RectangleShape2D_hngqn")
-
-[node name="SelectivePlatform" parent="." instance=ExtResource("4_w5fen")]
-position = Vector2(-4, -600)
-scale = Vector2(2.0448947, 1)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

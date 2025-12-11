@@ -21,8 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://bupqh23gfhxct" path="res://Scenes/metal_floor.tscn" id="21_imks0"]
 [ext_resource type="PackedScene" uid="uid://cj5y327umt8rf" path="res://Scenes/present_metal_catwalk.tscn" id="22_sda17"]
 [ext_resource type="Texture2D" uid="uid://sq350ryb5jwj" path="res://Sprites/Backgrounds/Untitled_Artwork.png" id="23_v6i5l"]
-[ext_resource type="PackedScene" uid="uid://dcq7k5xeh3eap" path="res://Scenes/first_ladder.tscn" id="24_u0op5"]
-[ext_resource type="PackedScene" uid="uid://fom7oa1cqhlu" path="res://Scenes/ladder_1.tscn" id="25_1f27d"]
 [ext_resource type="PackedScene" uid="uid://0mrvfwkcmf85" path="res://Scenes/LVgenerator_past.tscn" id="25_wlonh"]
 [ext_resource type="PackedScene" uid="uid://ceg3uecx0r7o7" path="res://Scenes/ladder_2.tscn" id="26_pm77i"]
 [ext_resource type="PackedScene" uid="uid://br7tol1ag7s1j" path="res://Scenes/ladder_3.tscn" id="27_xub2v"]
@@ -54,7 +52,9 @@
 [ext_resource type="Texture2D" uid="uid://bwtjs763gfi1" path="res://Sprites/Level1/Generator_Sign_Present.png" id="53_mdi36"]
 [ext_resource type="Texture2D" uid="uid://cdq5l7mxswa2p" path="res://Sprites/Backgrounds/Untitled_Artwork 1.png" id="53_nx6ne"]
 [ext_resource type="Texture2D" uid="uid://ucfat1wdsemy" path="res://Sprites/Level1/Generator_Sign_Past.png" id="54_h3d7q"]
+[ext_resource type="PackedScene" uid="uid://75pjelnph8m0" path="res://Scenes/longer_ladder.tscn" id="55_h3d7q"]
 [ext_resource type="PackedScene" uid="uid://bld71aal3ae54" path="res://Scenes/selective_platform.tscn" id="55_mdi36"]
+[ext_resource type="PackedScene" uid="uid://djh7fnsq4oi1r" path="res://Scenes/long_ladder.tscn" id="56_h3d7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwpk5"]
 size = Vector2(20, 110)
@@ -2762,24 +2762,9 @@ scale = Vector2(0.7598733, -0.69506544)
 position = Vector2(2662.3896, 597.54047)
 scale = Vector2(0.66665584, 1.1333518)
 
-[node name="first_ladder" parent="." instance=ExtResource("24_u0op5")]
-position = Vector2(374.36975, -270.8392)
-scale = Vector2(0.09282979, 0.08878683)
-disable_platform = true
-
 [node name="LadderSHPR2" parent="." instance=ExtResource("26_pm77i")]
 position = Vector2(762, 22)
 scale = Vector2(0.099999994, 0.06999999)
-
-[node name="LadderSHPR3" parent="." instance=ExtResource("26_pm77i")]
-position = Vector2(704, 1358)
-scale = Vector2(0.099999994, 0.06999999)
-disable_platform = true
-
-[node name="LadderSHPR4" parent="." instance=ExtResource("26_pm77i")]
-position = Vector2(1055, 1096)
-scale = Vector2(0.099999994, 0.06999999)
-disable_platform = true
 
 [node name="LadderTAPR13" parent="." instance=ExtResource("27_xub2v")]
 position = Vector2(3272, 3462)
@@ -2793,43 +2778,6 @@ scale = Vector2(0.099999994, 0.06999999)
 position = Vector2(934.99994, -313)
 scale = Vector2(0.099999994, 0.06999999)
 
-[node name="LadderTAPR5" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(2513, 260)
-scale = Vector2(0.099999994, 0.06999999)
-
-[node name="LadderTAPR10" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(704, 1207)
-scale = Vector2(0.099999994, 0.06999999)
-
-[node name="LadderTAPR12" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(1055, 1031)
-scale = Vector2(0.099999994, 0.06999999)
-
-[node name="LadderTAPR11" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(704, 1291)
-scale = Vector2(0.099999994, 0.06999999)
-disable_platform = true
-
-[node name="LadderTAPR6" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(2513, 343)
-scale = Vector2(0.099999994, 0.06999999)
-disable_platform = true
-
-[node name="LadderTAPR7" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(2513, 427)
-scale = Vector2(0.099999994, 0.06999999)
-disable_platform = true
-
-[node name="LadderTAPR8" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(2513, 509)
-scale = Vector2(0.099999994, 0.06999999)
-disable_platform = true
-
-[node name="LadderTAPR9" parent="." instance=ExtResource("27_xub2v")]
-position = Vector2(2513, 591)
-scale = Vector2(0.099999994, 0.06999999)
-disable_platform = true
-
 [node name="LadderTAPR3" parent="." instance=ExtResource("27_xub2v")]
 position = Vector2(763, -198.99997)
 scale = Vector2(0.099999994, 0.06999999)
@@ -2837,10 +2785,6 @@ scale = Vector2(0.099999994, 0.06999999)
 [node name="LadderTAPR4" parent="." instance=ExtResource("27_xub2v")]
 position = Vector2(763, -85.999985)
 scale = Vector2(0.099999994, 0.06999999)
-
-[node name="ladder_1" parent="." instance=ExtResource("25_1f27d")]
-position = Vector2(374.41354, -341.88275)
-scale = Vector2(0.08963606, 0.08963606)
 
 [node name="Lv1PresentBrokenElevatorSprite(1)" type="Sprite2D" parent="."]
 position = Vector2(1249.6101, 1276.4226)
@@ -2881,7 +2825,7 @@ scale = Vector2(1.306238, 1.306238)
 
 [node name="past_door" parent="." instance=ExtResource("45_s764c")]
 position = Vector2(470.99997, 4192)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.295, 0.295)
 
 [node name="Node2D" parent="." instance=ExtResource("46_g6dp3")]
 position = Vector2(124, -252)
@@ -2961,5 +2905,21 @@ scale = Vector2(0.118618704, 0.48967713)
 [node name="KillZone3" parent="." instance=ExtResource("36_7sml1")]
 position = Vector2(708.3725, 68.5244)
 scale = Vector2(0.32324237, -3.1509864)
+
+[node name="long_ladder" parent="." instance=ExtResource("56_h3d7q")]
+position = Vector2(374, -265.3)
+scale = Vector2(0.093, 0.07283333)
+
+[node name="longer_ladder" parent="." instance=ExtResource("55_h3d7q")]
+position = Vector2(2513.0002, 423)
+scale = Vector2(0.093, 0.114)
+
+[node name="long_ladder2" parent="." instance=ExtResource("56_h3d7q")]
+position = Vector2(704, 1325.0001)
+scale = Vector2(0.093, 0.089)
+
+[node name="long_ladder3" parent="." instance=ExtResource("56_h3d7q")]
+position = Vector2(1051.0001, 1097.0001)
+scale = Vector2(0.093, 0.06)
 
 [connection signal="body_entered" from="Cutscene_Trigger1" to="Player" method="_on_cutscene_trigger_1_body_entered"]
